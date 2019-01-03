@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorhome"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.AllocationActivity">
+
+    <include layout="@layout/tit" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginTop="30px"
+        android:background="@color/afragment"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="45px"
+            android:layout_weight="1"
+            android:textSize="13sp"
+            android:text="@string/Node_mark" />
+
+        <EditText
+            android:id="@+id/node"
+            style="@style/edittext"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="45px"
+            android:background="@null"
+            android:textSize="13sp"
+            android:hint="@string/Node_markinput"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/sNodeMessage"
+        style="@style/textview"
+        android:layout_margin="@dimen/dp_10"
+        android:text="@string/Node_message"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/n_Search"
+        android:layout_width="984px"
+        android:layout_height="114px"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@color/essential"
+        android:text="@string/Node_search"
+        android:textColor="#ffff"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/uLin"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        android:background="@color/afragment"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="50dp"
+            android:background="@color/grayf2">
+
+            <ImageView
+                android:id="@+id/uhead"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:src="@mipmap/initial" />
+
+            <TextView
+                android:id="@+id/uName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/uhead"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toRightOf="@+id/uhead"
+                android:text="xxxxxx"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/uPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/uName"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/uhead"
+                android:text="xxxxxx"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/uId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_alignBottom="@+id/uhead"
+                android:layout_toRightOf="@+id/uhead"
+                android:text="xxxxx"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/sAffirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/Node_affirm"
+            android:textColor="@color/tuichu"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/confirmTheAllocation"
+            android:layout_width="984px"
+            android:layout_height="114px"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@color/tuichu"
+            android:text="@string/Node_activate"
+            android:textColor="#ffff"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/getBack"
+            android:layout_width="984px"
+            android:layout_height="114px"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@color/tuichu"
+            android:text="@string/Welcome_succeed"
+            android:textColor="#ffff"
+            android:textSize="46px"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

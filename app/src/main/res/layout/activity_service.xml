@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.ServiceActivity">
+
+    <include layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="86dp"
+                android:layout_height="114dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/iclauncher" />
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="21dp"
+                android:text="@string/Service_advertising"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:layout_width="311dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@color/service">
+
+                <ImageView
+                    android:id="@+id/oneImageView"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/service" />
+
+                <TextView
+                    style="@style/qqq"
+                    android:layout_marginLeft="@dimen/dp_1"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/oneImageView"
+                    android:text="@string/wecard"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/noeService"
+                    style="@style/qqq"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:text="@string/Service_wc"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/wcImageView"
+                    android:layout_width="76dp"
+                    android:layout_height="102dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="46dp"
+                    android:src="@mipmap/wc" />
+
+                <TextView
+                    android:id="@+id/oneSaveImage"
+                    style="@style/qqq"
+                    android:layout_below="@+id/wcImageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Code_save"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:id="@+id/twoImageView"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_below="@+id/oneSaveImage"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/service" />
+
+                <TextView
+                    style="@style/qqq"
+                    android:layout_below="@+id/oneSaveImage"
+                    android:layout_marginLeft="@dimen/dp_1"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/twoImageView"
+                    android:text="@string/qq"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/twoService"
+                    style="@style/qqq"
+                    android:layout_below="@+id/oneSaveImage"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:text="@string/Service_wc"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/qqImageView"
+                    android:layout_width="76dp"
+                    android:layout_height="102dp"
+                    android:layout_below="@+id/twoImageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@mipmap/qq" />
+
+                <TextView
+                    android:id="@+id/twoSaveImage"
+                    style="@style/qqq"
+                    android:layout_below="@+id/qqImageView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Code_save"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:id="@+id/mallImageView"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_below="@+id/twoSaveImage"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/service" />
+
+                <TextView
+                    style="@style/qqq"
+                    android:layout_below="@+id/twoSaveImage"
+                    android:layout_marginLeft="@dimen/dp_1"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@+id/twoImageView"
+                    android:text="@string/ty"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/mallService"
+                    style="@style/qqq"
+                    android:layout_below="@+id/twoSaveImage"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:text="@string/Service_wc"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/mallImageViewInput"
+                    android:layout_width="76dp"
+                    android:layout_height="102dp"
+                    android:layout_below="@+id/mallService"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@drawable/mall" />
+
+                <TextView
+                    android:id="@+id/threeSaveImage"
+                    style="@style/qqq"
+                    android:layout_below="@+id/mallImageViewInput"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/Code_save"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="118px"
+    android:layout_marginLeft="@dimen/dp_16"
+    android:layout_marginRight="@dimen/dp_16">
+
+    <TextView
+        android:id="@+id/postUserId"
+        style="@style/vitextview"
+        android:text="兑换奖励"
+        android:textColor="@color/afragmenttext"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/postUserTime"
+        style="@style/atextview"
+        android:layout_below="@+id/postUserId"
+        android:text="xxxxxxxx"
+        android:textColor="@color/afragmenttext"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/postUserCard"
+        style="@style/textview"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="xxxxxx"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/appbackground" />
+</RelativeLayout>

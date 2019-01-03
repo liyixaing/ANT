@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Activity.drawer.SecurityPhoneUpActivity">
+
+    <include layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="45px"
+                    android:layout_weight="1"
+                    android:text="@string/Phoneup_oldphone"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/Phoneup_old"
+                    style="@style/edittext"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="45px"
+                    android:background="@null"
+                    android:hint="@string/Phoneup_phone"
+                    android:inputType="phone"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="30px"
+                android:background="@color/afragment">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="43px"
+                    android:layout_marginTop="24px"
+                    android:text="@string/Transfer_shoujiguanma"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/aaguanhao"
+                    style="@style/textview"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="120px"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/xxxxx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40px"
+                    android:src="@mipmap/fanhx" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="45px"
+                    android:layout_weight="1"
+                    android:text="@string/Phoneup_newphone"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/Phoneup_new"
+                    style="@style/edittext"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:hint="@string/Phoneup_phone"
+                    android:inputType="phone"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/FindPayget_ssm"
+                    style="@style/textview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="45px"
+                    android:layout_weight="0.5"
+                    android:text="@string/Register_getverification"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="45px"
+                    android:layout_weight="1"
+                    android:text="@string/Login_pwd"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/Phoneup_loginpwd"
+                    style="@style/edittext"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="45px"
+                    android:background="@null"
+                    android:hint="@string/Phoneup_loginpwd"
+                    android:inputType="textPassword"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="45px"
+                    android:layout_weight="1"
+                    android:text="@string/FindPay_pay"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/Phoneup_paypwd"
+                    style="@style/edittext"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="45px"
+                    android:background="@null"
+                    android:hint="@string/Phoneup_paypwd"
+                    android:inputType="textPassword"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="45px"
+                    android:layout_weight="1"
+                    android:text="@string/Register_verification"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/FindPay_ssmiput"
+                    style="@style/edittext"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="45px"
+                    android:background="@null"
+                    android:hint="@string/Register_verificationimport"
+                    android:inputType="number"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/loginup_submit"
+                android:layout_width="984px"
+                android:layout_height="114px"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="270px"
+                android:background="@drawable/butt"
+                android:text="@string/FindPay_ok"
+                android:textColor="@color/grayf2"
+                android:textSize="46px" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

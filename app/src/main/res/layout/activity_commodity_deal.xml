@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.CommodityDealActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/close"
+                style="@style/xx"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="20dp"
+                android:text="@string/Welcome_error"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_marginTop="50dp"
+                android:layout_width="57dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/commodity_pay" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/CommodityDeal_payee" />
+
+                    <TextView
+                        android:id="@+id/commodityCollection"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/CommodityDeal_payee" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/CommodityDeal_order" />
+
+                    <TextView
+                        android:id="@+id/commodityOrder"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/CommodityDeal_order" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/CommodityDeal_payType" />
+
+                    <TextView
+                        android:id="@+id/payType"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/CommodityDeal_payType" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/CommodityDeal_payNum" />
+
+                    <TextView
+                        android:id="@+id/payNumber"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/CommodityDeal_payNum"
+                        android:textColor="@color/tuichu" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/CommodityDeal_getProperty" />
+
+                    <TextView
+                        android:id="@+id/payGetCard"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/CommodityDeal_getProperty"
+                        android:textColor="@color/essential" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/payOverTime"
+                style="@style/qqq"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/dp_16"
+                android:textSize="12sp"
+                android:text="请在10分钟内完成支付" />
+
+            <RelativeLayout
+                android:layout_width="309dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="43dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/paycommodity">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="19dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
+                    android:layout_weight="1"
+                    android:src="@mipmap/you" />
+                <TextView
+                    style="@style/xx"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="120dp"
+                    android:text="@string/CommodityDeal_payCommodity"
+                    android:textSize="17sp" />
+                <com.example.administrator.mode.Utlis.SlideRightViewDragHelper
+                    android:id="@+id/pay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/comm" />
+                </com.example.administrator.mode.Utlis.SlideRightViewDragHelper>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

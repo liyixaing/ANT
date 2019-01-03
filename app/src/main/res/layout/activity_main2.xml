@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rexx"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/appbackground">
+
+        <RelativeLayout
+            android:id="@+id/aa"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_16">
+
+            <ImageView
+                android:id="@+id/mainhead"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp" />
+
+            <ImageView
+                android:id="@+id/eee"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/frame"
+                android:visibility="gone" />
+             <!--android:background="@drawable/headbg"-->
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/mainCrown"
+            android:layout_width="25dp"
+            android:layout_height="28dp"
+            android:layout_alignTop="@+id/aa"
+            android:layout_toLeftOf="@+id/et_user_name"
+            android:src="@mipmap/crown"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/aa"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/aa"
+            android:background="@null"
+            android:singleLine="true"
+            android:text="xxxxxxxx"
+            android:textColor="@color/afragmenttext"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/isVip"
+            android:layout_width="18dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/iv_setusername"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/et_user_name"
+            android:src="@mipmap/isvip"
+            android:visibility="gone"
+            android:background="@drawable/but3"
+            />
+
+        <TextView
+            android:id="@+id/isMerchant"
+            style="@style/xx"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/iv_setusername"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/isVip"
+            android:drawableLeft="@mipmap/store"
+            android:text="aaa"
+            android:visibility="gone"
+            android:background="@drawable/but3"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/user_phone"
+            style="@style/atextview"
+            android:layout_below="@+id/et_user_name"
+            android:layout_marginLeft="27px"
+            android:layout_toRightOf="@+id/aa"
+            android:text="电话号码"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/user_id"
+            style="@style/atextview"
+            android:layout_alignBottom="@+id/aa"
+            android:layout_marginLeft="27px"
+            android:layout_toRightOf="@+id/aa"
+            android:text="@string/Home_invite"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_setusername"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignTop="@+id/et_user_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="27px"
+            android:src="@mipmap/bianji" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50px"
+                android:background="@color/afragment" />
+
+            <RelativeLayout
+                android:id="@+id/re_yaoqin"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/appbackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_yaoqin"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="27px"
+                    android:src="@mipmap/qietu" />
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@+id/iv_yaoqin"
+                    android:text="@string/Home_yaoqin"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23px"
+                    android:src="@mipmap/fan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/grayf2" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re_shiming"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/appbackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_renzhen"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="27px"
+                    android:src="@mipmap/renzhen" />
+
+                <TextView
+                    android:id="@+id/tvrenz"
+                    style="@style/textview1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@+id/iv_renzhen"
+                    android:text="@string/Home_renz"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/iv_shi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/tvrenz"
+                    android:src="@mipmap/zhengque"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23px"
+                    android:src="@mipmap/fan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/grayf2" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re_anquan"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/appbackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_anquan"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="27px"
+                    android:src="@mipmap/anquan" />
+
+                <TextView
+                    android:id="@+id/tv_anquan"
+                    style="@style/textview1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@+id/iv_anquan"
+                    android:text="@string/Home_anq"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23px"
+                    android:src="@mipmap/fan" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30px"
+                android:background="@color/afragment"></LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/re_xiaoxi"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/appbackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_xiaoxi"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="27px"
+                    android:src="@mipmap/xiaoxi" />
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@+id/iv_xiaoxi"
+                    android:text="@string/Home_xx"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23px"
+                    android:src="@mipmap/fan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/grayf2" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re_banben"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/appbackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_banben"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="27px"
+                    android:src="@mipmap/banbenjiance" />
+
+                <TextView
+                    android:id="@+id/tv_banben"
+                    style="@style/textview1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@+id/iv_banben"
+                    android:text="@string/Home_banb"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/iv_ban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/tv_banben"
+                    android:src="@mipmap/aa"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23px"
+                    android:src="@mipmap/fan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/grayf2" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re_guanyu"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/appbackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_guanyu"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="27px"
+                    android:src="@mipmap/our" />
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@+id/iv_guanyu"
+                    android:text="@string/Home_guanyuwo"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23px"
+                    android:src="@mipmap/fan" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="32px"
+                android:background="@color/afragment"></LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/re_shezhi"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/appbackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_shezhi"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="27px"
+                    android:src="@mipmap/shezhi" />
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@+id/iv_shezhi"
+                    android:text="@string/Home_shezhi"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="23px"
+                    android:src="@mipmap/fan" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="600px"
+                android:background="@color/afragment">
+
+                <Button
+                    android:id="@+id/bu_tuichu"
+                    android:layout_width="300dp"
+                    android:layout_height="113px"
+                    android:layout_centerInParent="true"
+                    android:background="@color/tuichu"
+                    android:text="@string/Home_tuichu"
+                    android:textColor="@color/grayf2"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/Versions_now"
+                    style="@style/atextview"
+                    android:layout_below="@+id/bu_tuichu"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorhome" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

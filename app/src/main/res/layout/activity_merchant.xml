@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.mode.Fragment.homeFragment.MerchantActivity">
+
+    <include layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/xx"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/aaa"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/xx"
+                    android:text="@string/bbb"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/aa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginRight="24dp"
+                    android:background="@mipmap/dasdasd"
+                    android:text=""
+                    android:textColor="@color/afragmenttext"
+                    android:textSize="14sp"
+                    android:theme="@style/MyEditText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/xx"
+                    android:text="@string/ccc"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/bb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginRight="24dp"
+                    android:background="@mipmap/dasdasd"
+                    android:textColor="@color/afragmenttext"
+                    android:textSize="14sp"
+                    android:theme="@style/MyEditText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/xx"
+                    android:text="@string/ddd"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/cc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginRight="24dp"
+                    android:background="@mipmap/dasdasd"
+                    android:inputType="phone|number"
+                    android:textColor="@color/afragmenttext"
+                    android:textSize="14sp"
+                    android:theme="@style/MyEditText" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/xx"
+                    android:text="@string/eee"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/dd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginRight="24dp"
+                    android:background="@mipmap/dasdasd"
+                    android:inputType="phone"
+                    android:textColor="@color/afragmenttext"
+                    android:textSize="14sp"
+                    android:theme="@style/MyEditText" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/xx"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/fff"
+                android:textSize="14sp" />
+            <!--
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="88dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="24dp"
+                            android:background="@drawable/qq">
+
+
+                        </LinearLayout>-->
+
+            <EditText
+                android:id="@+id/ee"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="24dp"
+                android:background="@mipmap/dfasd"
+                android:gravity="top"
+                android:lineSpacingMultiplier="1.2"
+                android:singleLine="false"
+                android:text="     "
+                android:textColor="@color/afragmenttext"
+                android:textSize="13sp"
+                android:theme="@style/MyEditText" />
+
+            <Button
+                android:id="@+id/hei"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginRight="32dp"
+                android:background="@mipmap/but4"
+                android:text="@string/ggg"
+                android:textColor="@color/essential" />
+
+            <Button
+                android:id="@+id/cai"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="48dp"
+                android:background="@mipmap/but4"
+                android:text="@string/hhh"
+                android:textColor="@color/essential" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

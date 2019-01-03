@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.PropertyDetailActivity">
+
+    <include layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/xx"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/Deal_message" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_number" />
+
+                    <TextView
+                        android:id="@+id/dealNumber"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_type" />
+
+                    <TextView
+                        android:id="@+id/dealType"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_type" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_time" />
+
+                    <TextView
+                        android:id="@+id/dealTime"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_time" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/xx"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/Deal_messageOut" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_nameOut" />
+
+                    <TextView
+                        android:id="@+id/dealnameOut"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_nameOut" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_name" />
+
+                    <TextView
+                        android:id="@+id/dealName"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_name" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/xx"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/Deal_variation" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_carGet" />
+
+                    <TextView
+                        android:id="@+id/dealCarGet"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_carGet" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_propertyOut" />
+
+                    <TextView
+                        android:id="@+id/dealPropertyOut"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_propertyOut" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

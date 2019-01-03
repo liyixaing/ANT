@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.FriendParticularsActivity">
+
+    <include layout="@layout/tit" />
+
+    <TextView
+        style="@style/textview"
+        android:layout_margin="@dimen/dp_16"
+        android:textSize="17sp"
+        android:text="@string/Particulars_magess" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:background="@color/afragment"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_18"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/friendHade"
+                android:layout_width="67dp"
+                android:layout_height="67dp"
+                android:src="@mipmap/toux" />
+
+            <TextView
+                android:id="@+id/friendName"
+                style="@style/atextview"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textSize="11sp"
+                android:layout_alignTop="@+id/friendHade"
+                android:layout_toRightOf="@+id/friendHade"
+                android:text="xxxxxxx" />
+
+            <TextView
+                android:id="@+id/friendUserId"
+                style="@style/atextview"
+                android:layout_below="@+id/friendName"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="5dp"
+                android:textSize="11sp"
+                android:layout_toRightOf="@+id/friendHade"
+                android:text="xxxxxxx" />
+
+            <TextView
+                android:id="@+id/friendUserPhone"
+                style="@style/atextview"
+                android:layout_alignBottom="@+id/friendHade"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textSize="11sp"
+                android:layout_toRightOf="@+id/friendHade"
+                android:text="xxxxxxx" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_weight="2.5"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/friendPerson"
+                style="@style/vitextview"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="4"
+                android:text="xxxxxxxx"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="@dimen/dp_18"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_10"
+                android:src="@mipmap/shouji" />
+
+            <TextView
+                android:id="@+id/friendPhone"
+                style="@style/vitextview"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="xxxxxxxx"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:background="#828181"
+            android:layout_marginRight="@dimen/dp_25" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_weight="2.5">
+
+            <TextView
+                android:id="@+id/contactPerson"
+                style="@style/vitextview"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="4"
+                android:text="xxxxxxxx"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="@dimen/dp_18"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_10"
+                android:src="@mipmap/shouji" />
+
+            <TextView
+                android:id="@+id/contactPhone"
+                style="@style/vitextview"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="xxxxxxxx"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

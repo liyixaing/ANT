@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.PersonToPersonDetailActivity">
+
+    <include layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/xx"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/Deal_message" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_number" />
+
+                    <TextView
+                        android:id="@+id/personNumber"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_type" />
+
+                    <TextView
+                        android:id="@+id/personType"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_type" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_time" />
+
+                    <TextView
+                        android:id="@+id/personTime"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_time" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/xx"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/Deal_expenditure" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_expenditureId" />
+
+                    <TextView
+                        android:id="@+id/dealExpenditureId"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_expenditureId" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_name" />
+
+                    <TextView
+                        android:id="@+id/personName"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_name" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_expenditurecurrency" />
+
+                    <TextView
+                        android:id="@+id/expenditurecurrency"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_expenditurecurrency" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Transfer_service" />
+
+                    <TextView
+                        android:id="@+id/expenditureService"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Transfer_service" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_expenditureNumber" />
+
+                    <TextView
+                        android:id="@+id/expenditureNumber"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_expenditureNumber" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_expenditureAll" />
+
+                    <TextView
+                        android:id="@+id/expenditureAllOut"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_expenditureAll" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/xx"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/Deal_expenditureMessage" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_nameOut" />
+
+                    <TextView
+                        android:id="@+id/nameOut"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_nameOut" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_name" />
+
+                    <TextView
+                        android:id="@+id/personNameGet"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_name" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_expenditurecurrency" />
+
+                    <TextView
+                        android:id="@+id/ecurrency"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_expenditurecurrency" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_expenditureGet" />
+
+                    <TextView
+                        android:id="@+id/expenditureGet"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_expenditureGet" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/Deal_expenditureincome" />
+
+                    <TextView
+                        android:id="@+id/expenditureAllGet"
+                        style="@style/qqq"
+                        android:layout_gravity="center"
+                        android:text="@string/Deal_expenditureincome" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/xx"
+                android:layout_margin="@dimen/dp_10"
+                android:text="@string/Transfer_remark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/beizhuzhu"
+                    style="@style/qqq"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_weight="1"
+                    android:singleLine="false"
+                    android:text="@string/Transfer_remark" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

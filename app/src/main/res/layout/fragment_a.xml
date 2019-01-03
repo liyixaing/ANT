@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.A_Fragment">
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/pull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/home_tit" />
+
+                    <LinearLayout
+                        android:id="@+id/tit"
+                        android:layout_width="match_parent"
+                        android:layout_height="118dp"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginRight="30px"
+                        android:background="@color/afragment"
+                        android:orientation="vertical">
+                        <!--
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="1"
+                                                    android:visibility="gone">
+
+                                                    <ImageView
+                                                        android:id="@+id/laba"
+                                                        android:layout_width="@dimen/dp_25"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerVertical="true"
+                                                        android:src="@mipmap/laba" />
+
+                                                    <TextView
+                                                        style="@style/atextview"
+                                                        android:layout_centerVertical="true"
+                                                        android:layout_marginLeft="@dimen/dp_30"
+                                                        android:text="@string/Home_announcement" />
+                                                </RelativeLayout>-->
+                        <RelativeLayout
+                            android:id="@+id/relative_aircraft"
+                            android:layout_width="match_parent"
+                            android:layout_height="118dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:orientation="horizontal">
+
+
+                            <!--      <ImageView
+                                      android:id="@+id/jiashu"
+                                      android:layout_width="50dp"
+                                      android:layout_height="40dp"
+                                      android:layout_alignParentRight="true"
+                                      android:layout_centerVertical="true"
+                                      android:src="@mipmap/huojianjiashu" />
+      -->
+                            <TextView
+                                android:id="@+id/sao"
+                                style="@style/atextview"
+                                android:layout_centerVertical="true"
+                                android:drawableTop="@mipmap/saoyisao"
+                                android:gravity="center"
+                                android:text="@string/Home_sao"
+                                android:textSize="13sp" />
+
+
+                            <TextView
+                                android:id="@+id/shou"
+                                style="@style/atextview"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:drawableTop="@mipmap/erweima"
+                                android:gravity="center"
+                                android:text="@string/Home_shou"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/jiashu"
+                                style="@style/atextview"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:drawableTop="@mipmap/huojianjiashu"
+                                android:gravity="center"
+                                android:text="@string/Home_jia"
+                                android:textSize="13sp" />
+
+                            <ImageView
+                                android:id="@+id/read"
+                                android:layout_width="32px"
+                                android:layout_height="32px"
+                                android:layout_alignTop="@+id/jiashu"
+                                android:layout_alignParentRight="true"
+                                android:src="@mipmap/red" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginRight="30px"
+                        android:background="@color/colorhome" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginRight="30px"
+                        android:background="@color/afragment">
+
+                        <LinearLayout
+                            android:id="@+id/home_balance"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/atextview"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:text="@string/Property_yue"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/ant"
+                                style="@style/textview"
+                                android:layout_gravity="center"
+                                android:text="0.0000"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                style="@style/vitextview"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/dp_5"
+                                android:text="@string/Property_detail"
+                                android:textSize="@dimen/sp_12" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="2px"
+                            android:layout_height="100dp"
+                            android:background="@color/colorhome" />
+
+                        <LinearLayout
+                            android:id="@+id/conversion"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/atextview"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_weight="1"
+                                android:text="@string/Property_card"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/integral"
+                                style="@style/textview"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="0.0000"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                style="@style/vitextview"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/dp_5"
+                                android:layout_weight="1"
+                                android:text="@string/Property_conversionproperty"
+                                android:textSize="@dimen/sp_12" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="108dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginRight="30px" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="30px"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/afragment"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/textview"
+                            android:layout_margin="@dimen/dp_5"
+                            android:text="@string/Home_performance"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:background="@color/colorhome" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/friend"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/icon0"
+                                android:gravity="center"
+                                android:text="@string/Property_friend"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/relative_comm"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/icon5"
+                                android:gravity="center"
+                                android:text="@string/Home_node"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/T2"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/icon2"
+                                android:gravity="center"
+                                android:text="@string/Home_more"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:background="@color/colorhome" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/book"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live3"
+                                android:gravity="center"
+                                android:text="@string/Home_book"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/zhi"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/icon1"
+                                android:gravity="center"
+                                android:text="@string/Home_t1"
+                                android:textSize="13sp" />
+
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/relative_comm1"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/icon3"
+                                android:gravity="center"
+                                android:text="@string/Home_zhitui"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="360dp"
+                        android:layout_marginLeft="30px"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="30px"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/afragment"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/textview"
+                            android:layout_margin="@dimen/dp_5"
+                            android:text="@string/Home_live"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:background="@color/colorhome" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/home_card"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live1"
+                                android:gravity="center"
+                                android:text="@string/Property_dealdetail"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/refuel"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live2"
+                                android:gravity="center"
+                                android:text="@string/Home_refuel"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/contract"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/icon4"
+                                android:gravity="center"
+                                android:text="@string/Property_contract"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:background="@color/colorhome" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/telephone"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live4"
+                                android:gravity="center"
+                                android:text="@string/Home_telephone"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/taking"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live5"
+                                android:gravity="center"
+                                android:text="@string/Home_taking"
+                                android:textSize="13sp" />
+
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/game"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live6"
+                                android:gravity="center"
+                                android:text="@string/Home_game"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:background="@color/colorhome" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/take"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live7"
+                                android:gravity="center"
+                                android:text="@string/Home_take"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/information"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live8"
+                                android:gravity="center"
+                                android:text="@string/Home_information"
+                                android:textSize="13sp" />
+
+
+                            <TextView
+                                android:layout_width="2px"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorhome" />
+
+                            <TextView
+                                android:id="@+id/more1"
+                                style="@style/vitextview"
+                                android:layout_width="52dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:drawableTop="@mipmap/live9"
+                                android:gravity="center"
+                                android:text="@string/Home_more1"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </com.baoyz.widget.PullRefreshLayout>
+</LinearLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/afragment"
+    tools:context="com.example.administrator.mode.Fragment.homeFragment.CrowdParticularsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/tit" />
+
+        <TextView
+            style="@style/xx"
+            android:layout_margin="8dp"
+            android:text="ANT蚂蚁通证"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/eqwe"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="4dp"
+            android:singleLine="false"
+            android:text="ANT token采用持有ANT token即享分红权益模式，商家将部分收益按照持有ANT数量比例分发给ANT持有者，持有ANT越多，享受权益越高。" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/scheduleProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="60"
+                android:progressDrawable="@drawable/progressbar"
+                android:visibility="visible" />
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="bottom"
+                android:text="60.00%"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp">
+
+         <TextView style="@style/qqq"
+             android:text="总量（ANT）"
+             android:textSize="10sp"/>
+            <TextView style="@style/qqq"
+                android:text="已参与（ANT）"
+                android:layout_centerHorizontal="true"
+                android:textSize="10sp"/>
+            <TextView style="@style/qqq"
+                android:text="剩余天数"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"/>
+        </RelativeLayout>
+
+        <TextView
+            style="@style/xx"
+            android:layout_margin="8dp"
+            android:text="项目介绍"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/eqwe"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="4dp"
+            android:singleLine="false"
+            android:text="ANT token即蚂蚁通证，立足于服务实体经济、为传统行业赋能，利用通证将商户和用户连接在一起，形成一个商业大联盟，告别单打独斗，孤军奋战的时代。ANT致力于创建一个安全、高效、透明的通证经济应用系统，让商户和用户形成一个利益共同体，最终实现商户产品不愁卖，用户购买产品有折扣还能享受商户权益的互惠互利，共享共赢模式。
+
+ANT token社区是一个公开透明的、Token化的组织，ANT token代表ANT token商业联盟的合法权益。ANT token采用持有ANT token即享分红权益模式，商家将部分收益按照持有ANT token数量比例分发给ANT token持有者，持有ANT token越多，享受权益越高。另外，每个ANT token持有者都有权利参与社区的业务决策、团队选举等社区活动。ANT token是一个所有ANT token持有者和联盟商户共有、共治、共享的社区型组织。" />
+
+        <TextView
+            style="@style/xx"
+            android:layout_margin="8dp"
+            android:text="白皮书"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/eqwe"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="4dp"
+            android:singleLine="false"
+            android:text="http://anttoken.io/page/WhitePaper.html" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="8dp"
+            android:background="@color/appbackground"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="8dp"
+                android:text="请输入购买数量"
+                android:textSize="15sp" />
+
+            <EditText
+                style="@style/xx"
+                android:layout_width="48dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:padding="2dp"
+                android:textSize="15sp" />
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="8dp"
+                android:text="枚"
+                android:textSize="15sp" />
+
+            <Button
+                android:layout_width="112dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="8dp"
+                android:background="@color/essential"
+                android:text="立即购买"
+                android:textColor="@color/grayf2" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.CodeActivity">
+
+    <include layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="34dp"
+                android:src="@mipmap/ewewe" />
+
+            <TextView
+                android:id="@+id/iddd"
+                style="@style/xx"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="10000"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/code_username"
+                style="@style/xx"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="喜洋洋与灰太狼"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/code_userphone"
+                style="@style/xx"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="139999999999"
+                android:textSize="11sp" />
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@mipmap/aaaee">
+
+                <ImageView
+                    android:id="@+id/Code_code"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/erweim" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/xx"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/Scan"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/code_save"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="48dp"
+                android:textColor="@color/essential"
+                android:text="@string/Code_save"
+                android:background="@mipmap/but4"
+                android:layout_marginRight="32dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

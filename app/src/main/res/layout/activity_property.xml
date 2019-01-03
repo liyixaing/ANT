@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.PropertyActivity">
+
+    <include layout="@layout/tit" />
+
+    <TextView
+        style="@style/xx"
+        android:textSize="18sp"
+        android:layout_marginLeft="28px"
+        android:layout_marginTop="35px"
+        android:text="@string/Property_property" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_marginTop="34px"
+        android:background="@color/afragment">
+
+        <TextView
+            android:id="@+id/tv_prmo"
+            style="@style/atextview"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/Property_usableMoney" />
+
+        <TextView
+            android:id="@+id/property_mon"
+            style="@style/atextview"
+            android:layout_below="@+id/tv_prmo"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="20px"
+            android:text="000.000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_prto"
+            style="@style/atextview"
+            android:layout_below="@+id/property_mon"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="12dp"
+            android:text="@string/Home_tong1" />
+
+        <TextView
+            android:id="@+id/property_ton"
+            style="@style/atextview"
+            android:layout_below="@+id/tv_prto"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="20px"
+            android:text="000.000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/property_con"
+            style="@style/textview"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="43px"
+
+            android:text="@string/Property_conversion" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67px">
+
+        <TextView
+            style="@style/xx"
+            android:layout_marginLeft="28px"
+            android:text="@string/Property_jilu"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tong"
+            style="@style/xx"
+            android:layout_centerHorizontal="true"
+            android:text="@string/Property_yue"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="45dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tong"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@color/essential" />
+
+        <TextView
+            android:id="@+id/zichan"
+            style="@style/xx"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80px"
+            android:text="@string/Property_card"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="45dp"
+            android:layout_height="1dp"
+            android:layout_below="@+id/zichan"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="80px"
+            android:background="@color/essential"
+            android:visibility="gone" />
+
+        <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
+            android:id="@+id/property_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="114px"
+            android:background="@color/afragment" />
+
+        <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
+            android:id="@+id/card_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="114px"
+            android:background="@color/afragment"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/antout"
+                android:layout_width="wrap_content"
+                android:layout_height="114px"
+                android:layout_weight="1"
+                android:background="@color/tuichu"
+                android:text="@string/Property_zhuanchu"
+                android:textColor="@color/grayf2"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/antget"
+                android:layout_width="wrap_content"
+                android:layout_height="114px"
+                android:layout_weight="1"
+                android:background="@color/essential"
+                android:text="@string/Property_zuanru"
+                android:textColor="@color/grayf2"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

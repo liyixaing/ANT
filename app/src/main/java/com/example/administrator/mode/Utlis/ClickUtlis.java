@@ -1,0 +1,20 @@
+package com.example.administrator.mode.Utlis;
+
+import android.view.View;
+
+//三秒只能点击一次
+public abstract  class ClickUtlis implements View.OnClickListener{
+    private static final int MIN_CLICK_DELAY_TIME = 1000;
+    private static long lastClickTime;
+    public abstract void onMultiClick(View v);
+
+    @Override
+    public void onClick(View view) {
+        long curClickTime = System.currentTimeMillis();
+        if((curClickTime - lastClickTime) >= MIN_CLICK_DELAY_TIME) {
+            // 超过点击间隔后再将lastClickTime重置为当前点击时间
+            lastClickTime = curClickTime;
+            onMultiClick(view);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120px"
+
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/property_type"
+        style="@style/atextview"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:text="支出" />
+
+    <TextView
+        android:id="@+id/property_date"
+        style="@style/atextview"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_weight="3"
+        android:text="2018.6.6" />
+
+    <TextView
+        android:id="@+id/property_card"
+        style="@style/textview"
+        android:textSize="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_weight="0.5"
+        android:gravity="right"
+        android:text="41000" />
+</RelativeLayout>

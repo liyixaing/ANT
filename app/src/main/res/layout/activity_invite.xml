@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Activity.drawer.InviteActivity">
+
+    <include layout="@layout/tit" />
+
+
+    <ImageView
+        android:id="@+id/image_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/xinfen" />
+
+    <ImageView
+        android:id="@+id/imageview_Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_top"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/paidfvb" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_top"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_toRightOf="@+id/imageview_Top"
+        android:src="@mipmap/baiyunduo" />
+
+    <TextView
+        android:id="@+id/Invite_yard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="1234567"
+        android:textColor="@color/essential"
+        android:textSize="36dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/ivcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Invite_yard"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Invite_yard"
+        android:textColor="@color/essential"
+        android:textSize="36dp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageview_Top"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_toLeftOf="@+id/relative_bom"
+        android:src="@mipmap/yunduo" />
+
+    <RelativeLayout
+        android:id="@+id/relative_bom"
+        android:layout_width="740px"
+        android:layout_height="623px"
+        android:layout_below="@+id/imageview_Top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/dixianaku"></RelativeLayout>
+
+    <ImageView
+        android:id="@+id/invitation"
+        android:layout_width="358px"
+        android:layout_height="358px"
+        android:layout_below="@+id/imageview_Top"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/erweimatup" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_invite"
+        android:layout_toRightOf="@+id/relative_bom"
+        android:src="@mipmap/baiyunduo" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivcode"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="@dimen/dp_5"
+        android:src="@mipmap/diaokon" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ivcode"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="@dimen/dp_5"
+        android:src="@mipmap/diaokon" />
+
+    <TextView
+        android:id="@+id/tv_invite"
+        style="@style/textview"
+        android:layout_below="@+id/invitation"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_5"
+        android:text="@string/Invite_scan" />
+
+    <TextView
+        style="@style/textview"
+        android:layout_below="@+id/tv_invite"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:textSize="15sp"
+        android:layout_marginTop="3dp"
+        android:text="@string/Invite_newUser" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/xianrenz" />
+    <!--  <TextView
+
+          android:layout_width="750px"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:layout_marginTop="117px"
+          android:text="分享ANT链接http//ANT.htl.ccm.ore/sta-tic/cmcc.com每日可限领取礼品一份"
+          android:textColor="@color/essential" />-->
+
+    <!--  <Button
+          android:layout_width="293px"
+          android:layout_height="100px"
+          android:layout_gravity="center_horizontal"
+          android:layout_marginTop="153px"
+          android:textSize="@dimen/dp_16"
+          android:background="@mipmap/juxing"
+          android:text="@string/Invite_copy"
+          android:textColor="@color/grayf2" />-->
+</RelativeLayout>

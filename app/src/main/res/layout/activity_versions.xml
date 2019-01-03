@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    tools:context=".Activity.drawer.VersionsActivity">
+
+    <include
+        android:id="@+id/versions_tit"
+        layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_below="@+id/versions_tit">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="228px"
+                android:layout_height="305px"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50px"
+                android:src="@mipmap/iclauncher" />
+
+            <TextView
+                android:id="@+id/xx"
+                style="@style/textview"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="34px"
+                android:textSize="14sp"
+                android:text="@string/Versions_ver" />
+
+            <TextView
+                style="@style/vitextview"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="34px"
+                android:textSize="12sp"
+                android:text="@string/Versions_thisver" />
+
+            <TextView
+                style="@style/textview"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="34px"
+                android:textSize="14sp"
+                android:text="@string/Versions_message" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="37px"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="50px"
+                    android:layout_weight="9"
+                    android:textSize="13sp"
+                    android:text="@string/Versions_new" />
+
+                <TextView
+                    android:id="@+id/affirmdeal_user"
+                    style="@style/vitextview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="50px"
+                    android:layout_weight="1"
+                    android:textSize="13sp"
+                    android:gravity="right"
+                    android:text="111111111" />
+
+                <ImageView
+                    android:id="@+id/Versns_new"
+                    android:layout_width="32dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:src="@mipmap/aa"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="50px"
+                    android:layout_weight="7"
+                    android:textSize="13sp"
+                    android:text="@string/Versions_date" />
+
+                <TextView
+                    android:id="@+id/affirmdeal_date"
+                    style="@style/vitextview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="50px"
+                    android:gravity="right"
+                    android:textSize="13sp"
+                    android:text="111111111" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="50px"
+                    android:layout_weight="7"
+                    android:textSize="13sp"
+                    android:text="@string/Versions_size" />
+
+                <TextView
+                    android:id="@+id/affirmdeal_size"
+                    style="@style/vitextview"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="50px"
+                    android:textSize="13sp"
+                    android:gravity="right"
+                    android:text="111111111" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_weight="9"
+                android:textSize="14sp"
+                android:text="@string/Versions_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/afragment">
+
+                <TextView
+                    android:id="@+id/Versions_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:lineSpacingExtra="12px"
+                    android:singleLine="false"
+                    android:textColor="@color/afragmenttext"
+                    android:textSize="45px" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50px"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/versions_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="114px"
+            android:layout_marginLeft="5px"
+            android:layout_weight="1"
+            android:background="@color/tuichu"
+            android:text="@string/Versions_yes"
+            android:textColor="@color/grayf2" />
+
+        <Button
+            android:id="@+id/versions_no"
+            android:layout_width="wrap_content"
+            android:layout_height="114px"
+            android:layout_gravity="right"
+            android:layout_marginRight="20px"
+            android:layout_weight="1"
+            android:background="@color/essential"
+            android:lineSpacingExtra="20px"
+            android:text="@string/Versions_no"
+            android:textColor="@color/grayf2" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120px"
+    android:background="@color/afragment"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/community_date"
+        style="@style/atextview"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="2018年9月9日" />
+    <TextView
+        android:id="@+id/community_card"
+        style="@style/textview"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="100000000" />
+</RelativeLayout>

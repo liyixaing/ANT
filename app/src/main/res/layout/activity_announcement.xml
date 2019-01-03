@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AnnouncementActivity">
+
+
+    <RelativeLayout
+        android:layout_width="303dp"
+        android:layout_height="397dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30">
+
+        <ImageView
+            android:layout_width="303dp"
+            android:layout_height="397dp"
+            android:src="@mipmap/notice_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageN"
+            android:layout_centerHorizontal="true"
+            android:text="@string/notice"
+            android:textColor="@color/essential"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageN"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="70dp"
+            android:src="@mipmap/notice_title" />
+
+        <ScrollView
+            android:layout_below="@+id/imageN"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/dp_25"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageN"
+                android:layout_marginTop="@dimen/dp_16"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/announcement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="12px"
+                    android:singleLine="false"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/afragmenttext"
+                    android:textSize="45px" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+</RelativeLayout>

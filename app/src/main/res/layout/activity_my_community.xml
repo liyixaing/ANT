@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.MyCommunityActivity">
+
+    <include layout="@layout/tit" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250px"
+        android:layout_marginTop="35px"
+        android:background="@color/afragment"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/textview"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20px"
+            android:text="@string/Mycomm_t1"
+            android:textSize="@dimen/dp_16" />
+
+
+        <TextView
+            android:id="@+id/myinvite"
+            style="@style/atextview"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15px"
+            android:text="xxxxxxxxxx"
+            android:textSize="@dimen/dp_18" />
+
+        <TextView
+            android:id="@+id/t1"
+            style="@style/atextview"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15px"
+            android:text="@string/Mycomm_copy" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        android:layout_marginTop="30px"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_weight="1"
+            android:text="@string/Mycomm_performance" />
+
+        <TextView
+            android:id="@+id/lookfriend"
+            style="@style/textview"
+            android:gravity="right"
+            android:text="@string/Mycomm_friend" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lv_friend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50px"
+        android:layout_marginTop="30px"/>
+</LinearLayout>

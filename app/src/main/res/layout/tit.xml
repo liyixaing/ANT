@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginTop="@dimen/dp_5"
+    android:background="@color/appbackground">
+
+    <ImageView
+        android:id="@+id/tit_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/fanhui" />
+
+    <TextView
+        android:id="@+id/tit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tit_iv"
+        android:layout_toRightOf="@+id/tit_iv"
+        android:text="  "
+        android:textColor="@color/essential"
+        android:textSize="17sp" />
+
+    <ImageView
+        android:id="@+id/tit_iv1"
+        android:layout_width="26dp"
+        android:layout_height="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignTop="@+id/tit_iv"
+   />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/essential"></TextView>
+</RelativeLayout>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorhome"
+    tools:context=".Fragment.homeFragment.PosActivity">
+    <include layout="@layout/tit" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@color/afragment"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/postCard"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="0.00"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/Home_balance"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorhome" />
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/postproperty"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="0.00"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/Home_tong1"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorhome" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/yesterdayPost"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="0.00"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/pos_yesterday"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorhome" />
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/accumulatePost"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="0.00"
+                    android:textSize="20sp" />
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/pos_up"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_weight="1"
+            android:text="@string/Post_award"
+            android:textSize="14sp" />
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="@dimen/dp_1"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/rights" />
+        <TextView
+            android:id="@+id/postmeagess"
+            style="@style/atextview"
+            android:text="@string/Post_explain"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@color/afragment"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="118px"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_18"
+                android:layout_weight="1"
+                android:text="@string/Post_recentAward"
+                android:textSize="13sp" />
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center_vertical"
+                android:text="@string/Property_yue"
+                android:layout_marginRight="26dp"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/appbackground" />
+        <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
+            android:id="@+id/posList"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView>
+    </LinearLayout>
+</LinearLayout>

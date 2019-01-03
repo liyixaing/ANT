@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    tools:context=".Activity.RegisterActivity">
+
+    <ImageView
+        android:layout_width="94dp"
+        android:layout_height="125dp"
+        android:src="@mipmap/iclauncher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/registerlogin"
+        style="@style/textview1"
+        android:text="@string/Login_button"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/register"
+        style="@style/textview"
+        android:text="@string/Login_register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+
+    <View
+        android:layout_width="45dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@color/essential"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <TextView
+        android:id="@+id/registerfindpwd"
+        style="@style/textview1"
+        android:text="@string/Login_forGetpwd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="17sp"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/textview"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:text="@string/Login_invite" />
+
+            <EditText
+                android:id="@+id/re_yaoq"
+                android:inputType="number"
+                style="@style/edittext"
+                android:textSize="15sp"
+                android:hint="@string/Login_invite1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/essential" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/reinput"
+        android:layout_width="984px"
+        android:layout_height="38dp"
+        android:background="@drawable/butt"
+        android:text="@string/Register_next"
+        android:textColor="#ffff"
+        android:layout_gravity="center_horizontal"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:id="@+id/register_state"
+                style="@style/textview"
+                android:textSize="15sp"
+                android:text="@string/Login_phoneType2" />
+
+            <TextView
+                android:id="@+id/login_state1"
+                style="@style/textview"
+                android:textSize="15sp"
+                />
+
+            <ImageView
+                android:layout_width="26px"
+                android:layout_height="42px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:src="@mipmap/sanjiao" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/textview"
+                android:layout_weight="4"
+                android:textSize="15sp"
+                android:text="@string/Login_phone" />
+
+            <EditText
+                android:id="@+id/user_Regname"
+                style="@style/edittext"
+                android:textSize="15sp"
+                android:inputType="phone"
+                android:layout_weight="2"
+                android:background="@null"
+                android:hint="@string/Phoneup_phone" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_5"
+                android:id="@+id/Reg_ssm"
+                style="@style/textview"
+                android:textSize="15sp"
+                android:layout_weight="0.5"
+                android:text="@string/Register_getverification" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:textSize="15sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/essential" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/textview"
+                android:layout_weight="5"
+                android:textSize="15sp"
+                android:text="@string/Register_verification" />
+
+            <EditText
+                android:id="@+id/user_Regssm"
+                style="@style/edittext"
+                android:inputType="number"
+                android:textSize="15sp"
+                android:background="@null"
+                android:hint="@string/Register_verificationimport"
+                android:textCursorDrawable="@drawable/edit_num_bg_red" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/essential" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="right"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/Reg_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_gravity="center_vertical"
+                android:checked="true"
+                android:theme="@style/My_CheckBox"
+                android:textColor="@color/essential"
+                />
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_1"
+                android:textSize="15sp"
+                android:text="@string/Register_Invitation" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Regnext"
+            android:layout_width="984px"
+            android:layout_height="38dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/butt"
+            android:text="@string/Register_next"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffff"
+            android:textSize="46px" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

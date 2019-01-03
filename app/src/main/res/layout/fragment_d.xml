@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.D_Fragment">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:visibility="gone"
+           android:orientation="horizontal">
+
+          <EditText
+              android:id="@+id/refreshUrl"
+              android:layout_width="0dp"
+              android:hint="输入url"
+              android:gravity="center"
+              android:background="@color/grayf2"
+              android:textSize="@dimen/dp_18"
+              android:layout_height="match_parent"
+              android:layout_weight="2" />
+          <Button
+              android:id="@+id/refresh"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1"
+              android:text="加载" />
+       </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/d_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="197dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10" />
+
+            <RelativeLayout
+                android:id="@+id/cccccc"
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="187dp"
+                android:background="@mipmap/shopping">
+
+                <LinearLayout
+                    android:id="@+id/aaaa"
+                    android:layout_width="match_parent"
+                    android:layout_height="69dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/member"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/member"
+                        android:gravity="center"
+                        android:text="@string/member_getProperty"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="42dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorhome"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/allType"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/all_type"
+                        android:gravity="center"
+                        android:text="@string/all_orderRemark"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bbbbb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/aaaa"
+                    android:layout_marginTop="@dimen/dp_16">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dp_5"
+                        android:layout_toLeftOf="@+id/good"
+                        android:background="@color/grayf2" />
+
+                    <TextView
+                        android:id="@+id/good"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/good"
+                        android:textColor="@color/essential"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/good"
+                        android:background="@color/grayf2" />
+                </RelativeLayout>
+
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_below="@+id/bbbbb"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:text="@string/good1"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/eeeee"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_below="@id/cccccc"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:background="@mipmap/shop">
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/blak_iv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/eeeee"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@mipmap/shop111"
+                android:gravity="center"
+                android:text="@string/ant"
+                android:textColor="@color/essential"
+                android:textSize="22sp" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

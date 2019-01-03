@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Activity.drawer.SecurityLoginUpActivity">
+
+    <include layout="@layout/tit" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/afragment"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="45px"
+            android:textSize="15sp"
+            android:layout_weight="1"
+            android:text="@string/Loginup_oldpwd" />
+
+        <EditText
+            android:id="@+id/loginup_oldpwd"
+            style="@style/edittext"
+            android:inputType="textPassword"
+            android:textSize="15sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="45px"
+            android:hint="@string/Loginup_oldpwdinput" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/afragment"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="45px"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:text="@string/Loginup_newspwd" />
+
+        <EditText
+            android:id="@+id/loginup_newpwd"
+            style="@style/edittext"
+            android:textSize="15sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="45px"
+            android:inputType="textPassword"
+            android:hint="@string/Loginup_newspwdinput" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/afragment"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="45px"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:text="@string/Loginup_affirmnewpwd" />
+
+        <EditText
+            android:id="@+id/loginup_affirmnewpwd"
+            style="@style/edittext"
+            android:textSize="15sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="45px"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:hint="@string/Loginup_affirmnewpwdinput" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/loginup_submit"
+        android:layout_width="984px"
+        android:layout_height="114px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="270px"
+        android:background="@drawable/butt"
+        android:text="@string/Loginup_submit"
+        android:textColor="@color/grayf2"
+        android:textSize="46px" />
+</LinearLayout>

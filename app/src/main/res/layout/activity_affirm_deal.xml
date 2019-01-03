@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.AffirmDealActivity">
+
+    <include layout="@layout/tit" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            style="@style/xx"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="34px"
+            android:text="@string/AffirmDeal_dea" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:layout_marginTop="37px"
+            android:background="@color/afragment"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50px"
+                android:layout_weight="7"
+                android:text="@string/Transfer_name" />
+
+            <TextView
+                style="@style/qqq"
+                android:id="@+id/affirmdeal_user"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="111111111"
+              />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:background="@color/afragmenttext" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:background="@color/afragment"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50px"
+                android:layout_weight="7"
+                android:text="@string/AffirmDeal_usernam" />
+
+            <TextView
+                android:id="@+id/affirmdeal_username"
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="暂无"
+
+                 />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:background="@color/afragmenttext" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:background="@color/afragment"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50px"
+                android:layout_weight="7"
+                android:text="@string/AffirmDeal_username" />
+
+            <TextView
+                android:id="@+id/affirmdeal_usernameinput"
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="@string/AffirmDeal_usernaminput"
+             />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:background="@color/afragmenttext" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:background="@color/afragment"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50px"
+                android:layout_weight="7"
+                android:text="@string/AffirmDeal_amount" />
+
+            <TextView
+                android:id="@+id/affirmdeal_mon"
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="8888888"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:background="@color/afragmenttext" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:background="@color/afragment"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50px"
+                android:layout_weight="7"
+                android:text="@string/AffirmDeal_currency" />
+
+            <TextView
+                android:id="@+id/affirmdeal_currency"
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="@string/Property_yue"
+               />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:background="@color/afragmenttext" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:background="@color/afragment"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50px"
+                android:layout_weight="7"
+                android:text="@string/Transfer_service" />
+
+            <TextView
+                android:id="@+id/affirmdeal_service"
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="0.0"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:background="@color/afragmenttext" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:background="@color/afragment"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50px"
+                android:layout_weight="7"
+                android:text="@string/Particulars_anticipation" />
+
+            <TextView
+                android:id="@+id/affirmdeal_anticipation"
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="24小时以后"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="134px"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+
+                android:layout_marginLeft="50px"
+                android:text="@string/Transfer_practical" />
+
+            <TextView
+                android:id="@+id/affirmdeal_practical"
+                style="@style/qqq"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="50px"
+                android:gravity="right"
+                android:text="  - 000000000"
+                android:textColor="@color/grayf2"
+                android:background="@color/tuichu"
+                />
+        </LinearLayout>
+        <Button
+            android:id="@+id/affirm_ok"
+            android:layout_width="984px"
+            android:layout_height="114px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80px"
+            android:background="@color/tuichu"
+            android:text="@string/AffirmDeal_ok"
+            android:textColor="@color/grayf2"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/affirm_no"
+            android:layout_width="984px"
+            android:layout_height="114px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40px"
+            android:background="@color/essential"
+            android:text="@string/AffirmDeal_no"
+            android:textColor="@color/grayf2"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:textSize="15sp" />
+    </LinearLayout>
+</ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.CommunityFriendActivity">
+
+    <include layout="@layout/tit" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="218px"
+        android:layout_marginTop="30px"
+        android:background="@color/afragment">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="152px"
+            android:layout_height="152px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:src="@mipmap/touxiang" />
+
+        <TextView
+            android:id="@+id/community_name"
+            style="@style/atextview"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="17px"
+            android:layout_toRightOf="@+id/head"
+            android:text="name"
+            android:textSize="@dimen/dp_16" />
+
+        <TextView
+            android:id="@+id/community_phone"
+            style="@style/atextview"
+            android:layout_below="@+id/community_name"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="5px"
+            android:layout_toRightOf="@+id/head"
+            android:text="电话号码" />
+
+        <TextView
+            android:id="@+id/community_user"
+            style="@style/atextview"
+            android:layout_below="@+id/community_phone"
+            android:layout_marginLeft="27px"
+            android:layout_marginTop="5px"
+            android:layout_toRightOf="@+id/head"
+            android:text="0" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginLeft="45px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="50px"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_gravity="center"
+            android:layout_weight="7"
+            android:text="@string/Invite_name" />
+
+        <TextView
+            style="@style/textview"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:text="@string/Invite_username" />
+
+        <TextView
+            style="@style/textview"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/Invite_activate" />
+    </LinearLayout>
+
+    <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
+        android:id="@+id/community_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView>
+</LinearLayout>

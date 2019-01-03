@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Activity.drawer.SecurityActivity">
+
+    <include layout="@layout/tit" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/security_zhanghu"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/afragment"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginTop="24px"
+                    style="@style/textview"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="50px"
+                    android:text="@string/Property_account" />
+                <TextView
+                    android:layout_marginTop="100px"
+                    style="@style/textview2"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="50px"
+                    android:text="@string/Property_protect" />
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/button" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/security_diyu"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/afragment"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginTop="24px"
+                    style="@style/textview"
+                    android:layout_marginLeft="50px"
+                    android:textSize="15sp"
+                    android:text="@string/Property_territory" />
+                <TextView
+                    android:layout_marginTop="100px"
+                    style="@style/textview2"
+                    android:layout_marginLeft="50px"
+                    android:textSize="12sp"
+                    android:text="@string/Property_territory1" />
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/button" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/security_shoushi"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/afragment"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginTop="24px"
+                    style="@style/textview"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="50px"
+                    android:text="@string/Property_gesture" />
+                <TextView
+                    android:layout_marginTop="100px"
+                    style="@style/textview2"
+                    android:layout_marginLeft="50px"
+                    android:textSize="12sp"
+                    android:text="@string/Property_gesture1" />
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/button" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/security_pwdup"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/afragment"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginTop="24px"
+                    android:textSize="15sp"
+                    android:text="@string/Property_loginup" />
+
+                <TextView
+                    style="@style/textview2"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginTop="100px"
+                    android:textSize="12sp"
+                    android:text="@string/Property_loginup1" />
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="11dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/shequfanghui" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/security_payup"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/afragment"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginTop="24px"
+                    style="@style/textview"
+                    android:layout_marginLeft="50px"
+                    android:textSize="15sp"
+                    android:text="@string/Property_pay" />
+                <TextView
+                    android:layout_marginTop="100px"
+                    style="@style/textview2"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="50px"
+                    android:text="@string/Property_pay1" />
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="11dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/shequfanghui" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/security_phoneup"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/afragment"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginTop="24px"
+                    style="@style/textview"
+                    android:layout_marginLeft="50px"
+                    android:textSize="15sp"
+                    android:text="@string/Property_op" />
+                <TextView
+                    android:layout_marginTop="100px"
+                    style="@style/textview2"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="50px"
+                    android:text="@string/Property_op1" />
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="11dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/shequfanghui" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/security_findpay"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/afragment"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginTop="24px"
+                    style="@style/textview"
+                    android:layout_marginLeft="50px"
+                    android:textSize="15sp"
+                    android:text="@string/Property_findpay" />
+                <TextView
+                    android:layout_marginTop="100px"
+                    style="@style/textview2"
+                    android:layout_marginLeft="50px"
+                    android:textSize="12sp"
+                    android:text="@string/Property_findpay1" />
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="11dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/shequfanghui" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/security_youxiang"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="50px"
+                android:background="@color/afragment"
+                android:clickable="true">
+                <TextView
+                    android:layout_marginTop="24px"
+                    style="@style/textview"
+                    android:layout_marginLeft="50px"
+                    android:textSize="15sp"
+                    android:text="@string/Property_em" />
+                <TextView
+                    android:layout_marginTop="100px"
+                    style="@style/textview2"
+                    android:layout_marginLeft="50px"
+                    android:textSize="12sp"
+                    android:text="@string/Property_em1" />
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="11dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="50px"
+                    android:src="@mipmap/shequfanghui" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

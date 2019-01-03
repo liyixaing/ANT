@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorhome"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.DpostActivity">
+
+    <include layout="@layout/tit" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@color/afragment"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dyesterdayPost"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="xxx"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/Dpos_yesterday"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorhome" />
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dpostCard"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="xxx"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/Dpos_yesterday1"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorhome" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/daccumulatePost"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="xxx"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/Dpos_up"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorhome" />
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dpostproperty"
+                    style="@style/textview"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="xxx"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/vitextview"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/Dpos_yesterday2"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/textview"
+            android:layout_weight="1"
+            android:text="@string/Dpos_award"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="@dimen/dp_1"
+            android:src="@mipmap/rights" />
+
+        <TextView
+            android:id="@+id/Dposmeagess"
+            style="@style/atextview"
+            android:text="@string/Dpos_explain"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@color/afragment"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="118px"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1.9"
+                android:text="@string/Dpos_recentAward"
+                android:textSize="13sp" />
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/dp_30"
+                android:layout_weight="2"
+                android:text="@string/Property_yue"
+                android:textSize="13sp" />
+
+            <TextView
+                style="@style/textview"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/dp_16"
+                android:text="@string/Property_card"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/appbackground" />
+
+        <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
+            android:id="@+id/dposList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context=".Fragment.C_Fragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="143dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@color/afragment">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_alignTop="@+id/xxx"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_30"
+                    android:src="@mipmap/help" />
+
+                <RelativeLayout
+                    android:id="@+id/xxx"
+                    android:layout_width="170dp"
+                    android:layout_height="110dp"
+                    android:layout_centerInParent="true"
+                    android:background="@mipmap/credit">
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/Credit"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        style="@style/xx"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/dp_30"
+                        android:text="100" />
+
+                    <TextView
+                        style="@style/qqq"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/Trades" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@color/afragment"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/friend"
+                    style="@style/xx"
+                    android:layout_width="52dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/buy"
+                    android:gravity="center"
+                    android:text="@string/deal_buy"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="2px"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorhome" />
+
+                <TextView
+                    android:id="@+id/relative_comm"
+                    style="@style/xx"
+                    android:layout_width="52dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/issue"
+                    android:gravity="center"
+                    android:text="@string/deal_sell"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="2px"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorhome" />
+
+                <TextView
+                    android:id="@+id/T2"
+                    style="@style/xx"
+                    android:layout_width="52dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/crowd"
+                    android:gravity="center"
+                    android:text="@string/deal_crowd"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="30px"
+                android:layout_marginBottom="10dp"
+                android:background="@color/afragment"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/textview"
+                    android:layout_margin="@dimen/dp_5"
+                    android:text="@string/deal_se"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/colorhome" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/home_card"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/entrust"
+                        android:gravity="center"
+                        android:text="@string/deal_entrust"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorhome" />
+
+                    <TextView
+                        android:id="@+id/refuel"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/deal"
+                        android:gravity="center"
+                        android:text="@string/deal_ing"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorhome" />
+
+                    <TextView
+                        android:id="@+id/book"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/dealok"
+                        android:gravity="center"
+                        android:text="@string/deal_accomplish"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/colorhome" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/telephone"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/transaction"
+                        android:gravity="center"
+                        android:text="@string/deal_record"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorhome" />
+
+                    <TextView
+                        android:id="@+id/taking"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/creditrecord"
+                        android:gravity="center"
+                        android:text="@string/deal_creditrecord"
+                        android:textSize="13sp" />
+
+
+                    <TextView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorhome" />
+
+                    <TextView
+                        android:id="@+id/game"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/order"
+                        android:gravity="center"
+                        android:text="@string/deal_order"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/colorhome" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/take"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/bank"
+                        android:gravity="center"
+                        android:text="@string/deal_bank"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorhome" />
+
+                    <TextView
+                        android:id="@+id/information"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/kefu"
+                        android:gravity="center"
+                        android:text="@string/deal_service"
+                        android:textSize="13sp" />
+
+
+                    <TextView
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorhome" />
+
+                    <TextView
+                        android:id="@+id/more1"
+                        style="@style/vitextview"
+                        android:layout_width="52dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/complaint"
+                        android:gravity="center"
+                        android:text="@string/deal_suggest"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

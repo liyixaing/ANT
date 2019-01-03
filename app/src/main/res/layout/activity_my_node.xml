@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorhome"
+    android:orientation="vertical"
+    tools:context=".Fragment.homeFragment.MyNodeActivity">
+
+    <include layout="@layout/tit" />
+
+    <ListView
+        android:id="@+id/myNodeListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/re"
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="181dp"
+        android:layout_marginRight="@dimen/dp_5"
+        android:background="@color/afragment"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="17dp"
+            android:src="@mipmap/nonode"
+            android:text="@string/adad"
+            android:textColor="@color/afragmenttext"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:layout_width="141dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/nonode1" />
+    </RelativeLayout>
+    <!--
+     <TextView
+         android:id="@+id/t2"
+         style="@style/textview"
+         android:layout_marginLeft="@dimen/dp_10"
+         android:layout_marginTop="@dimen/dp_10"
+         android:text="@string/Home_T2"
+         android:textSize="14sp" />
+
+     <RelativeLayout
+         android:id="@+id/relativeT2"
+         android:layout_width="match_parent"
+         android:layout_height="163dp"
+         android:layout_marginLeft="@dimen/dp_10"
+         android:layout_marginRight="@dimen/dp_10"
+         android:layout_marginTop="@dimen/dp_10"
+         android:background="@color/afragment">
+
+         <ImageView
+             android:id="@+id/t2Hade"
+             android:layout_width="51dp"
+             android:layout_height="51dp"
+             android:layout_marginLeft="15dp"
+             android:layout_marginTop="31dp"
+             android:src="@mipmap/toux" />
+
+         <TextView
+             android:id="@+id/t2Name"
+             android:layout_width="49dp"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/t2Hade"
+             android:layout_marginLeft="12dp"
+             android:layout_marginTop="10dp"
+             android:gravity="center"
+             android:text="ANT token"
+             android:textColor="@color/aa"
+             android:textSize="10sp" />
+
+         <TextView
+             android:id="@+id/t2Userid"
+             android:layout_width="49dp"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/t2Name"
+             android:layout_marginLeft="13dp"
+             android:layout_marginTop="5dp"
+             android:gravity="center"
+             android:text="ID:100000"
+             android:textColor="@color/aa"
+             android:textSize="10sp" />
+
+         <TextView
+             android:id="@+id/t2UserPhone"
+             android:layout_width="63dp"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/t2Userid"
+             android:layout_marginLeft="8dp"
+             android:layout_marginTop="5dp"
+             android:gravity="center"
+             android:text="188****8888"
+             android:textColor="@color/aa"
+             android:textSize="10sp" />
+
+         <TextView
+             android:layout_width="1px"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="21dp"
+             android:layout_toRightOf="@+id/t2Hade"
+             android:background="@color/appbackground" />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="4dp"
+             android:layout_marginTop="@dimen/dp_16"
+             android:text="@string/MyNode_award"
+             android:textColor="@color/aa"
+             android:textSize="13sp" />
+
+         <TextView
+             android:id="@+id/t2Card"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignTop="@+id/t2Hade"
+             android:layout_marginLeft="38dp"
+             android:layout_marginTop="27dp"
+             android:layout_toRightOf="@+id/t2Hade"
+             android:text="资产量：0.0000"
+             android:textColor="@color/aa"
+             android:textSize="13sp" />
+
+         <TextView
+             android:id="@+id/t2Num"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignTop="@+id/t2Card"
+             android:layout_marginLeft="47dp"
+             android:layout_toRightOf="@+id/t2Card"
+             android:text="节点量：0"
+             android:textColor="@color/aa" />
+
+         <TextView
+             android:layout_width="230dp"
+             android:layout_height="1px"
+             android:layout_alignParentRight="true"
+             android:layout_below="@+id/t2Card"
+             android:layout_marginRight="13dp"
+             android:layout_marginTop="21dp"
+             android:background="@color/appbackground" />
+
+         <TextView
+             android:id="@+id/t2Recommend"
+             android:layout_width="113dp"
+             android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/t2Card"
+             android:layout_below="@+id/t2Card"
+             android:layout_marginTop="46dp"
+             android:text="推荐人：ID 100000"
+             android:textColor="@color/aa"
+             android:textSize="13sp" />
+
+         <ImageView
+             android:id="@+id/aa"
+             android:layout_width="@dimen/dp_10"
+             android:layout_height="18dp"
+             android:layout_alignLeft="@+id/t2Num"
+             android:layout_alignTop="@+id/t2Recommend"
+             android:src="@mipmap/shouji" />
+
+         <TextView
+             android:id="@+id/t2RecommendPhone"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignTop="@+id/t2Recommend"
+             android:layout_toRightOf="@+id/aa"
+             android:text="188****8888"
+             android:textColor="@color/aa"
+             android:textSize="13sp" />
+     </RelativeLayout>
+     -->
+
+
+</LinearLayout>
