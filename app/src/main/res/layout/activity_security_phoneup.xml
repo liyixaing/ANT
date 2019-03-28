@@ -19,32 +19,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="@dimen/dp_10"
-                android:background="@color/afragment"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/textview"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="45px"
-                    android:layout_weight="1"
-                    android:text="@string/Phoneup_oldphone"
-                    android:textSize="15sp" />
-
-                <EditText
-                    android:id="@+id/Phoneup_old"
-                    style="@style/edittext"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="45px"
-                    android:background="@null"
-                    android:hint="@string/Phoneup_phone"
-                    android:inputType="phone"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
@@ -97,6 +71,7 @@
                     style="@style/edittext"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="2"
+                    android:gravity="center"
                     android:hint="@string/Phoneup_phone"
                     android:inputType="phone"
                     android:textSize="15sp" />
@@ -132,6 +107,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="45px"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="@string/Phoneup_loginpwd"
                     android:inputType="textPassword"
                     android:textSize="15sp" />
@@ -149,7 +125,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="45px"
                     android:layout_weight="1"
-                    android:text="@string/FindPay_pay"
+                    android:text="@string/Phoneup_loginpwds"
                     android:textSize="15sp" />
 
                 <EditText
@@ -158,7 +134,8 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="45px"
                     android:background="@null"
-                    android:hint="@string/Phoneup_paypwd"
+                    android:gravity="right"
+                    android:hint="@string/Phoneup_loginpwds"
                     android:inputType="textPassword"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -184,19 +161,25 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="45px"
                     android:background="@null"
+                    android:gravity="right"
                     android:hint="@string/Register_verificationimport"
                     android:inputType="number"
                     android:textSize="15sp" />
             </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/resetKey"
+                style="@style/myCheckBox"
+                android:text="@string/resetKey" />
 
             <Button
                 android:id="@+id/loginup_submit"
                 android:layout_width="984px"
                 android:layout_height="114px"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="270px"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/butt"
-                android:text="@string/FindPay_ok"
+                android:text="@string/Loginup_submit"
                 android:textColor="@color/grayf2"
                 android:textSize="46px" />
         </LinearLayout>

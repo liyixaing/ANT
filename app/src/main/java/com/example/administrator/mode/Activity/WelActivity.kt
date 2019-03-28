@@ -1,6 +1,7 @@
 package com.example.administrator.mode.Activity
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -11,7 +12,6 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.widget.Toast
-import com.baidu.location.BDLocation
 import com.baidu.mobstat.StatService
 import com.example.administrator.mode.Activity.drawer.VersionsActivity
 import com.example.administrator.mode.Interface.MoneyService
@@ -22,27 +22,51 @@ import retrofit2.Callback
 import retrofit2.Response
 import com.example.administrator.mode.Pojo.SystemUPTurn
 import com.example.administrator.mode.Utlis.*
+import java.util.*
 
 
 class WelActivity : BaseActivity() {
-
+    private var recLen = 2
+    var timer = Timer()
     override fun getContentViewId(): Int {
         return R.layout.activity_wel
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        /*  if (VerifyUtlis.isInstallApp(this)) {
+              toast("xxx")
+          } else {
+              toast("zzz")
+          }
+          val intent = Intent()
+          intent.data = Uri.parse("csd://pull.csd.demo/cyn")
+          intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+          startActivity(intent)*/
+        /*          val intent = Intent()
+                  intent.data = Uri.parse("rubychainwallet://")
+                  intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                  startActivity(intent)*/
+    }
+
     override fun init() {
         super.init()
-        val baiduLocationUtil = BaiduLocationUtil(this, object : BaiduLocationUtil.IGetLocation {
-            override fun getLocationSuccess(bdLocation: BDLocation?) {
-                Log.i("ddasdasd", "经度"+bdLocation!!.longitude+"纬度"+bdLocation.latitude.toString())
+        val task = object : TimerTask() {
+            @SuppressLint("ResourceType")
+            override fun run() {
+                runOnUiThread {
+                    if (recLen == 0) {
+                        StatService.setDebugOn(true)
+                        StatService.start(this@WelActivity)
+                        isSystem()
+                    }
+                    recLen--
+                }
             }
-            override fun getLocationError() {
-
-            }
-        })
-        StatService.setDebugOn(true)
-        StatService.start(this)
-        isSystem()
+        }
+        timer.schedule(task, 1000, 1000)
+        recLen = 2
     }
 
     private fun isSystem() {
@@ -55,8 +79,9 @@ class WelActivity : BaseActivity() {
                         if (response.body()!!.code == 1) {
                             if (response.body()!!.data.state == "stop") {
                                 val intent = Intent(this@WelActivity, SystemUpActivity::class.java)
-                                intent.putExtra("openingtime", response.body()!!.data.openingtime.toString());
-                                startActivity(intent);
+                                intent.putExtra("openingtime", response.body()!!.data.openingtime.toString())
+                                intent.putExtra("openinginfo", response.body()!!.data.info.toString())
+                                startActivity(intent)
                                 finish()
                             } else {
                                 load()
@@ -68,7 +93,6 @@ class WelActivity : BaseActivity() {
                 }
 
                 override fun onFailure(call: Call<SystemUPTurn>, t: Throwable) {
-                    Log.i("whz", "SystemUpError" + t.toString())
                     if (t is DataResultException) {
                         Toast.makeText(this@WelActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
@@ -122,7 +146,7 @@ class WelActivity : BaseActivity() {
                 getVersions()
             } else {
                 // 弹出对话框告诉用户需要权限的原因, 并引导用户去应用权限管理中手动打开权限按钮
-                openAppDetails()
+                openAppDetails()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
             }
         }
     }
@@ -132,7 +156,6 @@ class WelActivity : BaseActivity() {
         val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
         val edit = sp.edit()
-        val first = sp.getBoolean("first", true)
         val transfer = retrofit.create(MoneyService::class.java).getVersion("0", "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(nowtime))
         transfer.enqueue(object : Callback<Versionsturn> {
             override fun onResponse(call: Call<Versionsturn>, response: Response<Versionsturn>) {
@@ -140,6 +163,7 @@ class WelActivity : BaseActivity() {
                     if (response.body()!!.code == 1) {
                         edit.putString("versionwebUrl", response.body()!!.data!!.webUrl)
                         val versionsInput = VerifyUtlis.getAppVersionName(this@WelActivity)
+                        Log.i("dadsa", response.body()!!.data!!.versionNumber.toString())
                         if (versionsInput != response.body()!!.data!!.versionNumber) {
                             if (response.body()!!.data!!.status == 1) {
                                 val intent = Intent(this@WelActivity, VersionsActivity::class.java)
@@ -147,28 +171,12 @@ class WelActivity : BaseActivity() {
                                 startActivity(intent)
                                 finish()
                                 return
-                            }
-                            if (first) {
-                                edit.putBoolean("versions", true)
-                                startActivity(Intent(this@WelActivity, LoginActivity::class.java))
-                                finish()
                             } else {
-                                edit.putBoolean("versions", true)
-                                val intent = Intent(this@WelActivity, MainActivity::class.java)
-                                startActivity(intent)
-                                finish()
+                                edit.putBoolean("versions11", true)
+                                abnormal22(this@WelActivity)
                             }
                         } else {
-                            if (first) {
-                                //没有账号密码本地记录跳转登录
-                                edit.putBoolean("versions", false)
-                                startActivity(Intent(this@WelActivity, LoginActivity::class.java))
-                                finish()
-                            } else {
-                                edit.putBoolean("versions", false)
-                                startActivity(Intent(this@WelActivity, MainActivity::class.java))
-                                finish()
-                            }
+                            abnormal22(this@WelActivity)
                         }
                     }
                 } catch (e: Exception) {
@@ -184,13 +192,11 @@ class WelActivity : BaseActivity() {
                 if (t is DataResultException) {
                     Toast.makeText(this@WelActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                 } else {
-                    Log.i("aaaaaaaaaaaaaaaaaaa", "aaaaaaa" + t.toString())
 
                 }
             }
         })
     } catch (e: Exception) {
-        Log.i("aaaaaa", e.toString() + "")
         finish()
     }
 

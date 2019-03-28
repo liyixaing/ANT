@@ -2,6 +2,7 @@ package com.example.administrator.mode.Activity.drawer
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.widget.Toast
@@ -53,8 +54,8 @@ class MesageImpuActivity : BaseActivity() {
                 try {
                     if (response.body()!!.code == 1) {
                         messageImplTit.text = response.body()!!.data.title
-                        /* messageImpuTime.text = sssss+DateUtils.timeslashData(response.body()!!.data.createTime)*/
                         messageImplContent.text = VerifyUtlis.stringChang("\n" + response.body()!!.data.content + "\n")
+                        Log.i("dawda",response.body()!!.data.content)
                     }
                 } catch (e: Exception) {
                 }

@@ -5,40 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appbackground"
-    android:orientation="vertical"
-    tools:context="com.example.administrator.mode.Fragment.homeFragment.CrowdPreheatActivity"
-    tools:layout_editor_absoluteY="25dp">
+    android:orientation="vertical">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/tit" />
+    <include layout="@layout/tit" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/afragment">
+        android:background="@color/afragment"
+        android:layout_height="wrap_content">
 
-    </LinearLayout>
 
-    <ScrollView
+        <include layout="@layout/top2" />
+
+        <include layout="@layout/top1" />
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_viewpager"
+        android:background="@color/afragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp">
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TextView
-                style="@style/xx"
-                android:layout_gravity="center"
-                android:layout_marginTop="32dp"
-                android:text="@string/zzzz" />
-        </LinearLayout>
-    </ScrollView>
+    <!--       <TextView
+               style="@style/xx"
+               android:layout_gravity="center"
+               android:layout_marginTop="32dp"
+               android:text="@string/zzzz" />-->
 </LinearLayout>

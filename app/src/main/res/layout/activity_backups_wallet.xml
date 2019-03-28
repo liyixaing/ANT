@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    tools:context="com.example.administrator.mode.creatorprivatekey.BackupsWalletActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/tit" />
+
+        <!--<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/agreement_success" />
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center"
+                android:text="@string/BackupsWalletActivityHint"
+                android:textSize="12sp" />
+        </LinearLayout>
+-->
+        <ImageView
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/ewewe" />
+
+        <TextView
+            style="@style/textview14"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="@string/CreateAPrivateKeyHint3"
+            android:textColor="#909090"
+             />
+
+        <TextView
+            android:id="@+id/keyNameInput"
+            style="@style/textview14"
+            android:textSize="@dimen/dp_16"
+            android:layout_gravity="center_horizontal"
+            android:text="" />
+        <!--      <TextView
+                  style="@style/textview14"
+                  android:layout_margin="8dp"
+                  android:text="@string/BackupsWalletActivityHint1"
+                  android:textColor="#6f6f6f"
+                  android:textSize="11sp" />-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textview14"
+                android:text="@string/TheWalletAddress"
+                android:textColor="#909090" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/keyAddress"
+                style="@style/textview14"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview14"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/TheMnemonicWord"
+                    android:textColor="#909090" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/view_frameaaa">
+
+                <TextView
+                    android:id="@+id/keyFileInput"
+                    style="@style/textview14"
+                    android:layout_margin="@dimen/dp_16"
+                    android:text="" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/fuzhi1"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/backupwalletcopy" />
+
+                    <TextView
+                        android:id="@+id/fuzhi"
+                        style="@style/xx"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="4dp"
+                        android:text="@string/Service_wc" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/backupWallet"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/butt"
+            android:text="@string/TheMnemonicWordNext"
+            android:textColor="#ffff"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#dedede">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_margin="8dp"
+                android:text="@string/BackupsWalletActivityHint1" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

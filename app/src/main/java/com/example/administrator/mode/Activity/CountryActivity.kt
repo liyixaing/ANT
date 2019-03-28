@@ -54,15 +54,15 @@ class CountryActivity : BaseActivity() {
         // 将国家进行排序，按照A~Z的顺序
         Collections.sort(mAllCountryList, pinyinComparator)
         adapter = CountrySortAdapter(this, mAllCountryList)
-        lv_countries.setAdapter(adapter)
+        lv_countries.adapter = adapter
         setListener()
         getCountryList()
     }
 
     private fun getCountryList() {
         val nowtime = DateUtils.getdata()
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
-        val login = retrofit.create(MoneyService::class.java!!).getWorldCodes("0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(nowtime))
+        val retrofit = Retrofit_manager.getInstance().userlogin
+        val login = retrofit.create(MoneyService::class.java).getWorldCodes("0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(nowtime))
         login.enqueue(object : Callback<CountryTurn> {
             override fun onResponse(call: Call<CountryTurn>, response: Response<CountryTurn>) {
                 try {
@@ -109,28 +109,21 @@ class CountryActivity : BaseActivity() {
     private fun setListener() {
 
         // 右侧sideBar监听
-        country_sidebar.setOnTouchingLetterChangedListener(
-                object : SideBar.OnTouchingLetterChangedListener {
-
-                    override fun onTouchingLetterChanged(s: String) {
-                        // 该字母首次出现的位置
-                        val position = adapter!!.getPositionForSection(s[0].toInt())
-                        if (position != -1) {
-                            lv_countries.setSelection(position)
-                        }
-                    }
-                })
-        lv_countries.setOnItemClickListener(AdapterView.OnItemClickListener { adapterView, view, i, l ->
-            val countryName = mAllCountryList!!.get(i).countryName
-            Log.i("whzzs", countryName)
-
-            val countryNumber = mAllCountryList!!.get(i).countryNumber
+        country_sidebar.setOnTouchingLetterChangedListener { s ->
+            // 该字母首次出现的位置
+            val position = adapter!!.getPositionForSection(s[0].toInt())
+            if (position != -1) {
+                lv_countries.setSelection(position)
+            }
+        }
+        lv_countries.setOnItemClickListener { _, _, i, _ ->
+            val countryName = mAllCountryList!![i].countryName
+            val countryNumber = mAllCountryList!![i].countryNumber
             val country = countryName.split("\n")
-
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
             val edit = sp.edit()
             try {
-                if (intent.extras.getString("wwwww").equals("xxx11111x")) {
+                if (intent.extras.getString("wwwww") == "xxx11111x") {
                     edit.putString("user_crowndsdasdas", countryNumber)
                 }
             } catch (e: java.lang.Exception) {
@@ -146,7 +139,7 @@ class CountryActivity : BaseActivity() {
                 StatService.onEvent(this@CountryActivity, "LoginView.SelectCounty", "xms", 1, attributes)
                 finish()
             }
-        })
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

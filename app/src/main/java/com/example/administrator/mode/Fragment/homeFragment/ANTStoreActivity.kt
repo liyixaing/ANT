@@ -16,12 +16,11 @@ import com.example.administrator.mode.Activity.MainActivity
 import com.example.administrator.mode.Utlis.WebViewAlbum
 
 class ANTStoreActivity : AppCompatActivity() {
-    var paxWebChromeClient: WebViewAlbum?=null
+    var paxWebChromeClient: WebViewAlbum? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_antstore)
         initView(intent.extras.getString("url"))
-        Log.i("sdasdsa", intent.extras.getString("url"))
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -33,13 +32,12 @@ class ANTStoreActivity : AppCompatActivity() {
             shopping.addJavascriptInterface(this, "ANTAndroid")
             shopping.settings.allowFileAccess = true
             shopping.settings.allowContentAccess = true
-            paxWebChromeClient=WebViewAlbum(this)
+            paxWebChromeClient = WebViewAlbum(this)
             shopping.webChromeClient = paxWebChromeClient
-
             val ua = shopping.settings.userAgentString
             shopping.settings.userAgentString = "$ua/AntDapp"
             shopping.loadUrl(url)
-        }catch (e:Exception){
+        } catch (e: Exception) {
         }
     }
 
@@ -55,6 +53,8 @@ class ANTStoreActivity : AppCompatActivity() {
             shopping.goBack()
             return true
         }
+        startActivity(Intent(this@ANTStoreActivity, MainActivity::class.java))
+        finish()
         return false
     }
 
@@ -68,9 +68,10 @@ class ANTStoreActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        paxWebChromeClient!!.onActivityResult(requestCode,resultCode,data)
+        paxWebChromeClient!!.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
     }
+
     @JavascriptInterface
     fun VerifyUser(userid: String, usertoken: String): Boolean {
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
@@ -99,5 +100,4 @@ class ANTStoreActivity : AppCompatActivity() {
         startActivity(Intent(this@ANTStoreActivity, MainActivity::class.java))
         finish()
     }
-
 }

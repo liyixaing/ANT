@@ -60,53 +60,50 @@ class DpostActivity : BaseActivity() {
             override fun onMultiClick(v: View?) {
                 if (xx == 1) {
                     tit_iv1.setImageResource(R.drawable.eyeclose)
-                    dpostCard.setText("****")
-                    dpostproperty.setText("****")
-                    dyesterdayPost.setText("****")
-                    daccumulatePost.setText("****")
+                    dpostCard.text = "****"
+                    dpostproperty.text = "****"
+                    dyesterdayPost.text = "****"
+                    daccumulatePost.text = "****"
                     xx++
                     return
                 }
                 if (xx == 2) {
                     tit_iv1.setImageResource(R.drawable.eyeopen)
-                    dpostCard.setText(String.format("%.2f", dpostCardInput))
-                    dpostproperty.setText(String.format("%.2f", dpostpropertyInput))
-                    dyesterdayPost.setText(String.format("%.2f", dyesterdayPostInput))
-                    daccumulatePost.setText(String.format("%.2f", daccumulatePostInput))
+                    dpostCard.text = String.format("%.2f", dpostCardInput)
+                    dpostproperty.text = String.format("%.2f", dpostpropertyInput)
+                    dyesterdayPost.text = String.format("%.2f", dyesterdayPostInput)
+                    daccumulatePost.text = String.format("%.2f", daccumulatePostInput)
                     xx--
                     return
                 }
             }
         })
-        dposList.setONLoadMoreListener(object : LoadMoreListView.OnLoadMoreListener {
-            override fun onloadMore() {
-                val task = object : TimerTask() {
-                    @SuppressLint("ResourceType")
-                    override fun run() {
-                        runOnUiThread {
-                            if (recLen == 0) {
-                                num++
-                                pullposload(num)
-                                dposList.setLoadCompleted()
-                            }
-                            recLen--
+        dposList.setONLoadMoreListener {
+            val task = object : TimerTask() {
+                @SuppressLint("ResourceType")
+                override fun run() {
+                    runOnUiThread {
+                        if (recLen == 0) {
+                            num++
+                            pullposload(num)
+                            dposList.setLoadCompleted()
                         }
+                        recLen--
                     }
                 }
-                timer.schedule(task, 1000, 1000)
-                recLen = 2
             }
-
-        })
+            timer.schedule(task, 1000, 1000)
+            recLen = 2
+        }
         DpostLoad()
     }
 
     private fun pullposload(num: Int) {
         try {
             val nowtime=DateUtils.getdata()
-            val retrofit = Retrofit_manager.getInstance().getUserlogin()
+            val retrofit = Retrofit_manager.getInstance().userlogin
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-            val pos = retrofit.create(MoneyService::class.java!!).getAntBananceLogList(sp.getString("user_id", ""), sp.getString("user_token", ""), "2", num.toString(), "10", "0",nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            val pos = retrofit.create(MoneyService::class.java).getAntBananceLogList(sp.getString("user_id", ""), sp.getString("user_token", ""), "2", num.toString(), "10", "0",nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
             pos.enqueue(object : Callback<aa> {
                 override fun onResponse(call: Call<aa>, response: Response<aa>) {
                     if (response.body()!!.code == 1) {
@@ -121,8 +118,7 @@ class DpostActivity : BaseActivity() {
 
                 override fun onFailure(call: Call<aa>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@DpostActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@DpostActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -136,9 +132,9 @@ class DpostActivity : BaseActivity() {
     private fun DpostLoad() {
         try {
             val nowtime=DateUtils.getdata()
-            val retrofit = Retrofit_manager.getInstance().getUserlogin()
+            val retrofit = Retrofit_manager.getInstance().userlogin
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-            val pos = retrofit.create(MoneyService::class.java!!).getAntBananceLogList(sp.getString("user_id", ""), sp.getString("user_token", ""), "2", count.toString(), "10", "0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            val pos = retrofit.create(MoneyService::class.java).getAntBananceLogList(sp.getString("user_id", ""), sp.getString("user_token", ""), "2", count.toString(), "10", "0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
             pos.enqueue(object : Callback<aa> {
                 override fun onResponse(call: Call<aa>, response: Response<aa>) {
                     if (response.body()!!.code == 1) {
@@ -146,17 +142,17 @@ class DpostActivity : BaseActivity() {
                         dpostpropertyInput = response.body()!!.data.history_dpos_score_earnings
                         dyesterdayPostInput = response.body()!!.data.yestoday_dpos_ant_earnings
                         daccumulatePostInput = response.body()!!.data.yestoday_dpos_score_earnings
-                        dpostCard.setText(String.format("%.2f", dpostCardInput))
-                        dpostproperty.setText(String.format("%.2f", dpostpropertyInput))
-                        dyesterdayPost.setText(String.format("%.2f", dyesterdayPostInput))
-                        daccumulatePost.setText(String.format("%.2f", daccumulatePostInput))
+                        dpostCard.text = String.format("%.2f", dpostCardInput)
+                        dpostproperty.text = String.format("%.2f", dpostpropertyInput)
+                        dyesterdayPost.text = String.format("%.2f", dyesterdayPostInput)
+                        daccumulatePost.text = String.format("%.2f", daccumulatePostInput)
                         list = response.body()!!.data!!.lists as ArrayList<aa.DataBean.ListsBean>
                         listInput.addAll(list)
                         baseadaptr = object : FenAdater<aa.DataBean.ListsBean>(this@DpostActivity, listInput, R.layout.dposlayout) {
                             override fun convert(holder: ViewHolder?, item: aa.DataBean.ListsBean?) {
                                 holder!!.setText(R.id.dPostUserTime, DateUtils.timeslashData(item!!.time.toString()))
-                                holder!!.setText(R.id.dPostUserpr, "+"+String.format("%.2f", item!!.ant))
-                                holder!!.setText(R.id.dPostUserCard,"+"+ String.format("%.2f", item!!.score))
+                                holder.setText(R.id.dPostUserpr, "+"+String.format("%.2f", item.ant))
+                                holder.setText(R.id.dPostUserCard,"+"+ String.format("%.2f", item.score))
                             }
                         }
                         dposList.adapter = baseadaptr
@@ -167,8 +163,7 @@ class DpostActivity : BaseActivity() {
 
                 override fun onFailure(call: Call<aa>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@DpostActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@DpostActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })

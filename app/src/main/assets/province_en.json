@@ -1,0 +1,2983 @@
+[
+  {
+    "name": "China",
+    "city": [
+      {
+        "name": "All regions",
+        "area": [
+          "All regions"
+        ]
+      },
+      {
+        "name": "Macao",
+        "area": [
+          "All regions"
+        ]
+      },
+      {
+        "name": "Hong Kong",
+        "area": [
+          "All regions"
+        ]
+      },
+      {
+        "name": "Taiwan Province",
+        "area": [
+          "Keelung",
+          "Hsinchu",
+          "Chiayi",
+          "Taoyuan",
+          "Tainan",
+          "Taichung",
+          "New Taipei",
+          "Kaohsiung",
+          "Taipei"
+        ]
+      },
+      {
+        "name": "Taiwan Province",
+        "area": [
+          "Keelung",
+          "Hsinchu",
+          "Chiayi",
+          "Taoyuan",
+          "Tainan",
+          "Taichung",
+          "New Taipei",
+          "Kaohsiung",
+          "Taipei"
+        ]
+      },
+      {
+        "name": "Xinjiang Uygur Autonomous Region",
+        "area": [
+          "Shihezi",
+          "Alar",
+          "Tumxuk",
+          "Wujiaqu",
+          "Beitun",
+          "Tiemenguan",
+          "Shuanghe",
+          "Cocodala",
+          "Kunyu",
+          "Ili Kazakh Autonomous Prefecture",
+          "Kizilesu Kirgiz Autonomous Prefecture",
+          "Bayinguoling Mongolian Autonomous Prefecture",
+          "Bortala Mongolian Autonomous Prefecture",
+          "Changji Hui Autonomous Prefecture",
+          "Kumul",
+          "Turpan",
+          "Karamay",
+          "Urumqi"
+        ]
+      },
+      {
+        "name": "Ningxia Hui Autonomous Region",
+        "area": [
+          "Zhongwei",
+          "Guyuan",
+          "Wuzhong",
+          "Shizuishan",
+          "Yinchuan"
+        ]
+      },
+      {
+        "name": "Qinghai Province",
+        "area": [
+          "Haixi Mongolian and Tibetan Autonomous Prefecture",
+          "Yushu Autonomous Prefecture",
+          "Guoluo Tibetan Autonomous Prefecture",
+          "Hainan Tibetan Autonomous Prefecture",
+          "Huangnan Tibetan Autonomous Prefecture",
+          "Haibei Tibetan Autonomous Prefecture",
+          "Haidong",
+          "Xining"
+        ]
+      },
+      {
+        "name": "Gansu Province",
+        "area": [
+          "Gannan Tibetan Autonomous Prefecture",
+          "Linxia Hui Autonomous Prefecture",
+          "Longnan",
+          "Dingxi",
+          "Qingyang",
+          "Jiuquan",
+          "Pingliang",
+          "Zhangye",
+          "Wuwei",
+          "Tianshui",
+          "Baiyin",
+          "Jinchang",
+          "Jiayuguan",
+          "Lanzhou"
+        ]
+      },
+      {
+        "name": "Shaanxi Province",
+        "area": [
+          "Shangluo",
+          "Ankang",
+          "Yulin",
+          "Hanzhoung",
+          "Yanan",
+          "Weinan",
+          "Xianyang",
+          "Baoji",
+          "Tongchuan",
+          "Xian"
+        ]
+      },
+      {
+        "name": "Tibet Autonomous Region",
+        "area": [
+          "Naqu",
+          "Shannan",
+          "Nyingchi",
+          "Changdu",
+          "Shigatse",
+          "Lhasa"
+        ]
+      },
+      {
+        "name": "Yunnan Province",
+        "area": [
+          "Diqing Tibetan Autonomous Prefecture",
+          "Dehong Dai Jingpo Autonomous Prefecture",
+          "Dali Bai Autonomous Prefecture",
+          "Xishuangbanna Dai Autonomous Prefecture",
+          "Wenshan Zhuang and Miao Autonomous Prefecture",
+          "Honghe Hani and Yi Autonomous Prefecture",
+          "Chuxiong Yi Autonomous Prefecture",
+          "Lincang",
+          "Puer",
+          "Li Jiang",
+          "Zhaotong",
+          "Baoshan",
+          "YuXi",
+          "Qujing",
+          "Kunming"
+        ]
+      },
+      {
+        "name": "Guizhou Province",
+        "area": [
+          "Buyi and Miao Autonomous Prefecture of QienNan",
+          "Miao-Dong Autonomous Prefecture of Qiandongnan",
+          "Qianxinan Buyei and Miao Autonomous Prefecture",
+          "Tongren",
+          "Bijie",
+          "Anshun",
+          "Zunyi",
+          "Liupanshui",
+          "Guiyang"
+        ]
+      },
+      {
+        "name": "Sichuan Province",
+        "area": [
+          "Liangshan Yi Autonomous Prefecture",
+          "Ganzi Tibetan Autonomous Prefecture",
+          "Ziyang",
+          "Bazhong",
+          "Yaan",
+          "Dazhou",
+          "Guangan",
+          "Yibin",
+          "Meishan",
+          "Nanchong",
+          "Leshan",
+          "Neijiang",
+          "Suiling",
+          "Guangyuan",
+          "Mianyang",
+          "Deyang",
+          "Luzhou",
+          "Panzhihua",
+          "Zigong",
+          "Chengdu"
+        ]
+      },
+      {
+        "name": "Chongqing",
+        "area": [
+          "Chongqing"
+        ]
+      },
+      {
+        "name": "Hainan Province",
+        "area": [
+          "Wuzhishan",
+          "Qionghai",
+          "WenChang",
+          "Wanning",
+          "Dongfang",
+          "Danzhou ",
+          "Sansha",
+          "Sanya",
+          "Haikou"
+        ]
+      },
+      {
+        "name": "Guangxi Zhuang Autonomous Region",
+        "area": [
+          "Chongzuo",
+          "Laibin",
+          "Hechi",
+          "Hezhou",
+          "Baise",
+          "Yulin",
+          "Guigang",
+          "Qinzhou",
+          "Fangchenggang",
+          "Beihai",
+          "Wuzhou",
+          "Guilin",
+          "Liuzhou",
+          "Nanning"
+        ]
+      },
+      {
+        "name": "Guangdong Province",
+        "area": [
+          "Yunfu",
+          "Jieyang",
+          "Chaozhou",
+          "Zhongshan",
+          "Dongguan",
+          "Qingyuan",
+          "Yangjiang",
+          "Heyuan",
+          "Shanwei",
+          "Meizhou",
+          "Huizhou",
+          "Zhaoqing",
+          "Maoming",
+          "Zhanjiang",
+          "Jiangmen",
+          "Foshan",
+          "Shantou",
+          "Zhuhai",
+          "Shenzhen",
+          "Shaoguan",
+          "Guangzhou"
+        ]
+      },
+      {
+        "name": "Hunan Province",
+        "area": [
+          "Western Hunan Tujia and Miao Autonomous Prefecture",
+          "Loudi",
+          "Huaihua",
+          "Chenzhou",
+          "Yiyang",
+          "Zhangjiajie",
+          "Changde",
+          "Yueyang",
+          "Shaoyang",
+          "Hengyang",
+          "Xiangtan",
+          "Zhuzhou",
+          "Changsha"
+        ]
+      },
+      {
+        "name": "Hubei province",
+        "area": [
+          "Xiantao",
+          "Qianjiang",
+          "Tianmen",
+          "Shennongjia Forestry District",
+          "Enshi Tujia and Miao Autonomous Prefecture",
+          "Suizhou",
+          "Xianning",
+          "Huanggang",
+          "Jingzhou",
+          "Xiaogan",
+          "Jingmen",
+          "Ezhou",
+          "Xiangyang",
+          "Yichang",
+          "Shiyan",
+          "Huangshi",
+          "Wuhan"
+        ]
+      },
+      {
+        "name": "Henan Province",
+        "area": [
+          "Jiyuan",
+          "Zhumadian",
+          "Zhoukou",
+          "Xinyang",
+          "Shangqiu",
+          "Nanyang",
+          "Sanmenxia",
+          "Luohe",
+          "Xuchang",
+          "Puyang",
+          "Jiaozuo",
+          "Xinxiang",
+          "Hebi",
+          "Anyang",
+          "Pingdingshan",
+          "Luoyang",
+          "Kaifeng",
+          "Zhengzhou"
+        ]
+      },
+      {
+        "name": "Shandong Province",
+        "area": [
+          "HeZe",
+          "Binzhou",
+          "LiaoCheng",
+          "Dezhou",
+          "Linyi",
+          "Laiwu",
+          "Rizhao",
+          "Weihai",
+          "Taian",
+          "Jining",
+          "Weifang",
+          "Yantai",
+          "Dongying",
+          "Zaozhuang",
+          "Zibo",
+          "Qingdao",
+          "Jinan"
+        ]
+      },
+      {
+        "name": "Jiangxi Province",
+        "area": [
+          "Shangrao",
+          "Fuzhou",
+          "Yichun",
+          "Jian",
+          "Ganzhou",
+          "Yingtan",
+          "Xinyu",
+          "Jiujiang",
+          "Pingxiang",
+          "Jingdezhen",
+          "Nanchang"
+        ]
+      },
+      {
+        "name": "Fujian Province",
+        "area": [
+          "Ningde",
+          "Longyan",
+          "Nanping",
+          "Zhangzhou",
+          "Quanzhou",
+          "Sanming",
+          "Putian",
+          "Xiamen",
+          "Fuzhou"
+        ]
+      },
+      {
+        "name": "Anhui Province",
+        "area": [
+          "Xuancheng",
+          "Chizhou",
+          "Bozhou",
+          "Luan",
+          "Suzhou",
+          "Fuyang",
+          "Chuzhou",
+          "Huangshan",
+          "Anqing",
+          "Tongling",
+          "Huaibei",
+          "Maanshan",
+          "Huainan",
+          "Bengbu",
+          "Wuhu",
+          "Hefei"
+        ]
+      },
+      {
+        "name": "Zhejiang Province",
+        "area": [
+          "Lishui",
+          "Taizhou",
+          "Zhoushan",
+          "Quzhou",
+          "Jinhua",
+          "Shaoxing",
+          "Huzhou",
+          "Jiaxing",
+          "Wenzhou",
+          "Ningbo",
+          "Hangzhou"
+        ]
+      },
+      {
+        "name": "Jiangsu Province",
+        "area": [
+          "Suqian",
+          "Taizhou",
+          "Zhenjiang",
+          "Yangzhou",
+          "Yancheng",
+          "Huaian",
+          "Lianyungang",
+          "Nantong",
+          "Suzhou",
+          "Changzhou",
+          "Xuzhou",
+          "Wuxi",
+          "Nanjing"
+        ]
+      },
+      {
+        "name": "Shanghai",
+        "area": [
+          "Shanghai"
+        ]
+      },
+      {
+        "name": "Heilongjiang Province",
+        "area": [
+          "Suihua",
+          "Heihe",
+          "Mudanjiang",
+          "Qitaihe",
+          "Jiamusi",
+          "Yichun",
+          "Daqing",
+          "Shuangyashan",
+          "Hegang",
+          "Jixi",
+          "Qiqihar",
+          "Harbin"
+        ]
+      },
+      {
+        "name": "Jilin Province",
+        "area": [
+          "Yanbian Korean Autonomous Prefecture",
+          "Baicheng",
+          "Songyuan",
+          "Baishan",
+          "Tonghua",
+          "Liaoyuan",
+          "Siping",
+          "Jilin",
+          "Changchun"
+        ]
+      },
+      {
+        "name": "Liaoning Province",
+        "area": [
+          "Huludao",
+          "Chaoyang",
+          "Tieling",
+          "Panjin",
+          "Liaoyang",
+          "Fuxin",
+          "Yingkou",
+          "Jinzhou",
+          "Dandong",
+          "Benxi",
+          "Fushun",
+          "Anshan",
+          "Dalian",
+          "Shenyang"
+        ]
+      },
+      {
+        "name": "Inner Mongolia Autonomous Region",
+        "area": [
+          "Ulanchab",
+          "Bayan Nur",
+          "Hulunbuir",
+          "Eerduosi",
+          "Tongliao",
+          "Chifeng",
+          "Wuhai",
+          "Baotou",
+          "Hohhot"
+        ]
+      },
+      {
+        "name": "Shanxi Province",
+        "area": [
+          "Lvliang",
+          "Linfen",
+          "Xinzhou",
+          "Yuncheng",
+          "Jinzhong",
+          "Shuozhou",
+          "Jincheng",
+          "Changzhi",
+          "Yangquan",
+          "Datong",
+          "Taiyuan"
+        ]
+      },
+      {
+        "name": "Hebei Province",
+        "area": [
+          "Hengshui",
+          "Langfang",
+          "Cangzhou",
+          "Chengde",
+          "Zhangjiakou",
+          "Baoding",
+          "Xingtai",
+          "Handan",
+          "Qinhuangdao",
+          "Tangshan",
+          "Shijiazhuang"
+        ]
+      },
+      {
+        "name": "Tianjin",
+        "area": [
+          "Tianjin"
+        ]
+      },
+      {
+        "name": "Beijing",
+        "area": [
+          "Beijing"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Afghan",
+    "city": [
+      {
+        "name": "Afghan",
+        "area": [
+          "Afghan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Albania",
+    "city": [
+      {
+        "name": "Albania",
+        "area": [
+          "Albania"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Algeria",
+    "city": [
+      {
+        "name": "Algeria",
+        "area": [
+          "Algeria"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Samoa",
+    "city": [
+      {
+        "name": "Samoa",
+        "area": [
+          "Samoa"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Andorra",
+    "city": [
+      {
+        "name": "Andorra",
+        "area": [
+          "Andorra"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Angola",
+    "city": [
+      {
+        "name": "Angola",
+        "area": [
+          "Angola"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Anguilla",
+    "city": [
+      {
+        "name": "Anguilla",
+        "area": [
+          "Anguilla"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antarctica",
+    "city": [
+      {
+        "name": "Antarctica",
+        "area": [
+          "Antarctica"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "city": [
+      {
+        "name": "Antigua and Barbuda",
+        "area": [
+          "Antigua and Barbuda"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Argentina",
+    "city": [
+      {
+        "name": "Argentina",
+        "area": [
+          "Argentina"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Armenia",
+    "city": [
+      {
+        "name": "Armenia",
+        "area": [
+          "Armenia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aruba",
+    "city": [
+      {
+        "name": "Aruba",
+        "area": [
+          "Aruba"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Australia",
+    "city": [
+      {
+        "name": "Australia",
+        "area": [
+          "Australia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Austriav",
+    "city": [
+      {
+        "name": "Austria",
+        "area": [
+          "Austria"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Azerbaijan",
+    "city": [
+      {
+        "name": "Azerbaijan",
+        "area": [
+          "Azerbaijan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bahamas",
+    "city": [
+      {
+        "name": "Bahamas",
+        "area": [
+          "Bahamas"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bahrain",
+    "city": [
+      {
+        "name": "Bahrain",
+        "area": [
+          "Bahrain"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bangladesh",
+    "city": [
+      {
+        "name": "Bangladesh",
+        "area": [
+          "Bangladesh"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Barbados",
+    "city": [
+      {
+        "name": "Barbados",
+        "area": [
+          "Barbados"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Belarus",
+    "city": [
+      {
+        "name": "Belarus",
+        "area": [
+          "Belarus"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Belgium",
+    "city": [
+      {
+        "name": "Belgium",
+        "area": [
+          "Belgium"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Belize",
+    "city": [
+      {
+        "name": "Belize",
+        "area": [
+          "Belize"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Benin",
+    "city": [
+      {
+        "name": "Benin",
+        "area": [
+          "Benin"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bermuda",
+    "city": [
+      {
+        "name": "Bermuda",
+        "area": [
+          "Bermuda"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bhutan",
+    "city": [
+      {
+        "name": "Bhutan",
+        "area": [
+          "Bhutan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bolivia",
+    "city": [
+      {
+        "name": "Bolivia",
+        "area": [
+          "Bolivia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "city": [
+      {
+        "name": "Bosnia and Herzegovina",
+        "area": [
+          "Bosnia and Herzegovina"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Botswana",
+    "city": [
+      {
+        "name": "Botswana",
+        "area": [
+          "Botswana"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brazil",
+    "city": [
+      {
+        "name": "Brazil",
+        "area": [
+          "Brazil"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "city": [
+      {
+        "name": "British Indian Ocean Territory",
+        "area": [
+          "British Indian Ocean Territory"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brunei Darussalam",
+    "city": [
+      {
+        "name": "Brunei Darussalam",
+        "area": [
+          "Brunei Darussalam"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bulgaria",
+    "city": [
+      {
+        "name": "Bulgaria",
+        "area": [
+          "Bulgaria"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Burkina Faso",
+    "city": [
+      {
+        "name": "Burkina Faso",
+        "area": [
+          "Burkina Faso"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Burundi",
+    "city": [
+      {
+        "name": "Burundi",
+        "area": [
+          "Burundi"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cambodia",
+    "city": [
+      {
+        "name": "Cambodia",
+        "area": [
+          "Cambodia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cameroon",
+    "city": [
+      {
+        "name": "Cameroon",
+        "area": [
+          "Cameroon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Canada",
+    "city": [
+      {
+        "name": "Canada",
+        "area": [
+          "Canada"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cape Verde",
+    "city": [
+      {
+        "name": "Cape Verde",
+        "area": [
+          "Cape Verde"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cayman Is",
+    "city": [
+      {
+        "name": "Cayman Is",
+        "area": [
+          "Cayman Is"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Central African Republic",
+    "city": [
+      {
+        "name": "Central African Republic",
+        "area": [
+          "Central African Republic"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chad",
+    "city": [
+      {
+        "name": "Chad",
+        "area": [
+          "Chad"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chile",
+    "city": [
+      {
+        "name": "Chile",
+        "area": [
+          "Chile"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Saint Yan Island",
+    "city": [
+      {
+        "name": "Saint Yan Island",
+        "area": [
+          "Saint Yan Island"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cocos Islands",
+    "city": [
+      {
+        "name": "Cocos Islands",
+        "area": [
+          "Cocos Islands"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Columbia",
+    "city": [
+      {
+        "name": "Columbia",
+        "area": [
+          "Columbia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Comoros",
+    "city": [
+      {
+        "name": "Comoros",
+        "area": [
+          "Comoros"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Congo",
+    "city": [
+      {
+        "name": "Congo",
+        "area": [
+          "Congo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Democratic Republic of the Congo",
+    "city": [
+      {
+        "name": "Democratic Republic of the Congo",
+        "area": [
+          "Democratic Republic of the Congo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cook Islands",
+    "city": [
+      {
+        "name": "Cook Islands",
+        "area": [
+          "Cook Islands"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Costa Rica",
+    "city": [
+      {
+        "name": "Costa Rica",
+        "area": [
+          "Costa Rica"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Croatia",
+    "city": [
+      {
+        "name": "Croatia",
+        "area": [
+          "Croatia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cuba",
+    "city": [
+      {
+        "name": "Cuba",
+        "area": [
+          "Cuba"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cyprus",
+    "city": [
+      {
+        "name": "Cyprus",
+        "area": [
+          "Cyprus"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Czech",
+    "city": [
+      {
+        "name": "Czech",
+        "area": [
+          "Czech"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Denmark",
+    "city": [
+      {
+        "name": "Denmark",
+        "area": [
+          "Denmark"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Djibouti",
+    "city": [
+      {
+        "name": "Djibouti",
+        "area": [
+          "Djibouti"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dominica",
+    "city": [
+      {
+        "name": "Dominica",
+        "area": [
+          "Dominica"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dominican Republic",
+    "city": [
+      {
+        "name": "Dominican Republic",
+        "area": [
+          "Dominican Republic"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Timor-Leste",
+    "city": [
+      {
+        "name": "Timor-Leste",
+        "area": [
+          "Timor-Leste"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ecuador",
+    "city": [
+      {
+        "name": "Ecuador",
+        "area": [
+          "Ecuador"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Egypt",
+    "city": [
+      {
+        "name": "Egypt",
+        "area": [
+          "Egypt"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Equatorial Guinea",
+    "city": [
+      {
+        "name": "Equatorial Guinea",
+        "area": [
+          "Equatorial Guinea"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eritrea",
+    "city": [
+      {
+        "name": "Eritrea",
+        "area": [
+          "Eritrea"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eritrea",
+    "city": [
+      {
+        "name": "Eritrea",
+        "area": [
+          "Eritrea"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Estonia",
+    "city": [
+      {
+        "name": "Estonia",
+        "area": [
+          "Estonia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ethiopia",
+    "city": [
+      {
+        "name": "Ethiopia",
+        "area": [
+          "Ethiopia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Falkland Islands",
+    "city": [
+      {
+        "name": "Falkland Islands",
+        "area": [
+          "Falkland Islands"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Faroe Islands",
+    "city": [
+      {
+        "name": "Faroe Islands",
+        "area": [
+          "Faroe Islands"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fiji",
+    "city": [
+      {
+        "name": "Fiji",
+        "area": [
+          "Fiji"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Finland",
+    "city": [
+      {
+        "name": "Finland",
+        "area": [
+          "Finland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "France",
+    "city": [
+      {
+        "name": "France",
+        "area": [
+          "France"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Metropolitan France",
+    "city": [
+      {
+        "name": "Metropolitan France",
+        "area": [
+          "Metropolitan France"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "French Guyana",
+    "city": [
+      {
+        "name": "French Guyana",
+        "area": [
+          "French Guyana"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "French Polynesia",
+    "city": [
+      {
+        "name": "French Polynesia",
+        "area": [
+          "French Polynesia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gabon",
+    "city": [
+      {
+        "name": "Gabon",
+        "area": [
+          "Gabon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gambia",
+    "city": [
+      {
+        "name": "Gambia",
+        "area": [
+          "Gambia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Georgia",
+    "city": [
+      {
+        "name": "Georgia",
+        "area": [
+          "Georgia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Germany",
+    "city": [
+      {
+        "name": "Germany",
+        "area": [
+          "Germany"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ghana",
+    "city": [
+      {
+        "name": "Ghana",
+        "area": [
+          "Ghana"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gibraltar",
+    "city": [
+      {
+        "name": "Gibraltar",
+        "area": [
+          "Gibraltar"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Greece",
+    "city": [
+      {
+        "name": "Greece",
+        "area": [
+          "Greece"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Greenland",
+    "city": [
+      {
+        "name": "Greenland",
+        "area": [
+          "Greenland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Grenada",
+    "city": [
+      {
+        "name": "Grenada",
+        "area": [
+          "Grenada"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guadeloupe",
+    "city": [
+      {
+        "name": "Guadeloupe",
+        "area": [
+          "Guadeloupe"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guam",
+    "city": [
+      {
+        "name": "Guam",
+        "area": [
+          "Guam"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guatemala",
+    "city": [
+      {
+        "name": "Guatemala",
+        "area": [
+          "Guatemala"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guinea",
+    "city": [
+      {
+        "name": "Guinea",
+        "area": [
+          "Guinea"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guinea-Bissau",
+    "city": [
+      {
+        "name": "Guinea-Bissau",
+        "area": [
+          "Guinea-Bissau"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guyana",
+    "city": [
+      {
+        "name": "Guyana",
+        "area": [
+          "Guyana"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Haiti",
+    "city": [
+      {
+        "name": "Haiti",
+        "area": [
+          "Haiti"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Honduras",
+    "city": [
+      {
+        "name": "Honduras",
+        "area": [
+          "Honduras"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hong Kong",
+    "city": [
+      {
+        "name": "Hong Kong",
+        "area": [
+          "Hong Kong"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hungary",
+    "city": [
+      {
+        "name": "Hungary",
+        "area": [
+          "Hungary"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Iceland",
+    "city": [
+      {
+        "name": "Iceland",
+        "area": [
+          "Iceland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "India",
+    "city": [
+      {
+        "name": "India",
+        "area": [
+          "India"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Indonesia",
+    "city": [
+      {
+        "name": "Indonesia",
+        "area": [
+          "Indonesia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Iran",
+    "city": [
+      {
+        "name": "Iran",
+        "area": [
+          "Iran"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Iraq",
+    "city": [
+      {
+        "name": "Iraq",
+        "area": [
+          "Iraq"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ireland",
+    "city": [
+      {
+        "name": "Ireland",
+        "area": [
+          "Ireland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Israel",
+    "city": [
+      {
+        "name": "Israel",
+        "area": [
+          "Israel"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Italy",
+    "city": [
+      {
+        "name": "Italy",
+        "area": [
+          "Italy"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jamaica",
+    "city": [
+      {
+        "name": "Jamaica",
+        "area": [
+          "Jamaica"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Japan",
+    "city": [
+      {
+        "name": "Japan",
+        "area": [
+          "Japan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jordan",
+    "city": [
+      {
+        "name": "Jordan",
+        "area": [
+          "Jordan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kazakhstan",
+    "city": [
+      {
+        "name": "Kazakhstan",
+        "area": [
+          "Kazakhstan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kenya",
+    "city": [
+      {
+        "name": "Kenya",
+        "area": [
+          "Kenya"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kuwait Kyrgyzstan",
+    "city": [
+      {
+        "name": "Kuwait Kyrgyzstan",
+        "area": [
+          "Kuwait Kyrgyzstan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Latvia",
+    "city": [
+      {
+        "name": "Latvia",
+        "area": [
+          "Latvia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lebanon",
+    "city": [
+      {
+        "name": "Lebanon",
+        "area": [
+          "Lebanon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lesotho",
+    "city": [
+      {
+        "name": "Lesotho",
+        "area": [
+          "Lesotho"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Libya",
+    "city": [
+      {
+        "name": "Libya",
+        "area": [
+          "Libya"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Luxembourg",
+    "city": [
+      {
+        "name": "Luxembourg",
+        "area": [
+          "Luxembourg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Macao",
+    "city": [
+      {
+        "name": "Macao",
+        "area": [
+          "Macao"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Madagascar",
+    "city": [
+      {
+        "name": "Madagascar",
+        "area": [
+          "Madagascar"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Malawi",
+    "city": [
+      {
+        "name": "Malawi",
+        "area": [
+          "Malawi"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Malaysia",
+    "city": [
+      {
+        "name": "Malaysia",
+        "area": [
+          "Malaysia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maldives",
+    "city": [
+      {
+        "name": "Maldives",
+        "area": [
+          "Maldives"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mali",
+    "city": [
+      {
+        "name": "Mali",
+        "area": [
+          "Mali"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Malta",
+    "city": [
+      {
+        "name": "Malta",
+        "area": [
+          "Malta"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marshall Is",
+    "city": [
+      {
+        "name": "Marshall Is",
+        "area": [
+          "Marshall Is"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Martinique",
+    "city": [
+      {
+        "name": "Martinique",
+        "area": [
+          "Martinique"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mauritania",
+    "city": [
+      {
+        "name": "Mauritania",
+        "area": [
+          "Mauritania"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mexico",
+    "city": [
+      {
+        "name": "Mexico",
+        "area": [
+          "Mexico"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Micronesia",
+    "city": [
+      {
+        "name": "Micronesia",
+        "area": [
+          "Micronesia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Moldova",
+    "city": [
+      {
+        "name": "Moldova",
+        "area": [
+          "Moldova"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Monaco",
+    "city": [
+      {
+        "name": "Monaco",
+        "area": [
+          "Monaco"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Outer Mongolia",
+    "city": [
+      {
+        "name": "Outer Mongolia",
+        "area": [
+          "Outer Mongolia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Montenegro",
+    "city": [
+      {
+        "name": "Montenegro",
+        "area": [
+          "Montenegro"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Montserrat",
+    "city": [
+      {
+        "name": "Montserrat",
+        "area": [
+          "Montserrat"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Morocco",
+    "city": [
+      {
+        "name": "Morocco",
+        "area": [
+          "Morocco"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mozambique",
+    "city": [
+      {
+        "name": "Mozambique",
+        "area": [
+          "Mozambique"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Namibian",
+    "city": [
+      {
+        "name": "Namibian",
+        "area": [
+          "Namibian"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nauru",
+    "city": [
+      {
+        "name": "Nauru",
+        "area": [
+          "Nauru"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nepal",
+    "city": [
+      {
+        "name": "Nepal",
+        "area": [
+          "Nepal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Holland",
+    "city": [
+      {
+        "name": "Holland",
+        "area": [
+          "Holland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "New Caledonia",
+    "city": [
+      {
+        "name": "New Caledonia",
+        "area": [
+          "New Caledonia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "New Zealand",
+    "city": [
+      {
+        "name": "New Zealand",
+        "area": [
+          "New Zealand"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nicaragua",
+    "city": [
+      {
+        "name": "Nicaragua",
+        "area": [
+          "Nicaragua"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Niger",
+    "city": [
+      {
+        "name": "Niger",
+        "area": [
+          "Niger"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nigeria",
+    "city": [
+      {
+        "name": "Nigeria",
+        "area": [
+          "Nigeria"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Norfolk Island",
+    "city": [
+      {
+        "name": "Norfolk Island",
+        "area": [
+          "Norfolk Island"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "D.P.R.Korea",
+    "city": [
+      {
+        "name": "D.P.R.Korea",
+        "area": [
+          "D.P.R.Korea"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Norway",
+    "city": [
+      {
+        "name": "Norway",
+        "area": [
+          "Norway"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Oman",
+    "city": [
+      {
+        "name": "Oman",
+        "area": [
+          "Oman"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pakistan",
+    "city": [
+      {
+        "name": "Pakistan",
+        "area": [
+          "Pakistan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Palau",
+    "city": [
+      {
+        "name": "Palau",
+        "area": [
+          "Palau"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Palestine",
+    "city": [
+      {
+        "name": "Palestine",
+        "area": [
+          "Palestine"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Panama",
+    "city": [
+      {
+        "name": "Panama",
+        "area": [
+          "Panama"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Papua New Guinea",
+    "city": [
+      {
+        "name": "Papua New Guinea",
+        "area": [
+          "Papua New Guinea"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Paraguay",
+    "city": [
+      {
+        "name": "Paraguay",
+        "area": [
+          "Paraguay"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Peru",
+    "city": [
+      {
+        "name": "Peru",
+        "area": [
+          "Peru"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Philippines",
+    "city": [
+      {
+        "name": "Philippines",
+        "area": [
+          "Philippines"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pitcairn I",
+    "city": [
+      {
+        "name": "Pitcairn I",
+        "area": [
+          "Pitcairn I"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Poland",
+    "city": [
+      {
+        "name": "Poland",
+        "area": [
+          "Poland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Portugal",
+    "city": [
+      {
+        "name": "Portugal",
+        "area": [
+          "Portugal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Puerto Rico",
+    "city": [
+      {
+        "name": "Puerto Rico",
+        "area": [
+          "Puerto Rico"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Qatar",
+    "city": [
+      {
+        "name": "Qatar",
+        "area": [
+          "Qatar"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reunion Island",
+    "city": [
+      {
+        "name": "Reunion Island",
+        "area": [
+          "Reunion Island"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Romania",
+    "city": [
+      {
+        "name": "Romania",
+        "area": [
+          "Romania"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Russian Federation",
+    "city": [
+      {
+        "name": "Russian Federation",
+        "area": [
+          "Russian Federation"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rwanda",
+    "city": [
+      {
+        "name": "Rwanda",
+        "area": [
+          "Rwanda"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "American Samoa",
+    "city": [
+      {
+        "name": "American Samoa",
+        "area": [
+          "American Samoa"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "San Marino",
+    "city": [
+      {
+        "name": "San Marino",
+        "area": [
+          "San Marino"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Saudi Arabia",
+    "city": [
+      {
+        "name": "Saudi Arabia",
+        "area": [
+          "Saudi Arabia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Serbia",
+    "city": [
+      {
+        "name": "Serbia",
+        "area": [
+          "Serbia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seychelles",
+    "city": [
+      {
+        "name": "Seychelles",
+        "area": [
+          "Seychelles"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sierra Leone",
+    "city": [
+      {
+        "name": "Sierra Leone",
+        "area": [
+          "Sierra Leone"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Singapore",
+    "city": [
+      {
+        "name": "Singapore",
+        "area": [
+          "Singapore"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Solomon Islands",
+    "city": [
+      {
+        "name": "Solomon Islands",
+        "area": [
+          "Solomon Islands"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Somalia",
+    "city": [
+      {
+        "name": "Somalia",
+        "area": [
+          "Somalia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "South Africa",
+    "city": [
+      {
+        "name": "South Africa",
+        "area": [
+          "South Africa"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "R.O.Korea",
+    "city": [
+      {
+        "name": "R.O.Korea",
+        "area": [
+          "R.O.Korea"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spain",
+    "city": [
+      {
+        "name": "Spain",
+        "area": [
+          "Spain"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sri Lanka",
+    "city": [
+      {
+        "name": "Sri Lanka",
+        "area": [
+          "Sri Lanka"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sultan",
+    "city": [
+      {
+        "name": "Sultan",
+        "area": [
+          "Sultan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suriname",
+    "city": [
+      {
+        "name": "Suriname",
+        "area": [
+          "Suriname"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Swaziland",
+    "city": [
+      {
+        "name": "Swaziland",
+        "area": [
+          "Swaziland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sweden",
+    "city": [
+      {
+        "name": "Sweden",
+        "area": [
+          "Sweden"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Switzerland",
+    "city": [
+      {
+        "name": "Switzerland",
+        "area": [
+          "Switzerland"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Syria",
+    "city": [
+      {
+        "name": "Syria",
+        "area": [
+          "Syria"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taiwan",
+    "city": [
+      {
+        "name": "Taiwan",
+        "area": [
+          "Taiwan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tajikistan",
+    "city": [
+      {
+        "name": "Tajikistan",
+        "area": [
+          "Tajikistan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tanzania",
+    "city": [
+      {
+        "name": "Tanzania",
+        "area": [
+          "Tanzania"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thailand",
+    "city": [
+      {
+        "name": "Thailand",
+        "area": [
+          "Thailand"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Togo",
+    "city": [
+      {
+        "name": "Togo",
+        "area": [
+          "Togo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tokelau",
+    "city": [
+      {
+        "name": "Tokelau",
+        "area": [
+          "Tokelau"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tonga",
+    "city": [
+      {
+        "name": "Tonga",
+        "area": [
+          "Tonga"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "city": [
+      {
+        "name": "Trinidad and Tobago",
+        "area": [
+          "Trinidad and Tobago"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tunisia",
+    "city": [
+      {
+        "name": "Tunisia",
+        "area": [
+          "Tunisia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Turkey",
+    "city": [
+      {
+        "name": "Turkey",
+        "area": [
+          "Turkey"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Turkmenistan",
+    "city": [
+      {
+        "name": "Turkmenistan",
+        "area": [
+          "Turkmenistan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Turks and Caicos",
+    "city": [
+      {
+        "name": "Turks and Caicos",
+        "area": [
+          "Turks and Caicos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tuvalu",
+    "city": [
+      {
+        "name": "Tuvalu",
+        "area": [
+          "Tuvalu"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Uganda",
+    "city": [
+      {
+        "name": "Uganda",
+        "area": [
+          "Uganda"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ukraine",
+    "city": [
+      {
+        "name": "Ukraine",
+        "area": [
+          "Ukraine"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arab",
+    "city": [
+      {
+        "name": "Arab",
+        "area": [
+          "Arab"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Britain",
+    "city": [
+      {
+        "name": "Britain",
+        "area": [
+          "Britain"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "America",
+    "city": [
+      {
+        "name": "America",
+        "area": [
+          "America"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Uruguay",
+    "city": [
+      {
+        "name": "Uruguay",
+        "area": [
+          "Uruguay"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Uzbekistan",
+    "city": [
+      {
+        "name": "Uzbekistan",
+        "area": [
+          "Uzbekistan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vanuatu",
+    "city": [
+      {
+        "name": "Vanuatu",
+        "area": [
+          "Vanuatu"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vatican",
+    "city": [
+      {
+        "name": "Vatican",
+        "area": [
+          "Vatican"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Venezuela",
+    "city": [
+      {
+        "name": "Venezuela",
+        "area": [
+          "Venezuela"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vietnam",
+    "city": [
+      {
+        "name": "Vietnam",
+        "area": [
+          "Vietnam"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Western Sahara",
+    "city": [
+      {
+        "name": "Western Sahara",
+        "area": [
+          "Western Sahara"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yemen",
+    "city": [
+      {
+        "name": "Yemen",
+        "area": [
+          "Yemen"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yugoslavia",
+    "city": [
+      {
+        "name": "Yugoslavia",
+        "area": [
+          "Yugoslavia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zambia",
+    "city": [
+      {
+        "name": "Zambia",
+        "area": [
+          "Zambia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zimbabwe",
+    "city": [
+      {
+        "name": "Zimbabwe",
+        "area": [
+          "Zimbabwe"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Abkhazia",
+    "city": [
+      {
+        "name": "Abkhazia",
+        "area": [
+          "Abkhazia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jersey",
+    "city": [
+      {
+        "name": "Jersey",
+        "area": [
+          "Jersey"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Laos",
+    "city": [
+      {
+        "name": "Laos",
+        "area": [
+          "Laos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Macedonia",
+    "city": [
+      {
+        "name": "Macedonia",
+        "area": [
+          "Macedonia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "city": [
+      {
+        "name": "Saint Kitts and Nevis",
+        "area": [
+          "Saint Kitts and Nevis"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mayotte",
+    "city": [
+      {
+        "name": "Mayotte",
+        "area": [
+          "Mayotte"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Saint Lucia",
+    "city": [
+      {
+        "name": "Saint Lucia",
+        "area": [
+          "Saint Lucia"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lithuania",
+    "city": [
+      {
+        "name": "Lithuania",
+        "area": [
+          "Lithuania"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "city": [
+      {
+        "name": "Saint Vincent and the Grenadines",
+        "area": [
+          "Saint Vincent and the Grenadines"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sao Tome and Principe",
+    "city": [
+      {
+        "name": "Sao Tome and Principe",
+        "area": [
+          "Sao Tome and Principe"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "South Sudan",
+    "city": [
+      {
+        "name": "South Sudan",
+        "area": [
+          "South Sudan"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Myanmar",
+    "city": [
+      {
+        "name": "Myanmar",
+        "area": [
+          "Myanmar"
+        ]
+      }
+    ]
+  }
+]

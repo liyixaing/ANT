@@ -43,7 +43,17 @@ public class SystemUPTurn {
          */
 
         private String state;
+        private String info;
+
         private int openingtime;
+
+        public String getInfo() {
+            return info;
+        }
+
+        public void setInfo(String info) {
+            this.info = info;
+        }
 
         public String getState() {
             return state;

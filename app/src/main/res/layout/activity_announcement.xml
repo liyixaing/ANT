@@ -8,21 +8,23 @@
 
 
     <RelativeLayout
-        android:layout_width="303dp"
-        android:layout_height="397dp"
+        android:layout_width="480dp"
+        android:layout_height="480dp"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="@dimen/dp_30"
-        android:layout_marginRight="@dimen/dp_30">
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
 
         <ImageView
-            android:layout_width="303dp"
-            android:layout_height="397dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:src="@mipmap/notice_bg" />
 
         <TextView
+            android:id="@+id/announcementThis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/imageN"
+            android:layout_marginTop="4dp"
             android:layout_centerHorizontal="true"
             android:text="@string/notice"
             android:textColor="@color/essential"
@@ -33,16 +35,17 @@
             android:layout_width="@dimen/dp_30"
             android:layout_height="@dimen/dp_30"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="35dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="78dp"
             android:src="@mipmap/notice_title" />
 
         <ScrollView
             android:layout_below="@+id/imageN"
-            android:layout_marginLeft="@dimen/dp_30"
-            android:layout_marginRight="@dimen/dp_30"
             android:layout_width="match_parent"
             android:layout_marginBottom="@dimen/dp_25"
+
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -58,13 +61,11 @@
                     android:layout_height="wrap_content"
                     android:lineSpacingExtra="12px"
                     android:singleLine="false"
-                    android:layout_marginRight="@dimen/dp_10"
-                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
                     android:textColor="@color/afragmenttext"
                     android:textSize="45px" />
             </LinearLayout>
         </ScrollView>
-
-
     </RelativeLayout>
 </RelativeLayout>

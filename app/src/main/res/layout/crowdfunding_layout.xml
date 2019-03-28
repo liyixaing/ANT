@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="136dp"
+    android:background="@color/afragment">
+
+    <ImageView
+        android:id="@+id/crowdImageView"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/crowd_coin" />
+
+    <TextView
+        android:id="@+id/crawdNameTextView"
+        style="@style/eqwe"
+        android:layout_alignTop="@+id/crowdImageView"
+        android:layout_toRightOf="@+id/crowdImageView"
+        android:gravity="center"
+        android:text="ANT蚂蚁通证"
+        android:textColor="@color/essential"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/crowdType"
+        style="@style/eqwe"
+        android:layout_width="40dp"
+        android:layout_height="14dp"
+        android:layout_alignBottom="@+id/crawdNameTextView"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toRightOf="@+id/crawdNameTextView"
+        android:background="@color/essential"
+        android:gravity="center"
+        android:text="预热中"
+        android:textColor="#ffff"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/crawdAstrictTextView"
+        style="@style/eqwe"
+        android:layout_below="@+id/crawdNameTextView"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/crowdImageView"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/crawdProportionTextView"
+        style="@style/eqwe"
+        android:layout_below="@+id/crawdNameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/crawdDaysTextView"
+        style="@style/eqwe"
+        android:layout_below="@+id/crawdNameTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="8dp"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/crawdCurrencyTextView"
+        style="@style/eqwe"
+        android:layout_below="@+id/crawdAstrictTextView"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/crowdImageView"
+        android:textSize="9sp" />
+
+    <TextView
+        android:id="@+id/crawdTimeTextView"
+        style="@style/xx"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        android:layout_marginTop="2dp"
+        android:text="0000.00.00"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/crawdScale"
+        style="@style/eqwe"
+        android:layout_below="@+id/crowdImageView"
+        android:layout_margin="8dp"
+        android:text="@string/rwqe"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/crawdScaleTextView"
+        style="@style/eqwe"
+
+        android:layout_marginTop="2sp"
+        android:layout_below="@+id/crawdScale"
+        android:layout_marginLeft="8dp"
+        android:text="3000万"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/priceScale"
+        style="@style/eqwe"
+        android:layout_alignTop="@+id/crawdScale"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ewqe"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/priceScaleTextView"
+        style="@style/eqwe"
+        android:layout_alignTop="@+id/crawdScaleTextView"
+        android:layout_centerHorizontal="true"
+        android:text="0KTB=？"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/timeRemaining"
+        style="@style/eqwe"
+        android:layout_below="@+id/crowdImageView"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"
+        android:text="@string/dadasd"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/timeRemainingTextView"
+        style="@style/eqwe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeRemaining"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:text="未开始"
+        android:textColor="@color/tuichu"
+        android:textSize="11sp" />
+
+    <ProgressBar
+        android:id="@+id/scheduleProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="180dp"
+        android:layout_height="6dp"
+        android:layout_below="@+id/crawdScaleTextView"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="8dp"
+        android:max="100"
+        android:progressDrawable="@drawable/progressbar"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/scheduleTextView"
+        style="@style/eqwe"
+        android:layout_below="@+id/priceScaleTextView"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/scheduleProgressBar"
+        android:text="0.0%"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/immediatelyBuy"
+        style="@style/eqwe"
+        android:layout_width="42dp"
+        android:layout_height="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="6dp"
+        android:background="#e6e6e6"
+        android:gravity="center"
+        android:textSize="12sp" />
+</RelativeLayout>

@@ -25,8 +25,6 @@ public abstract class FenAdater<T> extends BaseAdapter {
         inflater= LayoutInflater.from(context);
     }
 
-
-
     @Override
     public int getCount() {
         return list == null?0:list.size();
@@ -54,5 +52,4 @@ public abstract class FenAdater<T> extends BaseAdapter {
     private ViewHolder getViewHolder(int position, View convertView, ViewGroup parent){
         return ViewHolder.get(context,convertView,parent,itemLayoutId,position);
     }
-
 }

@@ -6,7 +6,7 @@
                 android:bottomRightRadius="10px"
                 android:topLeftRadius="10px"
                 android:topRightRadius="10px"/>
-            <solid android:color="#ffffff"/>
+            <solid android:color="@color/appbackground"/>
         </shape>
     </item>
 

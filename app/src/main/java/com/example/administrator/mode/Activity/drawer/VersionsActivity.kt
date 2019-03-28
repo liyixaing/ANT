@@ -106,20 +106,20 @@ class VersionsActivity : BaseActivity() {
             override fun onMultiClick(v: View?) {
                 var progressDialog: ProgressDialog? = null
                 progressDialog = ProgressDialog(this@VersionsActivity)
-                progressDialog!!.setMessage(xxxxxxxxx)
-                progressDialog!!.setIndeterminate(true)
-                progressDialog!!.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-                progressDialog!!.setCancelable(true)
-                var downloadTask: DownloadTask = DownloadTask(this@VersionsActivity, progressDialog);
-                downloadTask.execute(url);
-                progressDialog!!.setOnCancelListener {
+                progressDialog.setMessage(xxxxxxxxx)
+                progressDialog.isIndeterminate = true
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
+                progressDialog.setCancelable(true)
+                val downloadTask: DownloadTask = DownloadTask(this@VersionsActivity, progressDialog)
+                downloadTask.execute(url)
+                progressDialog.setOnCancelListener {
                     downloadTask.cancel(true)
                 }
                 val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
                 //获得一个SharedPreferences编辑器
                 val edit = sp.edit()
                 edit.putBoolean("versions", false)
-                edit.commit();
+                edit.commit()
             }
         })
     }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appbackground"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.mode.Activity.privatekeymanage.NewUpPwdActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/appbackground">
+
+        <ImageView
+            android:id="@+id/newUpPwdTit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:src="@mipmap/fanhui" />
+
+        <TextView
+            android:id="@+id/newUpPwdName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/changePassword"
+            android:textColor="#101010"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#d3d3d3"
+            android:padding="@dimen/dp_10" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/edittext12"
+            android:text="@string/TheCurrentPrivateKeyPassword"
+            android:textColor="#aaa9a9" />
+
+        <EditText
+            android:id="@+id/thisPwd"
+            style="@style/edittext12"
+            android:gravity="left"
+            android:paddingTop="6dp"
+            android:inputType="textPassword"
+            android:layout_width="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#d2d2d2" />
+
+        <TextView
+            style="@style/edittext12"
+            android:layout_marginTop="16dp"
+            android:text="@string/UserfindPwd_pwdimport"
+            android:textColor="#aaa9a9" />
+
+        <EditText
+            android:id="@+id/newPwd"
+            style="@style/edittext12"
+
+            android:paddingTop="6dp"
+            android:inputType="textPassword"
+            android:gravity="left"
+            android:layout_width="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#d2d2d2" />
+
+        <TextView
+            style="@style/edittext12"
+            android:layout_marginTop="16dp"
+            android:text="@string/UserfindPwd_pwdimports"
+            android:textColor="#aaa9a9" />
+
+        <EditText
+            android:id="@+id/newLoginPwd"
+            style="@style/edittext12"
+            android:paddingTop="6dp"
+            android:inputType="textPassword"
+            android:gravity="left"
+            android:layout_width="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#d2d2d2" />
+        <Button
+            android:id="@+id/newUpPwdTit1"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/butt"
+            android:text="@string/Register_ok"
+            android:textColor="#ffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

@@ -42,10 +42,10 @@ class PosActivity : BaseActivity() {
 
     override fun init() {
         super.init()
-        StatService.onPageStart(this,"MainModule.HomeView.POSDetailView")
+        StatService.onPageStart(this, "MainModule.HomeView.POSDetailView")
         tit_iv.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                StatService.onPageEnd(this@PosActivity,"MainModule.HomeView.POSDetailView")
+                StatService.onPageEnd(this@PosActivity, "MainModule.HomeView.POSDetailView")
                 finish()
             }
         })
@@ -62,53 +62,50 @@ class PosActivity : BaseActivity() {
             override fun onMultiClick(v: View?) {
                 if (xx == 1) {
                     tit_iv1.setImageResource(R.drawable.eyeclose)
-                    postCard.setText("****")
-                    postproperty.setText("****")
-                    yesterdayPost.setText("****")
-                    accumulatePost.setText("****")
+                    postCard.text = "****"
+                    postproperty.text = "****"
+                    yesterdayPost.text = "****"
+                    accumulatePost.text = "****"
                     xx++
                     return
                 }
                 if (xx == 2) {
                     tit_iv1.setImageResource(R.drawable.eyeopen)
-                    postCard.setText(String.format("%.2f", postCardInput))
-                    postproperty.setText(String.format("%.2f", postpropertyInput))
-                    yesterdayPost.setText(String.format("%.2f", yesterdayPostInput))
-                    accumulatePost.setText(String.format("%.2f", accumulatePostInput))
+                    postCard.text = String.format("%.2f", postCardInput)
+                    postproperty.text = String.format("%.2f", postpropertyInput)
+                    yesterdayPost.text = String.format("%.2f", yesterdayPostInput)
+                    accumulatePost.text = String.format("%.2f", accumulatePostInput)
                     xx--
                     return
                 }
             }
         })
         postLoad()
-        posList.setONLoadMoreListener(object : LoadMoreListView.OnLoadMoreListener {
-            override fun onloadMore() {
-                val task = object : TimerTask() {
-                    @SuppressLint("ResourceType")
-                    override fun run() {
-                        runOnUiThread {
-                            if (recLen == 0) {
-                                count++
-                                pullload(count)
-                                posList.setLoadCompleted()
-                            }
-                            recLen--
+        posList.setONLoadMoreListener {
+            val task = object : TimerTask() {
+                @SuppressLint("ResourceType")
+                override fun run() {
+                    runOnUiThread {
+                        if (recLen == 0) {
+                            count++
+                            pullload(count)
+                            posList.setLoadCompleted()
                         }
+                        recLen--
                     }
                 }
-                timer.schedule(task, 1000, 1000)
-                recLen = 2
             }
-
-        })
+            timer.schedule(task, 1000, 1000)
+            recLen = 2
+        }
     }
 
     private fun pullload(count: Int) {
         try {
-            val nowtime=DateUtils.getdata()
-            val retrofit = Retrofit_manager.getInstance().getUserlogin()
+            val nowtime = DateUtils.getdata()
+            val retrofit = Retrofit_manager.getInstance().userlogin
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-            val pos = retrofit.create(MoneyService::class.java!!).getAntBanancepos(sp.getString("user_id", ""), sp.getString("user_token", ""), "1", count.toString(), "10","0",nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            val pos = retrofit.create(MoneyService::class.java).getAntBanancepos(sp.getString("user_id", ""), sp.getString("user_token", ""), "1", count.toString(), "10", "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             pos.enqueue(object : Callback<PosTurn> {
                 override fun onResponse(call: Call<PosTurn>, response: Response<PosTurn>) {
                     if (response.body()!!.code == 1) {
@@ -125,8 +122,7 @@ class PosActivity : BaseActivity() {
                 override fun onFailure(call: Call<PosTurn>, t: Throwable) {
 
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@PosActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PosActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -137,10 +133,11 @@ class PosActivity : BaseActivity() {
     }
 
     private fun postLoad() {
-        try {val nowtime=DateUtils.getdata()
-            val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        try {
+            val nowtime = DateUtils.getdata()
+            val retrofit = Retrofit_manager.getInstance().userlogin
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-            val pos = retrofit.create(MoneyService::class.java!!).getAntBanancepos(sp.getString("user_id", ""), sp.getString("user_token", ""), "1", "1", "10", "0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            val pos = retrofit.create(MoneyService::class.java).getAntBanancepos(sp.getString("user_id", ""), sp.getString("user_token", ""), "1", "1", "10", "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             pos.enqueue(object : Callback<PosTurn> {
                 override fun onResponse(call: Call<PosTurn>, response: Response<PosTurn>) {
                     if (response.body()!!.code == 1) {
@@ -148,10 +145,10 @@ class PosActivity : BaseActivity() {
                         postpropertyInput = response.body()!!.data.score
                         yesterdayPostInput = response.body()!!.data.yestoday_pos_earnings
                         accumulatePostInput = response.body()!!.data.history_pos_earnings
-                        postCard.setText(String.format("%.2f", postCardInput))
-                        postproperty.setText(String.format("%.2f", postpropertyInput))
-                        yesterdayPost.setText(String.format("%.2f", yesterdayPostInput))
-                        accumulatePost.setText(String.format("%.2f", accumulatePostInput))
+                        postCard.text = String.format("%.2f", postCardInput)
+                        postproperty.text = String.format("%.2f", postpropertyInput)
+                        yesterdayPost.text = String.format("%.2f", yesterdayPostInput)
+                        accumulatePost.text = String.format("%.2f", accumulatePostInput)
                         /*   val posTurn: MutableList<PosTurn.DataBean.ListsBean>? = response.body()!!.data!!.lists
                            list = posTurn as ArrayList<PosTurn.DataBean.ListsBean>*/
                         list = response.body()!!.data!!.lists as ArrayList<PosTurn.DataBean.ListsBean>
@@ -159,8 +156,8 @@ class PosActivity : BaseActivity() {
                         baseadaptr = object : FenAdater<PosTurn.DataBean.ListsBean>(this@PosActivity, listInput, R.layout.poslayout) {
                             override fun convert(holder: ViewHolder?, item: PosTurn.DataBean.ListsBean?) {
                                 holder!!.setText(R.id.postUserId, item!!.userId.toString())
-                                holder!!.setText(R.id.postUserTime, DateUtils.timeslashData(item!!.changeTime.toString()))
-                                holder!!.setText(R.id.postUserCard,"+"+ String.format("%.2f", item!!.changeAmount))
+                                holder.setText(R.id.postUserTime, DateUtils.timeslashData(item.changeTime.toString()))
+                                holder.setText(R.id.postUserCard, "+" + String.format("%.2f", item.changeAmount))
                             }
                         }
                         posList.adapter = baseadaptr
@@ -173,8 +170,7 @@ class PosActivity : BaseActivity() {
 
                 override fun onFailure(call: Call<PosTurn>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@PosActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PosActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })

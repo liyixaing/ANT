@@ -4,16 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorhome"
+    android:background="@color/appbackground"
     android:orientation="vertical"
     tools:context=".Fragment.homeFragment.MyNodeActivity">
 
-    <include layout="@layout/tit" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/appbackground">
+
+        <ImageView
+            android:id="@+id/tit_iv22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:src="@mipmap/fanhui" />
+
+        <TextView
+            android:id="@+id/tit_name22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/aa"
+            android:textSize="17sp" />
+        <ImageView
+            android:id="@+id/tit_iv133"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:padding="@dimen/dp_10"
+            android:layout_alignParentBottom="true"
+            android:background="@color/essential"/>
+    </RelativeLayout>
+
 
     <ListView
         android:id="@+id/myNodeListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@null" />
 
     <RelativeLayout
         android:id="@+id/re"

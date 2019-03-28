@@ -1,6 +1,7 @@
 package com.example.administrator.mode.Interface;
 
 import com.example.administrator.mode.Pojo.Common;
+import com.example.administrator.mode.Pojo.CommonInt;
 import com.example.administrator.mode.Pojo.Loginturn;
 import com.example.administrator.mode.Pojo.ResponseBodytu;
 import java.util.List;
@@ -8,6 +9,7 @@ import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -83,7 +85,6 @@ public interface GitHubService {
             @Field("sign") String sign
     );
 
-    //修改登录密码
     @FormUrlEncoded
     @POST("redPacket/claimEveryDayRedPacket")
     Call<Common> redPacketUp(
@@ -143,19 +144,15 @@ public interface GitHubService {
     @Part List<MultipartBody.Part> partList);
 */
 
-    //修改手机号码
+    //忘记登录密码
     @FormUrlEncoded
-    @POST("user/modifyPhone")
+    @POST("user/forgetLoginPassword")
     Call<Common> phoneup(
-            @Field("userId") String userId,
-            @Field("oldPhone") String oldPhone,
-            @Field("oldWorldCode") String oldWorldCode,
-            @Field("newPhone") String newPhone,
-            @Field("newWorldCode") String newWorldCode,
+            @Field("phone") String phone,
             @Field("code") String code,
-            @Field("token") String token,
-            @Field("tradePassword") String tradePassword,
-            @Field("loginPassword") String loginPassword,
+            @Field("worldCode") String worldCode,
+            @Field("newLoginPassword") String newLoginPassword,
+            @Field("isDeletePrivateKey") String isDeletePrivateKey,
             @Field("clientType") String clientType,
             @Field("timestamp") String timestamp,
             @Field("language") String language,
@@ -187,6 +184,29 @@ public interface GitHubService {
             @Field("reqType") String reqType,
             @Field("timestamp") String timestamp,
             @Field("language") String language,
-            @Field("sign") String sign
+            @Field("sign") String sign,
+            @Field("secretKey") String secretKey
+    );
+
+    @GET("sso/getUserPrivateKey")
+    Call<Common> getUserPrivateKey(
+            @Query("phone") String phone,
+            @Query("loginPassword") String loginPassword,
+            @Query("phoneKey") String phoneKey,
+            @Query("worldCode") String worldCode,
+            @Query("clientType") String clientType,
+            @Query("timestamp") String timestamp,
+            @Query("language") String language,
+            @Query("sign") String sign
+    );
+
+    @GET("wallet/isExistWallet")
+    Call<CommonInt> isExistWallet(
+            @Query("userId") String userId,
+            @Query("token") String token,
+            @Query("clientType") String clientType,
+            @Query("timestamp") String timestamp,
+            @Query("language") String language,
+            @Query("sign") String sign
     );
 }

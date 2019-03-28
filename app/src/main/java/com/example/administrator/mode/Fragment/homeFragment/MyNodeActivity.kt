@@ -40,7 +40,7 @@ class MyNodeActivity : BaseActivity() {
         } else {
             tttt = "节点"
         }
-        tit_iv.setOnClickListener(object : ClickUtlis() {
+        tit_iv22.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 StatService.onPageEnd(this@MyNodeActivity, "MainModule.HomeView.NodeListView")
                 finish()
@@ -56,24 +56,23 @@ class MyNodeActivity : BaseActivity() {
               tit_iv1.setImageResource(R.drawable.eyeclose)
           }*/
         myNodeListView.onItemClickListener = AdapterView.OnItemClickListener { _, _, _, _ -> startActivity(Intent(this@MyNodeActivity, NodeAwardActivity::class.java)) }
-        tit_iv1.setOnClickListener(object : ClickUtlis() {
+        tit_iv133.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 if (num == 1) {
-                    tit_iv1.setImageResource(R.drawable.eyeclose)
+                    tit_iv133.setImageResource(R.drawable.eyeclose)
                     edit.putBoolean("lookNode", true)
                     edit.commit()
                     num++
                 } else if (num == 2) {
                     getMyNode()
-                    tit_iv1.setImageResource(R.drawable.eyeopen)
+                    tit_iv133.setImageResource(R.drawable.eyeopen)
                     edit.putBoolean("lookNode", false)
                     edit.commit()
                     num--
                 }
             }
         })
-
-        tit_name.setText(R.string.MyNode_tit)
+        tit_name22.setText(R.string.MyNode_tit)
         getMyNode()
     }
 
@@ -100,9 +99,9 @@ class MyNodeActivity : BaseActivity() {
                                     holder.setText(R.id.t1UserPhone, item.phone)
                                     holder.setText(R.id.t1Card, String.format("%.2f", item.score))
                                     holder.setText(R.id.t1Recommend, item.introducer.toString())
-                                    if (PreferencesUtil.get("language", "").equals("zh")) {
+                                    if (PreferencesUtil.get("language", "") == "zh") {
                                         holder.setText(R.id.t1Num, "节点量:" + item.childs)
-                                    } else if (PreferencesUtil.get("language", "").equals("en")) {
+                                    } else if (PreferencesUtil.get("language", "") == "en") {
                                         holder.setText(R.id.t1Num, "Invite the number:" + item.childs)
                                     } else {
                                         holder.setText(R.id.t1Num, "节点量:" + item.childs)

@@ -88,11 +88,13 @@
             <TextView
                 android:id="@+id/pwd_state"
                 style="@style/textview"
+                android:textSize="16dp"
                 android:text="@string/Login_phoneType2" />
 
             <TextView
                 android:id="@+id/pwd_state1"
                 style="@style/textview"
+
                 android:textSize="15sp"
 
                 />

@@ -8,6 +8,7 @@ import com.example.administrator.mode.Interface.GitHubService
 import com.example.administrator.mode.Pojo.Common
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
+import com.example.administrator.mode.creatorprivatekey.ReadAgreementActivity
 import kotlinx.android.synthetic.main.activity_register_thirdly.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -56,13 +57,13 @@ class RegisterThirdlyActivity : BaseActivity() {
                     val nowtime = DateUtils.getdata()
                     val phoneinput = intent.extras.getString("user_phone")
                     val wcinout = intent.extras.getString("user_wc")
-                    val retrofit = Retrofit_manager.getInstance().getUserlogin()
-                    val register = retrofit.create(GitHubService::class.java!!).registerthree(phoneinput, user_RegpayPwds.text.toString().trim(), wcinout, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(nowtime))
+                    val retrofit = Retrofit_manager.getInstance().userlogin
+                    val register = retrofit.create(GitHubService::class.java).registerthree(phoneinput, user_RegpayPwds.text.toString().trim(), wcinout, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(nowtime))
                     register.enqueue(object : Callback<Common> {
                         override fun onResponse(call: Call<Common>, response: Response<Common>) {
                             try {
                                 if (response.body()!!.code == 1) {
-                                    startActivity(Intent(this@RegisterThirdlyActivity, LoginActivity::class.java))
+                                    startActivity(Intent(this@RegisterThirdlyActivity, ReadAgreementActivity::class.java))
                                     StatService.onEvent(this@RegisterThirdlyActivity, "RegisterView.RegisterSuccess", "[请填写事件标签名]", 1);
                                     finish()
                                 } else {
@@ -76,10 +77,9 @@ class RegisterThirdlyActivity : BaseActivity() {
                         override fun onFailure(call: Call<Common>, t: Throwable) {
                             if (t is DataResultException) {
                                 val attributes = HashMap<String, String>()
-                                attributes.put("UserName", phoneinput)
+                                attributes["UserName"] = phoneinput
                                 StatService.onEvent(this@RegisterThirdlyActivity, "RegisterView.SendVerifyCode", "[请填写事件标签名]", 1, attributes)
-                                val resultException = t
-                                Toast.makeText(this@RegisterThirdlyActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this@RegisterThirdlyActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                             }
                         }
                     })

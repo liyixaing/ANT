@@ -1,14 +1,20 @@
 package com.example.administrator.mode.Fragment.homeFragment;
 
 import android.content.Context;
-import android.os.Handler;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.administrator.mode.Activity.privatekeymanage.PrivateKeyManageActivity;
+import com.example.administrator.mode.Fragment.crowd.CrowdParticularsActivity;
+import com.example.administrator.mode.Fragment.red_packet.OrdinaryRedEnvelopesActivity;
+import com.example.administrator.mode.Fragment.red_packet.RredEnvelopeActivity;
 import com.example.administrator.mode.R;
 import com.example.administrator.mode.Utlis.BaseDialog;
 import com.example.administrator.mode.Utlis.ClickUtlis;
-import com.example.administrator.mode.Utlis.PayPwdEditText;
 
 public class PayDialog extends BaseDialog {
 
@@ -16,12 +22,64 @@ public class PayDialog extends BaseDialog {
     private AffirmDealActivity affirmDealActivity;
     private ConversionActivity conversionActivity;
     private CommodityDealActivity commodityDealActivity;
+    private OrdinaryRedEnvelopesActivity ordinaryRedEnvelopesActivity;
+    private RredEnvelopeActivity rredEnvelopeActivity;
+    PrivateKeyManageActivity privateKeyManageActivity;
+
+    public PrivateKeyManageActivity getPrivateKeyManageActivity() {
+        return privateKeyManageActivity;
+    }
+
+    public void setPrivateKeyManageActivity(PrivateKeyManageActivity privateKeyManageActivity, String tit) {
+        this.tit = tit;
+        this.privateKeyManageActivity = privateKeyManageActivity;
+    }
+
+    CrowdParticularsActivity crowdParticularsActivity;
+
+    public CrowdParticularsActivity getCrowdParticularsActivity() {
+        return crowdParticularsActivity;
+    }
+
+    public void setCrowdParticularsActivity(CrowdParticularsActivity crowdParticularsActivity, String tit) {
+        this.crowdParticularsActivity = crowdParticularsActivity;
+        this.tit = tit;
+    }
+
+    private String tit;
+
+    public RredEnvelopeActivity getRredEnvelopeActivity() {
+        return rredEnvelopeActivity;
+    }
+
+    public void setRredEnvelopeActivity(RredEnvelopeActivity rredEnvelopeActivity, String tit) {
+        this.rredEnvelopeActivity = rredEnvelopeActivity;
+        this.tit = tit;
+    }
+
+    public String getTit() {
+        return tit;
+    }
+
+    public void setTit(String tit) {
+        this.tit = tit;
+    }
+
+    public OrdinaryRedEnvelopesActivity getOrdinaryRedEnvelopesActivity() {
+        return ordinaryRedEnvelopesActivity;
+    }
+
+    public void setOrdinaryRedEnvelopesActivity(OrdinaryRedEnvelopesActivity ordinaryRedEnvelopesActivity, String tit) {
+        this.ordinaryRedEnvelopesActivity = ordinaryRedEnvelopesActivity;
+        this.tit = tit;
+    }
 
     public CommodityDealActivity getCommodityDealActivity() {
         return commodityDealActivity;
     }
 
-    public void setCommodityDealActivity(CommodityDealActivity commodityDealActivity) {
+    public void setCommodityDealActivity(CommodityDealActivity commodityDealActivity, String tit) {
+        this.tit = tit;
         this.commodityDealActivity = commodityDealActivity;
     }
 
@@ -30,20 +88,24 @@ public class PayDialog extends BaseDialog {
         return affirmDealActivity;
     }
 
-    public void setAffirmDealActivity(AffirmDealActivity affirmDealActivity) {
+    public void setAffirmDealActivity(AffirmDealActivity affirmDealActivity, String tit) {
+        this.tit = tit;
         this.affirmDealActivity = affirmDealActivity;
     }
-
 
     public ConversionActivity getConversionActivity() {
         return conversionActivity;
     }
 
-    public void setConversionActivity(ConversionActivity conversionActivity) {
+    public void setConversionActivity(ConversionActivity conversionActivity, String tit) {
+        this.tit = tit;
         this.conversionActivity = conversionActivity;
     }
 
-    private PayPwdEditText payPwdEditText;
+    private Button payPwdEditText;
+    ImageView imageView;
+
+    TextView payDialogTit;
 
     public PayDialog(Context context) {
         super(context);
@@ -54,49 +116,59 @@ public class PayDialog extends BaseDialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay_dialog);
-
-        TextView textView = (TextView) findViewById(R.id.didog_findpwd);
-        textView.setOnClickListener(new ClickUtlis() {
+        imageView = (ImageView) findViewById(R.id.payDialogClose);
+        imageView.setOnClickListener(new ClickUtlis() {
             @Override
             public void onMultiClick(View v) {
-                if (getAffirmDealActivity() != null) {
-                    getAffirmDealActivity().tiaozhuan();
-                }
-                if (getConversionActivity() != null) {
-                    getConversionActivity().tiaozhuan();
-                }
-                if (getCommodityDealActivity() != null) {
-                    getCommodityDealActivity().tiaozhuan();
-                }
-
-
-            }
-        });
-        payPwdEditText = findViewById(R.id.ppet);
-        payPwdEditText.initStyle(R.drawable.edit_num_bg_red, 6, 0.33f, R.color.essential, R.color.essential, 20);
-        payPwdEditText.setOnTextFinishListener(new PayPwdEditText.OnTextFinishListener() {
-            @Override
-            public void onFinish(String str) {//密码输入完后的回调
-
-                if (getAffirmDealActivity() != null) {
-                    getAffirmDealActivity().OnInputPayPasswrodSuccess(str);
-                }
-                if (getConversionActivity() != null) {
-                    getConversionActivity().OnInputPayPasswrodSuccess(str);
-                }
-                if (getCommodityDealActivity() != null) {
-                    getCommodityDealActivity().OnInputPayPasswrodSuccess(str);
-                }
-
-
                 dismiss();
             }
         });
-        new Handler().postDelayed(new Runnable() {
+        payDialogTit = findViewById(R.id.payDialogTit);
+        payDialogTit.setText(tit);
+        TextView textView = (TextView) findViewById(R.id.payPwdInput);
+        payPwdEditText = findViewById(R.id.paySuccess);
+        payPwdEditText.setOnClickListener(new ClickUtlis() {
             @Override
-            public void run() {
-                payPwdEditText.setFocus();
+            public void onMultiClick(View v) {
+                String str = textView.getText().toString().trim();
+                try {
+                    if (str.length() < 1) {
+                        return;
+                    }
+                    if (getAffirmDealActivity() != null) {
+                        getAffirmDealActivity().OnInputPayPasswrodSuccess(str);
+                    }
+                    if (getOrdinaryRedEnvelopesActivity() != null) {
+                        getOrdinaryRedEnvelopesActivity().OnInputPayPasswrodSuccess(str);
+                    }
+                    if (getConversionActivity() != null) {
+                        getConversionActivity().OnInputPayPasswrodSuccess(str);
+                    }
+
+                    if (getCommodityDealActivity() != null) {
+                        getCommodityDealActivity().OnInputPayPasswrodSuccess(str);
+                    }
+
+                    if (getRredEnvelopeActivity() != null) {
+                        getRredEnvelopeActivity().OnInputPayPasswrodSuccess(str);
+                    }
+                    if (getCrowdParticularsActivity() != null) {
+                        getCrowdParticularsActivity().OnInputPayPasswrodSuccess(str);
+
+                    }
+                    if (getPrivateKeyManageActivity() != null) {
+                        getPrivateKeyManageActivity().OnremoveSuccess(str + "," + tit);
+                    }
+
+
+                } catch (Exception e) {
+                    Log.i("dadas", e.toString());
+                } finally {
+                    dismiss();
+                }
+
             }
-        }, 100);
+        });
+
     }
 }

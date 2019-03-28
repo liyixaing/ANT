@@ -40,22 +40,23 @@ class PropertyDetailActivity : BaseActivity() {
                 finish()
             }
         })
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         tit_name.setText(R.string.Deal_tit)
         try {
 
-            if (intent.extras.getString("propertytype").equals("tong")) {
-                val nowtime=DateUtils.getdata()
-                val login = retrofit.create(MoneyService::class.java!!).getAntBananceLogDetailStm(id, token, intent.extras.getString("order"),"0",nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            if (intent.extras.getString("propertytype") == "tong") {
+                val nowtime = DateUtils.getdata()
+                val login = retrofit.create(MoneyService::class.java).getAntBananceLogDetailStm(id, token, intent.extras.getString("order"), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
                 login.enqueue(object : Callback<PropertyStm> {
                     override fun onResponse(call: Call<PropertyStm>, response: Response<PropertyStm>) {
                         try {
                             if (response.body()!!.code == 1) {
                                 dealNumber.text = response.body()!!.data.orderId.toString()
                                 dealType.text = response.body()!!.data.tradeTypeDesc
+
                                 dealTime.text = DateUtils.timeslashData(response.body()!!.data.createTime.toString())
                                 dealnameOut.text = response.body()!!.data.phone
                                 dealName.text = response.body()!!.data.username
@@ -64,7 +65,6 @@ class PropertyDetailActivity : BaseActivity() {
                                 } else {
                                     dealCarGet.text = "+" + String.format("%.8f", response.body()!!.data.ant)
                                 }
-
                                 if (String.format("%.8f", response.body()!!.data.score).indexOf("-") != -1) {
                                     dealPropertyOut.text = String.format("%.8f", response.body()!!.data.score)
                                 } else {
@@ -86,15 +86,19 @@ class PropertyDetailActivity : BaseActivity() {
                     }
                 })
             }
-            if (intent.extras.getString("propertytype").equals("property")) {
-                val nowtime=DateUtils.getdata()
-                val login = retrofit.create(MoneyService::class.java!!).getAntLogScoreDetailStm(id, token, intent.extras.getString("order"),"0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            if (intent.extras.getString("propertytype") == "property") {
+                val nowtime = DateUtils.getdata()
+                val login = retrofit.create(MoneyService::class.java).getAntLogScoreDetailStm(id, token, intent.extras.getString("order"), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
                 login.enqueue(object : Callback<PropertyStm> {
                     override fun onResponse(call: Call<PropertyStm>, response: Response<PropertyStm>) {
                         try {
                             if (response.body()!!.code == 1) {
                                 dealNumber.text = response.body()!!.data.orderId.toString()
                                 dealType.text = response.body()!!.data.tradeTypeDesc
+                                if (response.body()!!.data.tradeTypeDesc == "地域红包支付" || response.body()!!.data.tradeTypeDesc == "普通红包支付") {
+                                    dsada.text="支出账户"
+                                    dasd.text="支出方信息"
+                                }
                                 dealTime.text = DateUtils.timeslashData(response.body()!!.data.createTime.toString())
                                 dealnameOut.text = response.body()!!.data.phone
                                 dealName.text = response.body()!!.data.username
@@ -114,8 +118,7 @@ class PropertyDetailActivity : BaseActivity() {
 
                     override fun onFailure(call: Call<PropertyStm>, t: Throwable) {
                         if (t is DataResultException) {
-                            val resultException = t as DataResultException
-                            Toast.makeText(this@PropertyDetailActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@PropertyDetailActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 })

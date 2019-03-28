@@ -12,13 +12,13 @@
         style="@style/atextview"
         android:layout_marginLeft="@dimen/dp_16"
         android:layout_centerVertical="true"
-        android:text="王鸿志最帅" />
+        android:text="" />
 
     <TextView
         android:id="@+id/friend_phone"
         style="@style/atextview"
         android:layout_centerInParent="true"
-        android:text="1535974664" />
+        android:text="" />
 
     <TextView
         android:id="@+id/friend_card"
@@ -26,5 +26,5 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/dp_30"
-        android:text="1535974664" />
+        android:text="" />
 </RelativeLayout>

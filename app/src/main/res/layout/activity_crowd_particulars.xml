@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/afragment"
-    tools:context="com.example.administrator.mode.Fragment.homeFragment.CrowdParticularsActivity">
+    tools:context="com.example.administrator.mode.Fragment.crowd.CrowdParticularsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,21 +17,22 @@
         <TextView
             style="@style/xx"
             android:layout_margin="8dp"
-            android:text="ANT蚂蚁通证"
+            android:text="@string/ANTCard"
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/crowdName"
             style="@style/eqwe"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:lineSpacingExtra="4dp"
-            android:singleLine="false"
-            android:text="ANT token采用持有ANT token即享分红权益模式，商家将部分收益按照持有ANT数量比例分发给ANT持有者，持有ANT越多，享受权益越高。" />
+            android:singleLine="false" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_margin="8dp" />
+            android:layout_height="141dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/crowd_iag" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,12 +53,12 @@
                 android:visibility="visible" />
 
             <TextView
+                android:id="@+id/crawdSchedule"
                 style="@style/qqq"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:gravity="bottom"
-                android:text="60.00%"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -65,42 +66,67 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginRight="8dp">
 
-         <TextView style="@style/qqq"
-             android:text="总量（ANT）"
-             android:textSize="10sp"/>
-            <TextView style="@style/qqq"
-                android:text="已参与（ANT）"
+            <TextView
+                style="@style/qqq"
+                android:text="@string/TotalAmountANT"
+                android:textSize="10sp" />
+
+            <TextView
+                style="@style/qqq"
                 android:layout_centerHorizontal="true"
-                android:textSize="10sp"/>
-            <TextView style="@style/qqq"
-                android:text="剩余天数"
+                android:text="@string/HasBeenInvolved"
+                android:textSize="10sp" />
+
+            <TextView
+                style="@style/qqq"
                 android:layout_alignParentRight="true"
-                android:textSize="10sp"/>
+                android:text="@string/remainingDays"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/crowdAmount"
+                style="@style/qqq"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/crowdParticipation"
+                style="@style/qqq"
+                android:layout_centerHorizontal="true"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/crowdLastDay"
+                style="@style/qqq"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp" />
         </RelativeLayout>
 
         <TextView
             style="@style/xx"
             android:layout_margin="8dp"
-            android:text="项目介绍"
+            android:text="@string/projectIntroduction"
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/crowdDesc"
             style="@style/eqwe"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:lineSpacingExtra="4dp"
-            android:singleLine="false"
-            android:text="ANT token即蚂蚁通证，立足于服务实体经济、为传统行业赋能，利用通证将商户和用户连接在一起，形成一个商业大联盟，告别单打独斗，孤军奋战的时代。ANT致力于创建一个安全、高效、透明的通证经济应用系统，让商户和用户形成一个利益共同体，最终实现商户产品不愁卖，用户购买产品有折扣还能享受商户权益的互惠互利，共享共赢模式。
-
-ANT token社区是一个公开透明的、Token化的组织，ANT token代表ANT token商业联盟的合法权益。ANT token采用持有ANT token即享分红权益模式，商家将部分收益按照持有ANT token数量比例分发给ANT token持有者，持有ANT token越多，享受权益越高。另外，每个ANT token持有者都有权利参与社区的业务决策、团队选举等社区活动。ANT token是一个所有ANT token持有者和联盟商户共有、共治、共享的社区型组织。" />
+            android:singleLine="false" />
 
         <TextView
             style="@style/xx"
             android:layout_margin="8dp"
-            android:text="白皮书"
+            android:text="@string/whitePaper"
             android:textSize="16sp" />
 
         <TextView
@@ -116,23 +142,27 @@ ANT token社区是一个公开透明的、Token化的组织，ANT token代表ANT
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginTop="8dp"
-            android:background="@color/appbackground"
+            android:background="#cdcdcd"
             android:orientation="horizontal">
 
             <TextView
                 style="@style/qqq"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="8dp"
-                android:text="请输入购买数量"
+                android:text="@string/PleaseenterThePurchaseQuantity"
                 android:textSize="15sp" />
 
             <EditText
-                style="@style/xx"
+                android:id="@+id/buyInput"
+                style="@style/edittext"
                 android:layout_width="48dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center_vertical"
+                android:background="@drawable/text_crowd"
+                android:gravity="center"
+                android:inputType="phone"
                 android:padding="2dp"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <TextView
                 style="@style/qqq"
@@ -142,12 +172,13 @@ ANT token社区是一个公开透明的、Token化的组织，ANT token代表ANT
                 android:textSize="15sp" />
 
             <Button
+                android:id="@+id/crawdSuccess"
                 android:layout_width="112dp"
                 android:layout_height="32dp"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="8dp"
                 android:background="@color/essential"
-                android:text="立即购买"
+                android:text="@string/buyThisNow"
                 android:textColor="@color/grayf2" />
         </LinearLayout>
     </LinearLayout>

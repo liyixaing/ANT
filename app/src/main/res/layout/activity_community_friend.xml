@@ -12,9 +12,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="218px"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30px"
-        android:background="@color/afragment">
+        android:background="@color/essential">
 
         <ImageView
             android:id="@+id/head"
@@ -27,6 +27,7 @@
         <TextView
             android:id="@+id/community_name"
             style="@style/atextview"
+            android:textColor="@color/afragment"
             android:layout_marginLeft="27px"
             android:layout_marginTop="17px"
             android:layout_toRightOf="@+id/head"
@@ -38,6 +39,7 @@
             style="@style/atextview"
             android:layout_below="@+id/community_name"
             android:layout_marginLeft="27px"
+            android:textColor="@color/afragment"
             android:layout_marginTop="5px"
             android:layout_toRightOf="@+id/head"
             android:text="电话号码" />
@@ -47,6 +49,7 @@
             style="@style/atextview"
             android:layout_below="@+id/community_phone"
             android:layout_marginLeft="27px"
+            android:textColor="@color/afragment"
             android:layout_marginTop="5px"
             android:layout_toRightOf="@+id/head"
             android:text="0" />

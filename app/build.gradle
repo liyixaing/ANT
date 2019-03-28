@@ -8,10 +8,10 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.xms.ant"
-        minSdkVersion 15
+        minSdkVersion 22
         targetSdkVersion 22
         versionCode 1
-        versionName "1.1.0"
+        versionName "2.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     allprojects {
@@ -27,6 +27,10 @@ android {
         // Or, if you prefer, you can continue to check for errors in release builds,
         // but continue the build even when errors are found:
         abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
@@ -50,15 +54,16 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0-rc02'
     implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.1'
+    implementation 'com.eightbitlab:rxbus:1.0.2'
     implementation 'com.android.support:design:28.0.0-rc02'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     implementation 'com.android.support:multidex:1.0.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //图片加载
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.bumptech.glide:glide:4.2.0'
     /*    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-                                        implementation 'io.reactivex.rxjava2:rxjava:2.1.7'*/
+                                                    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'*/
     implementation 'com.alibaba:fastjson:1.2.49'
     //随机布局
     /*  implementation 'com.wkp:RandomLayout:1.0.3'*/
@@ -69,8 +74,6 @@ dependencies {
     implementation 'com.bigkoo:convenientbanner:2.0.5'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation project(':IDCar')
-    implementation project(':Flicking')
     implementation 'org.greenrobot:eventbus:3.0.0'
     //省市区三级联动
     /* implementation 'com.airsaid.library:pickerview:1.0.3'*/
@@ -79,4 +82,17 @@ dependencies {
     implementation 'com.baidu.mobstat:mtj-sdk:latest.integration'
     implementation 'com.google.zxing:core:3.3.0'
     implementation files('libs/BaiduLBS_Android.jar')
+    implementation 'com.contrarywind:Android-PickerView:4.1.7'
+    implementation 'org.web3j:core:4.1.0-android'
+    implementation 'org.web3j:geth:4.1.0-android'
+    implementation 'org.web3j:abi:4.1.0-android'
+    implementation 'org.web3j:crypto:4.1.0-android'
+    implementation 'org.web3j:utils:4.1.0-android'
+    implementation 'org.web3j:rlp:4.1.0-android'
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+    implementation "com.bigkoo:alertview:$alert_view_version"
+    implementation 'com.github.shenyuanqing.zxing:zxing-simplify:1.0.5'
+    implementation files('libs/nim-basesdk-6.1.2.jar')
+    implementation files('libs/nim-chatroom-6.1.2.jar')
+    implementation files('libs/nim-push-6.1.2.jar')
 }

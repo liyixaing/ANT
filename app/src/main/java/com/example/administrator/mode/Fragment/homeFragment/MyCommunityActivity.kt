@@ -34,24 +34,24 @@ class MyCommunityActivity : BaseActivity() {
     }
 
     fun loadcommun() {
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime=DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).getearning(id, token, num.toString(), siz.toString(), "0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            val login = retrofit.create(MoneyService::class.java).getearning(id, token, num.toString(), siz.toString(), "0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
             login.enqueue(object : Callback<Earningtrun> {
                 override fun onResponse(call: Call<Earningtrun>, response: Response<Earningtrun>) {
                     try {
                         if (response.body()!!.code == 1) {
                             list = response.body()!!.data as ArrayList<Earningtrun.DataBean>
-                            lv_friend.setAdapter(object : FenAdater<Earningtrun.DataBean>(this@MyCommunityActivity, list, R.layout.communitylayout) {
+                            lv_friend.adapter = object : FenAdater<Earningtrun.DataBean>(this@MyCommunityActivity, list, R.layout.communitylayout) {
                                 override fun convert(holder: ViewHolder?, item: Earningtrun.DataBean?) {
                                     holder!!.setText(R.id.community_date, DateUtils.timeslash(item!!.changeTime))
-                                    holder!!.setText(R.id.community_card, "+" + String.format("%.8f", item!!.nodeEarnings!!.toDouble()))
+                                    holder.setText(R.id.community_card, "+" + String.format("%.8f", item.nodeEarnings!!.toDouble()))
                                 }
-                            })
+                            }
                         } else {
 
                             Toast.makeText(this@MyCommunityActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
@@ -76,7 +76,7 @@ class MyCommunityActivity : BaseActivity() {
     override fun init() {
         super.init()
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        myinvite.setText(sp.getString("user_id", ""))
+        myinvite.text = sp.getString("user_id", "")
         /*       val aa = "ID:8875567"
                val base = byteArrayOf(aa.toByte())
                val xxx = Base32Core.encode(base)

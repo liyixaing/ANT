@@ -41,11 +41,6 @@ class ServiceActivity : BaseActivity() {
             }
         })
 
-        mallService.setOnClickListener(object : ClickUtlis() {
-            override fun onMultiClick(v: View?) {
-                VerifyUtlis.copy(this@ServiceActivity, "gxganhh")
-            }
-        })
         oneSaveImage.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 save()
@@ -53,7 +48,7 @@ class ServiceActivity : BaseActivity() {
         })
         twoService.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                VerifyUtlis.copy(this@ServiceActivity, "1251817922")
+                VerifyUtlis.copy(this@ServiceActivity, "gxganhh")
             }
         })
         twoSaveImage.setOnClickListener(object : ClickUtlis() {
@@ -62,18 +57,7 @@ class ServiceActivity : BaseActivity() {
             }
         })
 
-        threeSaveImage.setOnClickListener(object : ClickUtlis() {
-            override fun onMultiClick(v: View?) {
-                save2()
-            }
-        })
-    }
 
-    private fun save2() {
-        mallImageViewInput.isDrawingCacheEnabled = true
-        val obmp = Bitmap.createBitmap(mallImageViewInput.drawingCache)
-        mallImageViewInput.isDrawingCacheEnabled = false
-        saveImageToGallery(this@ServiceActivity, obmp!!)
     }
 
     fun save() {
@@ -118,7 +102,7 @@ class ServiceActivity : BaseActivity() {
 
         val path = file.absolutePath
         try {
-            MediaStore.Images.Media.insertImage(context.getContentResolver(), path, fileName, null)
+            MediaStore.Images.Media.insertImage(context.contentResolver, path, fileName, null)
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         }

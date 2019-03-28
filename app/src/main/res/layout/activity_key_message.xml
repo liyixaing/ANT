@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/afragment"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.mode.Activity.drawer.KeyMessageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/tit" />
+
+        <ImageView
+            android:layout_width="192dp"
+            android:layout_height="192dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/cautious" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/Carefuloperation"
+            android:textSize="24dp"
+            android:textColor="@color/tuichu" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/afragment"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:drawableLeft="@mipmap/explain"
+                android:drawablePadding="2dp"
+                android:gravity="center"
+                android:text="@string/eqweqw"
+                android:textColor="@color/aa"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:lineSpacingExtra="8dp"
+                android:text="@string/eqweqdczxcw"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/zxczrfd"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="right|bottom"
+                android:layout_weight="1"
+                android:background="@color/essential"
+                android:text="@string/consent"
+                android:textColor="@color/grayf2" />
+
+            <Button
+                android:id="@+id/xzceeqw"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="right|bottom"
+                android:layout_weight="1"
+                android:background="@color/tuichu"
+                android:text="@string/reject"
+                android:textColor="@color/grayf2" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

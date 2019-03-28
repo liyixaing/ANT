@@ -6,8 +6,8 @@
         <item name="android:textSize">13sp</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/editText</item>
+        <item name="colorPrimaryDark">@color/editText</item>
         <item name="colorAccent">@color/essential</item>
         <!--  <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>-->
     </style>
@@ -21,10 +21,15 @@
         <item name="android:windowExitAnimation">@anim/dialog_scale_anim_out</item>
     </style>
     <!--相机-->
-    <style name="divider">
+      <style name="divider">
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">#d8d8d8</item>
+    </style>
+    <style name="daczx">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
     <style name="atextview">
@@ -38,6 +43,12 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">@color/afragmenttext</item>
         <item name="android:textSize">13sp</item>
+    </style>
+    <style name="textview14">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/afragmenttext</item>
+        <item name="android:textSize">14sp</item>
     </style>
     <style name="eqwe">
         <item name="android:layout_height">wrap_content</item>
@@ -59,6 +70,14 @@
         <item name="android:textColor">@color/essential</item>
         <item name="android:textSize">@dimen/dp_18</item>
     </style>
+    <style name="textview11sp">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/essential</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
     <style name="xx">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
@@ -66,29 +85,51 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="edittext12">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/editText</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColorHint">@color/editText</item>
+    </style>
     <style name="edittext">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textColor">@color/grayf2</item>
-        <item name="android:textSize">@dimen/dp_18</item>
+        <item name="android:textColor">@color/editText</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:background">@null</item>
         <item name="android:singleLine">true</item>
         <item name="android:gravity">right</item>
-        <item name="android:textColorHint">@color/afragmenttext</item>
+        <item name="android:textColorHint">@color/editText</item>
     </style>
 
     <style name="textview1">
         <item name="android:layout_height">24dp</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">@color/aa</item>
         <item name="android:textSize">@dimen/dp_18</item>
     </style>
 
     <style name="textview2">
         <item name="android:layout_height">24dp</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">@color/colorhome</item>
         <item name="android:textSize">33px</item>
+    </style>
+
+    <style name="textview14sp">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/editText11</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="textview12sp">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/editText</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="StyleDialog" parent="@android:style/Theme.Dialog">
@@ -135,10 +176,26 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="MyEditText" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/afragment</item>
+        <item name="colorAccent">@color/editText11</item>
         <!-- AppCompatEditText默认状态状态设置底线颜色 -->
         <!-- <item name="colorControlNormal">@color/afragment</item>-->
         <!-- AppCompatEditText选择的底线颜色 -->
         <!--<item name="colorControlActivated">@color/afragment</item>-->
+    </style>
+
+    <style name="myCheckBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@drawable/checkbox_true_textcolor</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="theme">@style/My_CheckBox11</item>
+    </style>
+    <style name="myCheckBox1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@drawable/checkbox_true_textcolor</item>
+        <item name="android:textSize">12sp</item>
+        <item name="theme">@style/My_CheckBox11</item>
     </style>
 </resources>

@@ -36,7 +36,7 @@ public class RedPacketActivity extends BaseDialog {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_red_packet);
         redPackent = (TextView) findViewById(R.id.openRedPacket);
-        if (redPackent.getText().toString().equals("Open")){
+        if (redPackent.getText().toString().equals("Open")) {
             redPackent.setTextSize(18);
         }
         redinput = (RelativeLayout) findViewById(R.id.red);
@@ -54,6 +54,7 @@ public class RedPacketActivity extends BaseDialog {
                         public void onAnimationStart(Animation animation) {
                             num = 0;
                         }
+
                         @Override
                         public void onAnimationEnd(Animation animation) {
                             dismiss();

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/red_background"
+    tools:context="com.example.administrator.mode.Fragment.red_packet.RedPacketGetActivity">
+
+    <RelativeLayout
+        android:id="@+id/tit_red"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageView
+
+            android:id="@+id/tit_iv11"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:paddingLeft="16dp"
+            android:src="@mipmap/red_gohome" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/RedEnvelopeKoi"
+            android:textColor="#be0016"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tit_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/RedEnvelopePreferenceRecord"
+            android:textColor="#be0016"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#be0016" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tit_red"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2">
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="199dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/board_033e5757">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="12sp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/GoodLuck"
+                    android:textColor="#dbdb9d"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="12sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:text="@string/greatfortune"
+                    android:textColor="#dbdb9d"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/avatar" />
+
+        <ImageView
+            android:id="@+id/red_head"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/head_red" />
+
+        <ImageView
+            android:id="@+id/whirl"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="24dp"
+            android:src="@drawable/shirk_40476406" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/a_wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tit_red"
+        android:layout_centerHorizontal="true"
+        android:text="@string/RedEnvelopeShark"
+        android:textColor="#dbdb9d"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <TextView
+        android:id="@+id/antred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/RedEnvelopeRedEnvelope1"
+        android:textColor="#dbdb9d"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22" />
+
+    <ImageView
+        android:id="@+id/ant_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_below="@+id/antred"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ant_phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41" />
+
+
+
+
+    <TextView
+        android:id="@+id/cashingPrize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ant_phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="今日领取了0个锦鲤红包"
+        android:textColor="#dbdb9d"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:layout_width="294dp"
+        android:layout_height="192dp"
+        android:layout_below="@+id/cashingPrize"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/image_00000_a0f1dbc4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/redRule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cashingPrize"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/ANTEnvelopeFunctionInput"
+        android:textColor="#dbdb9d"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99">
+
+        <Button
+            android:id="@+id/ordinaryRed"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_butt"
+            android:text="@string/RedEnvelopeSendRedBag"
+            android:textColor="#ce2b24"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/regionRed"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginLeft="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_butt"
+            android:text="@string/RedEnvelopeSendArea"
+            android:textColor="#ce2b24"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dasd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/sdadazx"
+        android:visibility="gone" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/xzczeew"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/gsdgsg"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/getCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#fc575a"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39"
+            android:text="123132"/>
+
+        <TextView
+            android:id="@+id/getLeave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="#f4c067"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+
+        <TextView
+            android:id="@+id/getProperty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="72dp"
+            android:text="@string/RedEnvelopeProperty"
+            android:textColor="#fc575a"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.36" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

@@ -48,53 +48,48 @@ class PropertyActivity : BaseActivity() {
 
     override fun onStart() {
         super.onStart()
-
         StatService.onPageStart(this@PropertyActivity, "MainModule.HomeView.TokenDetailView")
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
     }
 
     fun loadpr() {
-        property_con.paint.flags = Paint.UNDERLINE_TEXT_FLAG
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
         val token = sp.getString("user_token", "")
         val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).paroper(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java).paroper(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<prturn> {
                 override fun onResponse(call: Call<prturn>, response: Response<prturn>) {
                     try {
                         if (response.body()!!.code == 1) {
-                            property_mon.setText(String.format("%.8f", response.body()!!.data!!.user_ant!!.toDouble()))
-                            property_ton.setText(String.format("%.8f", response.body()!!.data!!.user_score!!.toDouble()))
+                            property_mon.text = String.format("%.8f", response.body()!!.data!!.user_ant!!.toDouble())
+                            property_ton.text = String.format("%.8f", response.body()!!.data!!.user_score!!.toDouble())
                         } else {
                             Toast.makeText(this@PropertyActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                         }
                     } catch (e: Exception) {
                     }
                 }
-
                 override fun onFailure(call: Call<prturn>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@PropertyActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PropertyActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
-
         } catch (e: Exception) {
         }
     }
 
     private fun propertyload(num: Int) {
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).getban(id, token, num.toString(), bannum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java).getban(id, token, num.toString(), bannum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<Bantrun> {
                 override fun onResponse(call: Call<Bantrun>, response: Response<Bantrun>) {
                     if (response.body()!!.code == 1) {
@@ -105,11 +100,9 @@ class PropertyActivity : BaseActivity() {
                         Toast.makeText(this@PropertyActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                     }
                 }
-
                 override fun onFailure(call: Call<Bantrun>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@PropertyActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PropertyActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -119,13 +112,13 @@ class PropertyActivity : BaseActivity() {
     }
 
     private fun cardload(num1: Int) {
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).getproperty(id, token, num1.toString(), prnum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java).getproperty(id, token, num1.toString(), prnum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<prpertyturn> {
                 override fun onResponse(call: Call<prpertyturn>, response: Response<prpertyturn>) {
                     try {
@@ -140,14 +133,12 @@ class PropertyActivity : BaseActivity() {
                         abnormal(this@PropertyActivity)
                     }
                 }
-
                 override fun onFailure(call: Call<prpertyturn>, t: Throwable) {
                     if (t is DataResultException) {
                         Toast.makeText(this@PropertyActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
-
         } catch (e: Exception) {
             abnormal(this@PropertyActivity)
         }
@@ -208,70 +199,64 @@ class PropertyActivity : BaseActivity() {
                 startActivity(Intent(this@PropertyActivity, CodeActivity::class.java))
             }
         })
-        card_lv.setONLoadMoreListener(object : LoadMoreListView.OnLoadMoreListener {
-            override fun onloadMore() {
-                val task = object : TimerTask() {
-                    @SuppressLint("ResourceType")
-                    override fun run() {
-                        runOnUiThread {
-                            if (recLen1 == 0) {
-                                num1++
-                                cardload(num1)
-                                card_lv.setLoadCompleted()
-                            }
-                            recLen1--
+        card_lv.setONLoadMoreListener {
+            val task = object : TimerTask() {
+                @SuppressLint("ResourceType")
+                override fun run() {
+                    runOnUiThread {
+                        if (recLen1 == 0) {
+                            num1++
+                            cardload(num1)
+                            card_lv.setLoadCompleted()
                         }
+                        recLen1--
                     }
                 }
-                timer1.schedule(task, 1000, 1000)
-                recLen1 = 2
             }
-
-        })
-        property_lv.setONLoadMoreListener(object : LoadMoreListView.OnLoadMoreListener {
-            override fun onloadMore() {
-                val task = object : TimerTask() {
-                    @SuppressLint("ResourceType")
-                    override fun run() {
-                        runOnUiThread {
-                            if (recLen == 0) {
-                                num++
-                                propertyload(num)
-                                property_lv.setLoadCompleted()
-                            }
-                            recLen--
+            timer1.schedule(task, 1000, 1000)
+            recLen1 = 2
+        }
+        property_lv.setONLoadMoreListener {
+            val task = object : TimerTask() {
+                @SuppressLint("ResourceType")
+                override fun run() {
+                    runOnUiThread {
+                        if (recLen == 0) {
+                            num++
+                            propertyload(num)
+                            property_lv.setLoadCompleted()
                         }
+                        recLen--
                     }
                 }
-                timer.schedule(task, 1000, 1000)
-                recLen = 2
             }
-
-        })
-        property_lv.onItemClickListener = AdapterView.OnItemClickListener { p0, p1, p2, p3 ->
-            if (list1Input.get(p2).changeType == 1 || list1Input.get(p2).changeType == 2) {
-                orderper(list1Input.get(p2).id, "tong")
+            timer.schedule(task, 1000, 1000)
+            recLen = 2
+        }
+        property_lv.onItemClickListener = AdapterView.OnItemClickListener { _, _, p2, _ ->
+            if (list1Input[p2].changeType == 1 || list1Input[p2].changeType == 2) {
+                orderper(list1Input[p2].id, "tong")
             } else {
-                orderLoadstm(list1Input.get(p2).id, "tong")
+                orderLoadstm(list1Input[p2].id, "tong")
             }
         }
-        card_lv.onItemClickListener = AdapterView.OnItemClickListener { p0, p1, p2, p3 ->
-            if (listInput.get(p2).changeType == 1 || listInput.get(p2).changeType == 2) {
-                orderper(listInput.get(p2).id, "property")
+        card_lv.onItemClickListener = AdapterView.OnItemClickListener { _, _, p2, _ ->
+            if (listInput[p2].changeType == 1 || listInput[p2].changeType == 2) {
+                orderper(listInput[p2].id, "property")
             } else {
-                orderLoadstm(listInput.get(p2).id, "property")
+                orderLoadstm(listInput[p2].id, "property")
             }
         }
     }
 
     fun tong1() {
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).getban(id, token, "1", bannum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java).getban(id, token, "1", bannum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<Bantrun> {
                 override fun onResponse(call: Call<Bantrun>, response: Response<Bantrun>) {
                     if (response.body()!!.code == 1) {
@@ -280,29 +265,22 @@ class PropertyActivity : BaseActivity() {
                         baseadaptr = object : FenAdater<Bantrun.DataBean>(this@PropertyActivity, list1Input, R.layout.propertylayout) {
                             override fun convert(holder: ViewHolder?, item: Bantrun.DataBean?) {
                                 holder!!.setText(R.id.property_type, item!!.changeDesc)
-                                holder!!.setText(R.id.property_date, DateUtils.timeslash(item!!.changeTime.toString()))
-                                if (item!!.changeAmount.toString().indexOf("-") != -1) {
-                                    holder!!.setText(R.id.property_card, String.format("%.2f", item!!.changeAmount))
+                                holder.setText(R.id.property_date, DateUtils.timeslash(item.changeTime.toString()))
+                                if (item.changeAmount.toString().indexOf("-") != -1) {
+                                    holder.setText(R.id.property_card, String.format("%.2f", item.changeAmount))
                                 } else {
-                                    holder!!.setText(R.id.property_card, "+" + String.format("%.2f", item!!.changeAmount))
+                                    holder.setText(R.id.property_card, "+" + String.format("%.2f", item.changeAmount))
                                 }
                             }
                         }
                         property_lv.adapter = baseadaptr
-
                     } else {
-
                         Toast.makeText(this@PropertyActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                     }
-
-
                 }
-
                 override fun onFailure(call: Call<Bantrun>, t: Throwable) {
-                    Log.i("whzzzzzz", t.toString())
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@PropertyActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PropertyActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -313,13 +291,13 @@ class PropertyActivity : BaseActivity() {
     }
 
     fun zichanload() {
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).getproperty(id, token, "1", prnum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java).getproperty(id, token, "1", prnum.toString(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<prpertyturn> {
                 override fun onResponse(call: Call<prpertyturn>, response: Response<prpertyturn>) {
                     try {
@@ -329,11 +307,11 @@ class PropertyActivity : BaseActivity() {
                             baseadaptr = object : FenAdater<prpertyturn.DataBean>(this@PropertyActivity, listInput, R.layout.propertylayout) {
                                 override fun convert(holder: ViewHolder?, item: prpertyturn.DataBean?) {
                                     holder!!.setText(R.id.property_type, item!!.changeDesc)
-                                    holder!!.setText(R.id.property_date, DateUtils.timeslash(item!!.changeTime.toString()))
-                                    if (item!!.changeAmount.toString().indexOf("-") != -1) {
-                                        holder!!.setText(R.id.property_card, String.format("%.2f", item!!.changeAmount))
+                                    holder.setText(R.id.property_date, DateUtils.timeslash(item.changeTime.toString()))
+                                    if (item.changeAmount.toString().indexOf("-") != -1) {
+                                        holder.setText(R.id.property_card, String.format("%.2f", item.changeAmount))
                                     } else {
-                                        holder!!.setText(R.id.property_card, "+" + String.format("%.2f", item!!.changeAmount))
+                                        holder.setText(R.id.property_card, "+" + String.format("%.2f", item.changeAmount))
                                     }
                                 }
                             }
@@ -348,8 +326,7 @@ class PropertyActivity : BaseActivity() {
 
                 override fun onFailure(call: Call<prpertyturn>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@PropertyActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PropertyActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -368,7 +345,6 @@ class PropertyActivity : BaseActivity() {
         StatService.onPageEnd(this@PropertyActivity, "MainModule.HomeView.TokenDetailView")
         finish()
     }
-
 
     fun orderper(order: Int, type: String) {
         val intent = Intent(this@PropertyActivity, PersonToPersonDetailActivity::class.java)

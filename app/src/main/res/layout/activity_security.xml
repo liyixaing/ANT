@@ -103,7 +103,7 @@
             <RelativeLayout
                 android:id="@+id/security_pwdup"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_10"
                 android:background="@color/afragment"
                 android:clickable="true">
@@ -135,7 +135,7 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:id="@+id/security_payup"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:background="@color/afragment"
                 android:clickable="true">
                 <TextView
@@ -162,7 +162,7 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:id="@+id/security_phoneup"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:background="@color/afragment"
                 android:clickable="true">
                 <TextView
@@ -190,7 +190,7 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:id="@+id/security_findpay"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:background="@color/afragment"
                 android:clickable="true">
                 <TextView
@@ -217,7 +217,7 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:id="@+id/security_youxiang"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="50px"
                 android:background="@color/afragment"
                 android:clickable="true">

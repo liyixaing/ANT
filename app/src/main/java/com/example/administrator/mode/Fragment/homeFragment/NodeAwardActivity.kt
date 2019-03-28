@@ -42,11 +42,11 @@ class NodeAwardActivity : BaseActivity() {
     override fun init() {
         super.init()
         StatService.onPageStart(this,"MainModule.HomeView.NodeListView.NodeDetailView")
-        if (PreferencesUtil.get("language", "").equals("ch")) {
+        if (PreferencesUtil.get("language", "") == "ch") {
             zichan1="资产"
             tongzheng="通证"
 
-        } else if (PreferencesUtil.get("language", "").equals("en")) {
+        } else if (PreferencesUtil.get("language", "") == "en") {
             zichan1="asset"
             tongzheng="token"
         }

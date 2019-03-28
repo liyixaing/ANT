@@ -12,31 +12,33 @@
 
     <TextView
         style="@style/xx"
-        android:textSize="18sp"
         android:layout_marginLeft="28px"
         android:layout_marginTop="35px"
-        android:text="@string/Property_property" />
+        android:text="@string/Property_property"
+        android:textSize="18sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="123dp"
-        android:layout_marginTop="34px"
-        android:background="@color/afragment">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/essential">
 
         <TextView
             android:id="@+id/tv_prmo"
             style="@style/atextview"
             android:layout_marginLeft="27px"
-            android:layout_marginTop="@dimen/dp_10"
-            android:text="@string/Property_usableMoney" />
+            android:layout_marginTop="5dp"
+            android:text="@string/Property_usableMoney"
+            android:textColor="@color/afragment" />
 
         <TextView
             android:id="@+id/property_mon"
             style="@style/atextview"
             android:layout_below="@+id/tv_prmo"
             android:layout_marginLeft="27px"
-            android:layout_marginTop="20px"
+            android:layout_marginTop="5dp"
             android:text="000.000"
+            android:textColor="@color/afragment"
             android:textSize="17sp" />
 
         <TextView
@@ -44,27 +46,37 @@
             style="@style/atextview"
             android:layout_below="@+id/property_mon"
             android:layout_marginLeft="27px"
-            android:layout_marginTop="12dp"
-            android:text="@string/Home_tong1" />
+            android:layout_marginTop="8dp"
+            android:text="@string/Home_tong1"
+            android:textColor="@color/afragment" />
 
         <TextView
             android:id="@+id/property_ton"
             style="@style/atextview"
             android:layout_below="@+id/tv_prto"
             android:layout_marginLeft="27px"
-            android:layout_marginTop="20px"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="000.000"
+            android:textColor="@color/afragment"
             android:textSize="17sp" />
 
         <TextView
             android:id="@+id/property_con"
             style="@style/textview"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="50px"
-            android:layout_marginTop="43px"
+            android:text="@string/Property_conversion"
+            android:textColor="@color/afragment" />
 
-            android:text="@string/Property_conversion" />
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="6dp"
+            android:src="@mipmap/private_key" />
     </RelativeLayout>
 
     <RelativeLayout

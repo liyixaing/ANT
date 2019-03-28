@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.mode.Fragment.red_packet.RredEnvelopeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/tit_red"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/tit_iven"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_centerVertical="true"
+                android:paddingLeft="16dp"
+                android:src="@mipmap/red_gohome" />
+
+            <TextView
+                android:id="@+id/tit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/RedEnvelopeSendRedBag2"
+                android:textColor="#be0016"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#be0016" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@mipmap/redtextbac">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:layout_weight="1"
+                android:text="@string/RedEnvelopeType" />
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="24dp"
+                android:text="@string/RedEnvelopeArea" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:background="@mipmap/redtextbac">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:text="@string/RedEnvelopeMoney" />
+
+            <EditText
+                android:id="@+id/territoryRedBag"
+                style="@style/edittext12"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:hint="@string/RedEnvelopeInput" />
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="24dp"
+                android:text="@string/RedEnvelopeProperty" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:background="@mipmap/redtextbac">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:text="@string/RedEnvelopeNuber" />
+
+            <EditText
+                android:id="@+id/redEnvelopSize"
+                style="@style/edittext12"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:hint="@string/RedEnvelopeNumber" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:background="@mipmap/redtextbac">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:text="@string/RedEnvelopeSendType" />
+
+            <CheckBox
+                android:id="@+id/isImmobilization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/RedEnvelopeImmobilization"
+                android:textColor="@color/colorhome"
+                android:textSize="12sp"
+                android:theme="@style/My_CheckBox" />
+
+            <CheckBox
+                android:id="@+id/isRandom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/RedEnvelopeEandom"
+                android:textColor="@color/colorhome"
+                android:textSize="12sp"
+                android:theme="@style/My_CheckBox" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/getRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:background="@mipmap/redtextbac"
+            android:clickable="true">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:text="@string/RedEnvelopePreferenceSelect" />
+
+            <TextView
+                android:id="@+id/inputRegion"
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="24dp"
+                android:src="@mipmap/redxiala" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="24dp"
+            android:background="@mipmap/redtextbac">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:text="@string/RedEnvelopeLeave" />
+
+            <EditText
+                android:id="@+id/redEnvelopMessage"
+                style="@style/edittext12"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="32dp"
+                android:layout_weight="1"
+                android:hint="@string/RedEnvelopeMessage" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/territoryRedBagInput"
+            style="@style/textview14"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="00.00"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/sendTerritory"
+            android:layout_width="177dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@mipmap/red_but_bac"
+            android:text="@string/RedEnvelopeSend"
+            android:textColor="@color/grayf2"
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

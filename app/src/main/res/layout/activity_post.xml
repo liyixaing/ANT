@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorhome"
+    android:background="@color/appbackground"
     tools:context=".Fragment.homeFragment.PosActivity">
     <include layout="@layout/tit" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_margin="@dimen/dp_10"
-        android:background="@color/afragment"
+        android:background="@drawable/home_view_fillet"
         android:orientation="vertical">
 
         <LinearLayout
@@ -34,12 +34,14 @@
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="0.00"
+                    android:textColor="@color/afragment"
                     android:textSize="20sp" />
 
                 <TextView
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Home_balance"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -62,12 +64,14 @@
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="0.00"
+                    android:textColor="@color/afragment"
                     android:textSize="20sp" />
 
                 <TextView
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Home_tong1"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -98,12 +102,14 @@
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="0.00"
+                    android:textColor="@color/afragment"
                     android:textSize="20sp" />
 
                 <TextView
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/pos_yesterday"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -125,12 +131,14 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
+                    android:textColor="@color/afragment"
                     android:text="0.00"
                     android:textSize="20sp" />
                 <TextView
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/pos_up"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
@@ -192,7 +200,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/appbackground" />
+            android:background="#1d2d35" />
         <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
             android:id="@+id/posList"
             android:layout_marginRight="15dp"

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.mode.creatorprivatekey.AnswerIssueActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/tit" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/agreement_error" />
+
+            <TextView
+                style="@style/textview14"
+                android:layout_gravity="center"
+                android:text="@string/AnswerIssueHint"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appbackground"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_margin="8dp"
+                android:text="@string/AnswerIssue1" />
+
+            <CheckBox
+                android:id="@+id/success1"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssueAnsuer1" />
+
+            <CheckBox
+                android:id="@+id/error1"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssueAnsuer2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appbackground"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_margin="8dp"
+                android:text="@string/AnswerIssue2" />
+
+            <CheckBox
+                android:id="@+id/success2"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue2Ansuer1" />
+
+            <CheckBox
+                android:id="@+id/error2"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue2Ansuer2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appbackground"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_margin="8dp"
+                android:text="@string/AnswerIssue3" />
+
+            <CheckBox
+                android:id="@+id/error3"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue3Ansuer1" />
+
+            <CheckBox
+                android:id="@+id/success3"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue3Ansuer2" />
+
+            <CheckBox
+                android:id="@+id/error4"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue3Ansuer3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appbackground"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_margin="8dp"
+                android:text="@string/AnswerIssue4" />
+
+            <CheckBox
+                android:id="@+id/success4"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue4Ansuer1" />
+
+            <CheckBox
+                android:id="@+id/error5"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue4Ansuer2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appbackground"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textview14"
+                android:layout_margin="8dp"
+                android:text="@string/AnswerIssue5" />
+
+            <CheckBox
+                android:id="@+id/error6"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssueAnsuer1" />
+
+            <CheckBox
+                android:id="@+id/success5"
+                style="@style/myCheckBox"
+                android:text="@string/AnswerIssue5Ansuer2" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/AgreementNext"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="56dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/butt"
+            android:text="@string/AnswerIssueSubmit"
+            android:textColor="#ffff"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</ScrollView>

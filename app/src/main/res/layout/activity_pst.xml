@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorhome"
+    android:background="@color/appbackground"
     android:orientation="vertical"
     tools:context=".Fragment.homeFragment.DpostActivity">
 
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_margin="@dimen/dp_10"
-        android:background="@color/afragment"
+        android:background="@drawable/home_view_fillet"
         android:orientation="vertical">
 
         <LinearLayout
@@ -35,12 +35,14 @@
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="xxx"
+                    android:textColor="@color/afragment"
                     android:textSize="20sp" />
 
                 <TextView
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Dpos_yesterday"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
 
 
@@ -63,6 +65,7 @@
                     style="@style/textview"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
+                    android:textColor="@color/afragment"
                     android:gravity="center"
                     android:text="xxx"
                     android:textSize="20sp" />
@@ -71,6 +74,7 @@
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Dpos_yesterday1"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -101,6 +105,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
+                    android:textColor="@color/afragment"
                     android:text="xxx"
                     android:textSize="20sp" />
 
@@ -108,6 +113,7 @@
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Dpos_up"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -127,6 +133,7 @@
                 <TextView
                     android:id="@+id/dpostproperty"
                     style="@style/textview"
+                    android:textColor="@color/afragment"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
@@ -137,6 +144,7 @@
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Dpos_yesterday2"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -210,7 +218,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/appbackground" />
+            android:background="#1d2d35" />
 
         <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
             android:id="@+id/dposList"

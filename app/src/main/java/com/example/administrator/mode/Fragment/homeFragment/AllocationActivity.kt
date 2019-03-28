@@ -6,10 +6,10 @@ import android.view.KeyEvent
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
-import android.widget.TextView
 import android.widget.Toast
 import com.baidu.mobstat.StatService
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions.bitmapTransform
 import com.example.administrator.mode.Activity.BaseActivity
 import com.example.administrator.mode.Activity.DataResultException
 import com.example.administrator.mode.Interface.GitHubService
@@ -38,18 +38,16 @@ class AllocationActivity : BaseActivity() {
             }
         })
         tit_name.setText(R.string.namenode)
-        node.setFocusable(true);
-        node.setFocusableInTouchMode(true);
-        node.requestFocus();
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-        node.setOnEditorActionListener(object : TextView.OnEditorActionListener {
-            override fun onEditorAction(p0: TextView?, p1: Int, p2: KeyEvent?): Boolean {
-                if (p1 == EditorInfo.IME_ACTION_DONE) {
-                    hideSoftInput()
-                }
-                return false;
+        node.isFocusable = true
+        node.isFocusableInTouchMode = true
+        node.requestFocus()
+        this.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+        node.setOnEditorActionListener { _, p1, _ ->
+            if (p1 == EditorInfo.IME_ACTION_DONE) {
+                hideSoftInput()
             }
-        })
+            false
+        }
         confirmTheAllocation.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 confirm()
@@ -72,12 +70,12 @@ class AllocationActivity : BaseActivity() {
     override fun onStart() {
         super.onStart()
         from = intent.extras.getString("allocation")
-        if (from.equals("manual")) {
+        if (from == "manual") {
         } else {
-            this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+            this.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
             node.setText(intent.extras.getString("allocation"))
             getBack.visibility = View.VISIBLE
-            node.setFocusable(false)
+            node.isFocusable = false
             uLin.visibility = View.VISIBLE
             sNodeMessage.visibility = View.VISIBLE
             confirmTheAllocation.visibility = View.GONE
@@ -87,14 +85,13 @@ class AllocationActivity : BaseActivity() {
         }
     }
 
-
     fun confirm() {
         try {
             val nowtime= DateUtils.getdata()
             val uIdInput = intent.extras.getString("uid")
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-            val retrofit = Retrofit_manager.getInstance().getUserlogin()
-            val getNodeMessage = retrofit.create(GitHubService::class.java!!).antIntroduce(sp.getString("user_id", ""), sp.getString("user_token", ""), uIdInput, node.text.toString().trim(),"0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            val retrofit = Retrofit_manager.getInstance().userlogin
+            val getNodeMessage = retrofit.create(GitHubService::class.java).antIntroduce(sp.getString("user_id", ""), sp.getString("user_token", ""), uIdInput, node.text.toString().trim(),"0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
             getNodeMessage.enqueue(object : Callback<Common> {
                 override fun onResponse(call: Call<Common>, response: Response<Common>) {
                     if (response.body()!!.code == 1) {
@@ -107,8 +104,7 @@ class AllocationActivity : BaseActivity() {
 
                 override fun onFailure(call: Call<Common>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@AllocationActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@AllocationActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -125,17 +121,17 @@ class AllocationActivity : BaseActivity() {
         try {
             val nowtime=DateUtils.getdata()
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-            val retrofit = Retrofit_manager.getInstance().getUserlogin()
-            val getNodeMessage = retrofit.create(MoneyService::class.java!!).getNodeMessage(sp.getString("user_id", ""), sp.getString("user_token", ""), node.text.toString().trim(),"0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+            val retrofit = Retrofit_manager.getInstance().userlogin
+            val getNodeMessage = retrofit.create(MoneyService::class.java).getNodeMessage(sp.getString("user_id", ""), sp.getString("user_token", ""), node.text.toString().trim(),"0",nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
             getNodeMessage.enqueue(object : Callback<GetNodeMessage> {
                 override fun onResponse(call: Call<GetNodeMessage>, response: Response<GetNodeMessage>) {
                     if (response.body()!!.code == 1) {
                         StatService.onEvent(this@AllocationActivity, "DetailView.SearchNode", "xms", 1)
-                        uName.setText(response.body()!!.data.username)
-                        uPhone.setText(response.body()!!.data.phone)
-                        uId.setText(response.body()!!.data.insertPointId.toString())
+                        uName.text = getString(R.string.nameOf)+response.body()!!.data.username
+                        uPhone.text = getString(R.string.phoneOf)+response.body()!!.data.phone
+                        uId.text = "ID:"+response.body()!!.data.insertPointId.toString()
                         if (response.body()!!.data.avatar != null) {
-                            Glide.with(this@AllocationActivity).load(response.body()!!.data.avatar).centerCrop().transform(GlideCircleTransform(this@AllocationActivity)).into(uhead)
+                            Glide.with(this@AllocationActivity).load(response.body()!!.data.avatar).apply(bitmapTransform( GlideCircleTransform(this@AllocationActivity))).into(uhead)
                         }
                         uLin.visibility = View.VISIBLE
                         sNodeMessage.visibility = View.VISIBLE
@@ -146,8 +142,7 @@ class AllocationActivity : BaseActivity() {
 
                 override fun onFailure(call: Call<GetNodeMessage>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(this@AllocationActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@AllocationActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                         /*  Toast.makeText(this@LoginActivity, R.string.Login_error, Toast.LENGTH_SHORT).show()*/
                     }
                 }

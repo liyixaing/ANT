@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,13 +29,16 @@ import android.widget.Toast;
 import com.example.administrator.mode.R;
 import com.example.administrator.mode.Utlis.Event;
 import com.example.administrator.mode.Utlis.PreferencesUtil;
+import com.example.administrator.mode.Utlis.SharedPreferencesUtil;
+import com.example.administrator.mode.Pojo.KeyAddressBean;
+import com.example.administrator.mode.app.MyApplication;
+import com.example.administrator.mode.creatorprivatekey.NewLoginActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 public abstract class BaseActivity extends FragmentActivity {
@@ -43,10 +47,8 @@ public abstract class BaseActivity extends FragmentActivity {
     private FragmentManager mFragmentManager;
     private Fragment showFragment;
     protected Context mContext;
-
     public static Boolean isFristCreated = false;
     private ProgressDialog waitDialog;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,25 +56,37 @@ public abstract class BaseActivity extends FragmentActivity {
         EventBus.getDefault().register(this);
         showLanguage(PreferencesUtil.get("language", "zh"));
         mContext = this;
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
-        }
-
-
         setContentView(getContentViewId());
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         mFragmentManager = getSupportFragmentManager();
         init();
         loadDatas();
     }
 
+    /*
+
+        @Override
+        public  Resources getResources(){
+            Resources res = super.getResources();
+            Configuration config=new Configuration();
+            config.setToDefaults();
+            res.updateConfiguration(config,res.getDisplayMetrics() );
+            return res;
+        }
+    */
+    @Override
+    public Resources getResources() {//还原字体大小
+        Resources res = super.getResources();
+        Configuration configuration = res.getConfiguration();
+        if (configuration.fontScale != 1.0f) {
+            configuration.fontScale = 1.0f;
+            res.updateConfiguration(configuration, res.getDisplayMetrics());
+        }
+        return res;
+    }
+
     protected void showLanguage(String language) {
+
         //设置应用语言类型
         Resources resources = getResources();
         Configuration config = resources.getConfiguration();
@@ -80,8 +94,8 @@ public abstract class BaseActivity extends FragmentActivity {
         if (language.equals("zh")) {
             PreferencesUtil.put("home", "首页");
             PreferencesUtil.put("wallet", "钱包");
-            PreferencesUtil.put("deal", "交易");
-            PreferencesUtil.put("mall", "商城");
+            PreferencesUtil.put("deal", "社区");
+            PreferencesUtil.put("mall", "我的");
             PreferencesUtil.put("quantity", "节点量:");
             PreferencesUtil.put("invite111", "邀请码:");
             PreferencesUtil.put("hint", "提示:");
@@ -98,8 +112,8 @@ public abstract class BaseActivity extends FragmentActivity {
         } else {
             PreferencesUtil.put("home", "Home");
             PreferencesUtil.put("wallet", "Wallet");
-            PreferencesUtil.put("deal", "Trades");
-            PreferencesUtil.put("mall", "Mall");
+            PreferencesUtil.put("deal", "Chat");
+            PreferencesUtil.put("mall", "Me");
             PreferencesUtil.put("quantity", "Node quantity:");
             PreferencesUtil.put("invite111", "Invitation code:");
             PreferencesUtil.put("hint", "hint:");
@@ -135,9 +149,29 @@ public abstract class BaseActivity extends FragmentActivity {
         SharedPreferences sp = getSharedPreferences("USER", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         edit.putBoolean("first", false);
-        startActivity(new Intent(context, LoginActivity.class));
+        int siz = SharedPreferencesUtil.getHashMapData("keyAddress", KeyAddressBean.class).size();
+        if (siz > 0) {
+            startActivity(new Intent(context, NewLoginActivity.class));
+            finish();
+        } else {
+            startActivity(new Intent(context, LoginActivity.class));
+            finish();
+        }
+
     }
 
+    public void abnormal22(Context context) {
+        MyApplication.keyAddressBeans = new KeyAddressBean();
+        int siz = SharedPreferencesUtil.getHashMapData("keyAddress", KeyAddressBean.class).size();
+        if (siz > 0) {
+            startActivity(new Intent(context, NewLoginActivity.class));
+            finish();
+        } else {
+            startActivity(new Intent(context, LoginActivity.class));
+            finish();
+        }
+
+    }
 
     /**
      * 加载数据的方法
@@ -146,14 +180,12 @@ public abstract class BaseActivity extends FragmentActivity {
 
     }
 
-
     protected void openActivity(Class<?> cls) {
         hideSoftKeyboard();
         Intent i = new Intent(mContext, cls);
         startActivity(i);
         overridePendingTransition(0, 0);
     }
-
 
     protected void openActivity(Class<?> cls, int type) {
         hideSoftKeyboard();
@@ -335,12 +367,5 @@ public abstract class BaseActivity extends FragmentActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }*/
-    }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("===", "类名===" + this.getClass().getName());
     }
 }

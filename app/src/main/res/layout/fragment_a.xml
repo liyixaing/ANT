@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/appbackground"
+    android:background="#dadada"
     android:orientation="vertical"
     tools:context=".Fragment.A_Fragment">
 
@@ -27,15 +27,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <include layout="@layout/home_tit" />
-
                     <LinearLayout
                         android:id="@+id/tit"
                         android:layout_width="match_parent"
                         android:layout_height="118dp"
-                        android:layout_marginLeft="30px"
-                        android:layout_marginRight="30px"
-                        android:background="@color/afragment"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/home_view_fillet"
                         android:orientation="vertical">
                         <!--
                                                 <RelativeLayout
@@ -56,14 +55,15 @@
                                                         android:layout_centerVertical="true"
                                                         android:layout_marginLeft="@dimen/dp_30"
                                                         android:text="@string/Home_announcement" />
-                                                </RelativeLayout>-->
+                                                </RelativeLayout>
+                        -->
+
                         <RelativeLayout
                             android:id="@+id/relative_aircraft"
                             android:layout_width="match_parent"
                             android:layout_height="118dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginBottom="15dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:orientation="horizontal">
 
 
@@ -73,8 +73,7 @@
                                       android:layout_height="40dp"
                                       android:layout_alignParentRight="true"
                                       android:layout_centerVertical="true"
-                                      android:src="@mipmap/huojianjiashu" />
-      -->
+                                      android:src="@mipmap/huojianjiashu" />-->
                             <TextView
                                 android:id="@+id/sao"
                                 style="@style/atextview"
@@ -82,6 +81,7 @@
                                 android:drawableTop="@mipmap/saoyisao"
                                 android:gravity="center"
                                 android:text="@string/Home_sao"
+                                android:textColor="@color/afragment"
                                 android:textSize="13sp" />
 
 
@@ -93,6 +93,7 @@
                                 android:drawableTop="@mipmap/erweima"
                                 android:gravity="center"
                                 android:text="@string/Home_shou"
+                                android:textColor="@color/afragment"
                                 android:textSize="13sp" />
 
                             <TextView
@@ -100,39 +101,44 @@
                                 style="@style/atextview"
                                 android:layout_alignParentRight="true"
                                 android:layout_centerVertical="true"
+                                android:layout_marginRight="6dp"
                                 android:drawableTop="@mipmap/huojianjiashu"
                                 android:gravity="center"
                                 android:text="@string/Home_jia"
+                                android:textColor="@color/afragment"
                                 android:textSize="13sp" />
 
                             <ImageView
-                                android:id="@+id/read"
-                                android:layout_width="32px"
-                                android:layout_height="32px"
-                                android:layout_alignTop="@+id/jiashu"
+                                android:id="@+id/redDo"
+                                android:layout_width="@dimen/dp_16"
+                                android:layout_height="@dimen/dp_16"
                                 android:layout_alignParentRight="true"
-                                android:src="@mipmap/red" />
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/red_dot"
+                                android:visibility="gone" />
                         </RelativeLayout>
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="2px"
-                        android:layout_marginLeft="30px"
-                        android:layout_marginRight="30px"
-                        android:background="@color/colorhome" />
+                    <!--  <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:layout_marginLeft="30px"
+                          android:layout_marginRight="30px"
+                          android:background="@color/colorhome" />-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="30px"
-                        android:layout_marginRight="30px"
-                        android:background="@color/afragment">
+                        android:layout_height="84dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/home_view">
 
                         <LinearLayout
                             android:id="@+id/home_balance"
-                            android:layout_width="0dp"
-                            android:layout_height="80dp"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
                             android:clickable="true"
                             android:orientation="vertical">
@@ -140,7 +146,6 @@
                             <TextView
                                 style="@style/atextview"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="@dimen/dp_5"
                                 android:text="@string/Property_yue"
                                 android:textSize="17sp" />
 
@@ -148,26 +153,25 @@
                                 android:id="@+id/ant"
                                 style="@style/textview"
                                 android:layout_gravity="center"
-                                android:text="0.0000"
                                 android:textSize="24sp" />
 
                             <TextView
                                 style="@style/vitextview"
                                 android:layout_gravity="center"
-                                android:layout_marginBottom="@dimen/dp_5"
                                 android:text="@string/Property_detail"
                                 android:textSize="@dimen/sp_12" />
                         </LinearLayout>
 
                         <TextView
-                            android:layout_width="2px"
+                            android:layout_width="1px"
                             android:layout_height="100dp"
-                            android:background="@color/colorhome" />
+                            android:background="#dadada" />
 
                         <LinearLayout
                             android:id="@+id/conversion"
-                            android:layout_width="0dp"
-                            android:layout_height="80dp"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
                             android:clickable="true"
                             android:orientation="vertical">
@@ -175,7 +179,6 @@
                             <TextView
                                 style="@style/atextview"
                                 android:layout_gravity="center"
-                                android:layout_marginTop="@dimen/dp_5"
                                 android:layout_weight="1"
                                 android:text="@string/Property_card"
                                 android:textSize="17sp" />
@@ -185,13 +188,11 @@
                                 style="@style/textview"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:text="0.0000"
                                 android:textSize="24sp" />
 
                             <TextView
                                 style="@style/vitextview"
                                 android:layout_gravity="center"
-                                android:layout_marginBottom="@dimen/dp_5"
                                 android:layout_weight="1"
                                 android:text="@string/Property_conversionproperty"
                                 android:textSize="@dimen/sp_12" />
@@ -203,18 +204,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="108dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginLeft="30px"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginTop="@dimen/dp_5"
-                        android:layout_marginRight="30px" />
+                        android:layout_marginRight="8dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="240dp"
-                        android:layout_marginLeft="30px"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginRight="30px"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/afragment"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/home_view"
                         android:orientation="vertical">
 
                         <TextView
@@ -225,9 +225,9 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
+                            android:layout_height="1px"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:background="@color/colorhome" />
+                            android:background="#dadada" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -248,9 +248,9 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/relative_comm"
@@ -264,9 +264,9 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/T2"
@@ -282,8 +282,8 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
-                            android:background="@color/colorhome" />
+                            android:layout_height="1px"
+                            android:background="#dadada" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -303,9 +303,9 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/zhi"
@@ -320,9 +320,9 @@
 
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/relative_comm1"
@@ -341,11 +341,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="360dp"
-                        android:layout_marginLeft="30px"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="30px"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/afragment"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/home_view"
                         android:orientation="vertical">
 
                         <TextView
@@ -356,16 +353,16 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
+                            android:layout_height="1px"
                             android:layout_marginTop="@dimen/dp_5"
-                            android:background="@color/colorhome" />
+                            android:background="#dadada" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-
                             android:orientation="horizontal">
+
 
                             <TextView
                                 android:id="@+id/home_card"
@@ -379,9 +376,9 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/refuel"
@@ -395,9 +392,9 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/contract"
@@ -413,8 +410,8 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
-                            android:background="@color/colorhome" />
+                            android:layout_height="1px"
+                            android:background="#dadada" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -434,9 +431,9 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/taking"
@@ -446,14 +443,15 @@
                                 android:layout_weight="1"
                                 android:drawableTop="@mipmap/live5"
                                 android:gravity="center"
+
+                                android:drawablePadding="5dp"
                                 android:text="@string/Home_taking"
                                 android:textSize="13sp" />
 
-
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/game"
@@ -461,7 +459,7 @@
                                 android:layout_width="52dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:drawableTop="@mipmap/live6"
+                                android:drawableTop="@mipmap/exchangefor"
                                 android:gravity="center"
                                 android:text="@string/Home_game"
                                 android:textSize="13sp" />
@@ -469,8 +467,8 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="2px"
-                            android:background="@color/colorhome" />
+                            android:layout_height="1px"
+                            android:background="#dadada" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -491,9 +489,9 @@
                                 android:textSize="13sp" />
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/information"
@@ -508,9 +506,9 @@
 
 
                             <TextView
-                                android:layout_width="2px"
+                                android:layout_width="1px"
                                 android:layout_height="match_parent"
-                                android:background="@color/colorhome" />
+                                android:background="#dadada" />
 
                             <TextView
                                 android:id="@+id/more1"

@@ -79,7 +79,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="32dp"
                 android:layout_marginTop="48dp"
-                android:textColor="@color/essential"
+                android:textColor="@color/afragment"
                 android:text="@string/Code_save"
                 android:background="@mipmap/but4"
                 android:layout_marginRight="32dp" />

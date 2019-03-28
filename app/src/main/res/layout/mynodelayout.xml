@@ -10,6 +10,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_marginTop="@dimen/dp_10"
         android:text="@string/Home_t2"
+        android:textColor="@color/aa"
         android:textSize="14sp" />
 
     <RelativeLayout
@@ -19,7 +20,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_marginRight="@dimen/dp_10"
         android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/afragment">
+        android:background="@drawable/home_view_fillet">
 
         <ImageView
             android:id="@+id/t1Hade"
@@ -38,7 +39,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="ANT token"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="10sp" />
 
         <TextView
@@ -50,7 +51,7 @@
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="ID:100000"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="10sp" />
 
         <TextView
@@ -58,11 +59,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/t1Userid"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="13dp"
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="188****8888"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="10sp" />
 
         <TextView
@@ -70,7 +71,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="21dp"
             android:layout_toRightOf="@+id/t1Hade"
-            android:background="@color/appbackground" />
+            android:background="@color/colorhome" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,7 +80,7 @@
             android:layout_marginRight="4dp"
             android:layout_marginTop="@dimen/dp_16"
             android:text="@string/MyNode_award"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="13sp" />
 
         <TextView
@@ -90,7 +91,7 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/t1Hade"
             android:text="@string/cardliang"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="13sp" />
 
         <TextView
@@ -102,7 +103,7 @@
             android:layout_marginTop="27dp"
             android:layout_toRightOf="@+id/t1Hade"
             android:text="0.0000"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="13sp" />
 
         <TextView
@@ -113,7 +114,7 @@
             android:layout_alignTop="@+id/t1Card"
             android:layout_marginRight="40dp"
             android:text="节点量：0"
-            android:textColor="@color/aa" />
+            android:textColor="@color/afragment" />
 
         <TextView
             android:layout_width="230dp"
@@ -122,7 +123,7 @@
             android:layout_below="@+id/t1Card"
             android:layout_marginRight="13dp"
             android:layout_marginTop="21dp"
-            android:background="@color/appbackground" />
+            android:background="@color/colorhome" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -131,7 +132,7 @@
             android:layout_below="@+id/t1Card"
             android:layout_marginTop="29dp"
             android:text="@string/tuijianren"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="13sp" />
 
         <TextView
@@ -142,7 +143,7 @@
             android:layout_below="@+id/t1Card"
             android:layout_marginTop="46dp"
             android:text="00000"
-            android:textColor="@color/aa"
+            android:textColor="@color/afragment"
             android:textSize="13sp" />
 
         <ImageView
@@ -152,7 +153,6 @@
             android:layout_alignLeft="@+id/t1Num"
             android:layout_alignTop="@+id/t1Recommend"
             android:src="@mipmap/shouji" />
-
         <TextView
             android:id="@+id/t1RecommendPhone"
             android:layout_width="wrap_content"
@@ -160,7 +160,8 @@
             android:layout_alignTop="@+id/t1Recommend"
             android:layout_toRightOf="@+id/bb"
             android:text="188****8888"
-            android:textColor="@color/aa"
+            android:paddingLeft="4dp"
+            android:textColor="@color/afragment"
             android:textSize="13sp" />
     </RelativeLayout>
 </LinearLayout>

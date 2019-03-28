@@ -40,30 +40,17 @@ class MerchantQrCodeActivity : BaseActivity() {
         val cc = intent.extras.getString("cc")
         val dd = intent.extras.getString("dd")
         val ee = intent.extras.getString("ee")
-        when {
-            intent.extras.getString("aaaaaa") == "hei" -> {
-                savaPhone11.setBackgroundDrawable(resources.getDrawable(R.drawable.lmageview_frame))
-                ewqe.setTextColor(Color.parseColor("#1d2d35"))
-                czxcz.setBackgroundDrawable(resources.getDrawable(R.drawable.fas))
-                fadfasd.setBackgroundColor(Color.parseColor("#2f3e45"))
-                xczxcz.setTextColor(Color.parseColor("#1d2d35"))
-                phoneMall.setTextColor(Color.parseColor("#1d2d35"))
-                phone11Mall.setTextColor(Color.parseColor("#1d2d35"))
-                phoneMall.text = aa
-                ewqe.text = bb
-                fsaz.text = String.format("%.2f", cc.toDouble())
-                phone11Mall.text = dd
-                vxzcvz.text = "      $ee"
-            }
-            intent.extras.getString("aaaaaa") == "cai" -> {
-                phoneMall.text = aa
-                ewqe.text = bb
-                fsaz.text = String.format("%.2f", cc.toDouble())
-                phone11Mall.text = dd
-                vxzcvz.text = "      $ee"
-            }
-            else -> finish()
-        }
+        savaPhone11.setBackgroundDrawable(resources.getDrawable(R.drawable.lmageview_frame))
+        ewqe.setTextColor(Color.parseColor("#1d2d35"))
+        xczxcz.setTextColor(Color.parseColor("#1d2d35"))
+        phoneMall.setTextColor(Color.parseColor("#1d2d35"))
+        phone11Mall.setTextColor(Color.parseColor("#1d2d35"))
+        phoneMall.text = aa
+        ewqe.text = bb
+        fsaz.text = String.format("%.2f", cc.toDouble())
+        phone11Mall.text = dd
+        vxzcvz.text = "      $ee"
+
         /*      val bitmap = generateBitmap("$aa,$cc", mallCode)   */
         val logoBitmap = BitmapFactory.decodeResource(resources, R.mipmap.ewewe)
         val bitmap = VerifyUtlis.createQRCodeBitmap("$aa,$cc", 800, 800, "UTF-8", "H", "1", Color.BLACK, Color.WHITE, logoBitmap, 0.2F)
@@ -154,16 +141,15 @@ class MerchantQrCodeActivity : BaseActivity() {
             e.printStackTrace()
         }
 
-        val path = file.getAbsolutePath()
+        val path = file.absolutePath
         try {
-            MediaStore.Images.Media.insertImage(context.getContentResolver(), path, fileName, null)
+            MediaStore.Images.Media.insertImage(context.contentResolver, path, fileName, null)
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         }
-
         val intent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
         val uri = Uri.fromFile(file)
-        intent.setData(uri)
+        intent.data = uri
         context.sendBroadcast(intent)
         Toast.makeText(this, R.string.Code_ok, Toast.LENGTH_SHORT).show()
         finish()

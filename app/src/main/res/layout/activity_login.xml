@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -28,6 +29,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.045" />
+
     <ImageView
         android:layout_width="94dp"
         android:layout_height="125dp"
@@ -37,90 +39,42 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <TextView
-        android:id="@+id/login"
-        style="@style/textview"
-        android:text="@string/Login_button"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
-
-    <View
-        android:layout_width="45dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="@dimen/dp_5"
-        android:background="@color/essential"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
-
-    <TextView
-        android:id="@+id/loginregister"
-        style="@style/textview1"
-        android:text="@string/Login_register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:textSize="17sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
-
-    <TextView
-        android:id="@+id/findpwd"
-        style="@style/textview1"
-        android:text="@string/Login_forGetpwd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        android:textSize="17sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="232dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="#FAFAFA"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75">
+        app:layout_constraintVertical_bias="0.65">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp">
+            android:layout_margin="8dp">
 
             <TextView
                 android:id="@+id/loginconstate"
                 style="@style/textview"
-                android:textSize="15sp"
-                android:text="@string/Login_phoneType2" />
+                android:text="@string/Login_phoneType2"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/login_state2"
                 style="@style/textview"
-                android:textSize="15sp"
                 android:text="86"
-                />
+                android:textSize="15sp" />
 
             <ImageView
-                android:layout_width="26px"
-                android:layout_height="42px"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/dp_5"
                 android:src="@mipmap/sanjiao" />
@@ -130,76 +84,116 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal">
 
-            <TextView
-                style="@style/textview"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:text="@string/Login_phone" />
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="27dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/loginphone" />
 
             <EditText
                 android:id="@+id/user_name"
                 style="@style/edittext"
+                android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@null"
-                android:textSize="15sp"
+                android:gravity="center"
                 android:hint="@string/Phoneup_phone"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/essential" />
+            android:background="@color/editText" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_30"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="5dp"
             android:orientation="horizontal">
 
-            <TextView
-                style="@style/textview"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:text="@string/Login_pwd" />
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="27dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/loginpas" />
 
             <EditText
                 android:id="@+id/user_pwd"
                 style="@style/edittext"
+                android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@null"
-                android:textSize="15sp"
+                android:gravity="center"
                 android:hint="@string/Phoneup_loginpwd"
-                android:inputType="textPassword" />
-
+                android:inputType="textPassword"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/essential" />
+            android:background="@color/editText" />
 
+        <TextView
+            android:id="@+id/findpwd"
+            style="@style/edittext"
+            android:layout_gravity="right"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/Login_forGetpwd" />
 
         <Button
             android:id="@+id/logininput"
-            android:layout_width="984px"
+            android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="40dp"
             android:background="@drawable/butt"
             android:text="@string/Login_button"
-            android:layout_gravity="center_horizontal"
             android:textColor="#ffff"
             android:textSize="15sp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95">
+
+        <TextView
+            android:id="@+id/loginregister"
+            style="@style/textview14"
+            android:layout_weight="1"
+            android:text="@string/Login_register" />
+
+        <TextView
+            android:id="@+id/privatelyKey"
+            style="@style/xx"
+            android:text="@string/ThePrivatekeyToLogIn" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:layout_gravity="center"
+            android:src="@drawable/new_login_turn" />
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

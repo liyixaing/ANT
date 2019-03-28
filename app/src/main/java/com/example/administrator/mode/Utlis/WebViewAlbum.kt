@@ -16,7 +16,8 @@ class WebViewAlbum constructor(activity:Activity) : WebChromeClient() {
 
     override fun onJsAlert(view: WebView?, url: String?, message: String?, result: JsResult?): Boolean {
         Toast.makeText(mActivity,message,Toast.LENGTH_SHORT).show()
-        return super.onJsAlert(view, url, message, result)
+        result!!.confirm()
+        return true
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

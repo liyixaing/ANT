@@ -32,7 +32,7 @@
                 android:layout_marginTop="20dp"
                 android:src="@mipmap/frame"
                 android:visibility="gone" />
-             <!--android:background="@drawable/headbg"-->
+            <!--android:background="@drawable/headbg"-->
         </RelativeLayout>
 
 
@@ -66,26 +66,24 @@
             android:layout_alignTop="@+id/iv_setusername"
             android:layout_marginLeft="3dp"
             android:layout_toRightOf="@+id/et_user_name"
-            android:src="@mipmap/isvip"
-            android:visibility="gone"
             android:background="@drawable/but3"
-            />
+            android:src="@mipmap/isvip"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/isMerchant"
             style="@style/xx"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_alignTop="@+id/iv_setusername"
             android:layout_marginLeft="3dp"
             android:layout_toRightOf="@+id/isVip"
-            android:drawableLeft="@mipmap/store"
-            android:text="aaa"
-            android:visibility="gone"
             android:background="@drawable/but3"
+            android:drawableLeft="@mipmap/store"
+            android:gravity="center"
+            android:text="aaa"
             android:textSize="10sp"
-            />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/user_phone"
@@ -163,9 +161,9 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
+                    android:layout_height="2px"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/grayf2" />
+                    android:background="@color/editText" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -212,9 +210,9 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
+                    android:layout_height="2px"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/grayf2" />
+                    android:background="@color/editText" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -254,7 +252,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="30px"
-                android:background="@color/afragment"></LinearLayout>
+                android:background="@color/afragment" />
 
             <RelativeLayout
                 android:id="@+id/re_xiaoxi"
@@ -289,9 +287,9 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
+                    android:layout_height="2px"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/grayf2" />
+                    android:background="@color/editText" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -307,7 +305,7 @@
                     android:layout_height="20dp"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="27px"
-                    android:src="@mipmap/banbenjiance" />
+                    android:src="@mipmap/iv_banben" />
 
                 <TextView
                     android:id="@+id/tv_banben"
@@ -338,9 +336,9 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
+                    android:layout_height="2px"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/grayf2" />
+                    android:background="@color/editText" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -379,7 +377,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="32px"
-                android:background="@color/afragment"></LinearLayout>
+                android:background="@color/afragment" />
 
             <RelativeLayout
                 android:id="@+id/re_shezhi"
@@ -420,9 +418,11 @@
 
                 <Button
                     android:id="@+id/bu_tuichu"
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="113px"
                     android:layout_centerInParent="true"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginRight="48dp"
                     android:background="@color/tuichu"
                     android:text="@string/Home_tuichu"
                     android:textColor="@color/grayf2"
@@ -434,6 +434,7 @@
                     android:layout_below="@+id/bu_tuichu"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="10dp"
+                    android:text="Versions-2.0.2"
                     android:textColor="@color/colorhome" />
             </RelativeLayout>
         </LinearLayout>

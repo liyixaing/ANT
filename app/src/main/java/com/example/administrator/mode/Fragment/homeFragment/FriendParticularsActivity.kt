@@ -1,5 +1,6 @@
 package com.example.administrator.mode.Fragment.homeFragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.KeyEvent
@@ -7,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.baidu.mobstat.StatService
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions.bitmapTransform
 import com.example.administrator.mode.Activity.BaseActivity
 import com.example.administrator.mode.Activity.DataResultException
 import com.example.administrator.mode.Interface.MoneyService
@@ -53,12 +55,15 @@ class FriendParticularsActivity : BaseActivity() {
     var xxaa = ""
     var aaxx = ""
     fun confirm() {
-        if (PreferencesUtil.get("language", "").equals("zh")) {
+        if (PreferencesUtil.get("language", "") == "zh") {
             xxaa = "推荐人:"
             aaxx = "接点人:"
-        } else if (PreferencesUtil.get("language", "").equals("en")) {
+        } else if (PreferencesUtil.get("language", "") == "en") {
             xxaa = "Referrer:"
             aaxx = "Contact person:"
+        }else{
+            xxaa = "推荐人:"
+            aaxx = "接点人:"
         }
         val uNode = intent.extras.getString("uNode")
         val uIdInput = intent.extras.getString("uIdInput")
@@ -66,20 +71,21 @@ class FriendParticularsActivity : BaseActivity() {
         val nowtime = DateUtils.getdata()
         val uName = intent.extras.getString("uName")
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
-        val getNodeMessage = retrofit.create(MoneyService::class.java!!).getNodeMessage(sp.getString("user_id", ""), sp.getString("user_token", ""), uNode, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+        val retrofit = Retrofit_manager.getInstance().userlogin
+        val getNodeMessage = retrofit.create(MoneyService::class.java).getNodeMessage(sp.getString("user_id", ""), sp.getString("user_token", ""), uNode, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
         getNodeMessage.enqueue(object : Callback<GetNodeMessage> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(call: Call<GetNodeMessage>, response: Response<GetNodeMessage>) {
                 if (response.body()!!.code == 1) {
-                    friendName.setText(uName)
-                    friendUserId.setText("ID:" + uIdInput)
-                    friendUserPhone.setText(uPhone)
-                    friendPerson.setText(xxaa + response.body()!!.data.introduce)
-                    friendPhone.setText(response.body()!!.data.introducePhone)
-                    contactPerson.setText(aaxx + response.body()!!.data.insertPointId)
-                    contactPhone.setText(response.body()!!.data.phone)
+                    friendName.text = getString(R.string.nameOf)+uName
+                    friendUserId.text = "ID:$uIdInput"
+                    friendUserPhone.text = getString(R.string.phoneOf)+uPhone
+                    friendPerson.text = xxaa + response.body()!!.data.introduce
+                    friendPhone.text = response.body()!!.data.introducePhone
+                    contactPerson.text = aaxx + response.body()!!.data.insertPointId
+                    contactPhone.text = response.body()!!.data.phone
                     if (response.body()!!.data.avatar != null) {
-                        Glide.with(this@FriendParticularsActivity).load(response.body()!!.data.avatar).centerCrop().transform(GlideCircleTransform(this@FriendParticularsActivity)).into(friendHade)
+                        Glide.with(this@FriendParticularsActivity).load(response.body()!!.data.avatar).apply(bitmapTransform( GlideCircleTransform(this@FriendParticularsActivity))).into(friendHade)
                     }
                 } else {
                     Toast.makeText(this@FriendParticularsActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
@@ -88,8 +94,7 @@ class FriendParticularsActivity : BaseActivity() {
 
             override fun onFailure(call: Call<GetNodeMessage>, t: Throwable) {
                 if (t is DataResultException) {
-                    val resultException = t as DataResultException
-                    Toast.makeText(this@FriendParticularsActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@FriendParticularsActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                 }
             }
         })

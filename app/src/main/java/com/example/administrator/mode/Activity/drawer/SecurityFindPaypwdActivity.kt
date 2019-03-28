@@ -90,7 +90,6 @@ class SecurityFindPaypwdActivity : BaseActivity() {
                 try {
                     val nowtime = DateUtils.getdata()
                     val retrofit = Retrofit_manager.getInstance().getUserlogin()
-                    Log.i("whz111", sp.getString("user_crown", ""))
                     val register = retrofit.create(MoneyService::class.java!!).findpaypwd(sp.getString("user_crown", ""), Findpay_op.text.toString().trim(), sp.getString("user_token", ""), FindPay_ssmiput.text.toString().trim(), FindPay_affirmnewpwd.text.toString().trim(), "0", nowtime,PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
                     register.enqueue(object : Callback<Common> {
                         override fun onResponse(call: Call<Common>, response: Response<Common>) {

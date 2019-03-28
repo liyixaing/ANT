@@ -103,9 +103,9 @@ class CodeActivity : BaseActivity() {
          Code_code.layout(0, 0, Code_code.getMeasuredWidth(), Code_code.getMeasuredHeight());
          Code_code.buildDrawingCache();*/
 
-        Code_code.setDrawingCacheEnabled(true);
-        val obmp = Bitmap.createBitmap(Code_code.getDrawingCache())
-        Code_code.setDrawingCacheEnabled(false)
+        Code_code.isDrawingCacheEnabled = true
+        val obmp = Bitmap.createBitmap(Code_code.drawingCache)
+        Code_code.isDrawingCacheEnabled = false
         saveImageToGallery(this@CodeActivity, obmp!!)
     }
 
@@ -128,16 +128,16 @@ class CodeActivity : BaseActivity() {
             e.printStackTrace()
         }
 
-        val path = file.getAbsolutePath()
+        val path = file.absolutePath
         try {
-            MediaStore.Images.Media.insertImage(context.getContentResolver(), path, fileName, null)
+            MediaStore.Images.Media.insertImage(context.contentResolver, path, fileName, null)
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         }
 
         val intent = Intent(ACTION_MEDIA_SCANNER_SCAN_FILE)
         val uri = Uri.fromFile(file)
-        intent.setData(uri)
+        intent.data = uri
         context.sendBroadcast(intent)
         Toast.makeText(this, R.string.Code_ok, Toast.LENGTH_SHORT).show()
         finish()

@@ -1,1 +1,1 @@
-include ':app',':IDCar',':Flicking'
+include ':app'

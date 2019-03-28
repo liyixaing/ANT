@@ -1,6 +1,5 @@
 package com.example.administrator.mode.Utlis;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -8,12 +7,9 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -34,14 +30,24 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
+import org.bouncycastle.jcajce.provider.digest.SHA256;
+import org.web3j.abi.datatypes.Address;
+import org.web3j.crypto.Hash;
+import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.methods.request.Transaction;
+import org.web3j.utils.Numeric;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Locale;
 
 import static android.content.Context.CLIPBOARD_SERVICE;
 
@@ -50,7 +56,7 @@ public class VerifyUtlis {
     public static final int MY_PERMISSION_REQUEST_CODE = 10000;
     //相册请求码
     public static final int ALBUM_REQUEST_CODE = 1;
-    public static final int ALBUM_REQUEST_CODEA=8;
+    public static final int ALBUM_REQUEST_CODEA = 8;
     //相机请求码
     public static final int CAMERA_REQUEST_CODE = 2;
     public static final int SYSTEM_CAMERA_CODE = 4;
@@ -82,23 +88,25 @@ public class VerifyUtlis {
 
 
     public static String stringChang(String s) {
-        StringBuffer sb = new StringBuffer();
-        char[] c;
-        c = s.toCharArray();
-        for (int i = 0; i < c.length; i++) {
-            if (c[i] != '\\') {
-                if (c[i] != 'n') {
-                    sb.append(c[i]);
-                } else {
-                    sb.append("");
-                }
-            } else {
-                sb.append("\n");
-            }
-        }
-        return sb.toString();
-    }
 
+        return s.replace("\\n","\n");
+
+//        StringBuffer sb = new StringBuffer();
+//        char[] c;
+//        c = s.toCharArray();
+//        for (int i = 0; i < c.length; i++) {
+//            if (c[i] != '\\') {
+//                if (c[i] != 'n') {
+//                    sb.append(c[i]);
+//                } else {
+//                    sb.append("");
+//                }
+//            } else {
+//                sb.append("\n");
+//            }
+//        }
+//        return sb.toString();
+    }
 
 
     public static String getAppVersionName(Context context) {
@@ -117,10 +125,101 @@ public class VerifyUtlis {
         }
         return versionName;
     }
+    public static boolean isInstallApp(Context context) {
+        final PackageManager packageManager = context.getPackageManager();// 获取packagemanager
+        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 获取所有已安装程序的包信息
+        if (pinfo != null) {
+            for (int i = 0; i < pinfo.size(); i++) {
+                String pn = pinfo.get(i).packageName.toLowerCase(Locale.ENGLISH);
+                if (pn.equals("com.rubychain.wallet")) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 字符串保存到手机内存设备中
+     *
+     * @param str
+     */
+    public static String saveFile(String str, String fileName) {
+        // 创建String对象保存文件名路径
+        try {
+            // 创建指定路径的文件
+            File file = new File(Environment.getExternalStorageDirectory(), fileName);
+            // 如果文件不存在
+            if (file.exists()) {
+                // 创建新的空文件
+                file.delete();
+            }
+            file.createNewFile();
+            // 获取文件的输出流对象
+            FileOutputStream outStream = new FileOutputStream(file);
+            // 获取字符串对象的byte数组并写入文件流
+            outStream.write(str.getBytes());
+            // 最后关闭文件输出流
+            outStream.close();
+            return file.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    /**
+     * 删除已存储的文件
+     */
+    public static void deletefile(String fileName) {
+        try {
+            // 找到文件所在的路径并删除该文件
+            File file = new File(Environment.getExternalStorageDirectory(), fileName);
+            file.delete();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 读取文件里面的内容
+     *
+     * @return
+     */
+    public static String getFile(String fileName) {
+        try {
+            // 创建文件
+            File file = new File(Environment.getExternalStorageDirectory(), fileName);
+            // 创建FileInputStream对象
+            FileInputStream fis = new FileInputStream(file);
+            // 创建字节数组 每次缓冲1M
+            byte[] b = new byte[1024];
+            int len = 0;// 一次读取1024字节大小，没有数据后返回-1.
+            // 创建ByteArrayOutputStream对象
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            // 一次读取1024个字节，然后往字符输出流中写读取的字节数
+            while ((len = fis.read(b)) != -1) {
+                baos.write(b, 0, len);
+            }
+            // 将读取的字节总数生成字节数组
+            byte[] data = baos.toByteArray();
+            // 关闭字节输出流
+            baos.close();
+            // 关闭文件输入流
+            fis.close();
+            // 返回字符串对象
+            return new String(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
 
     public static Bitmap createQRCodeBitmap(String content, int width, int height, String character_set,
-                                            String error_correction_level,String margin, int color_black,
-                                            int color_white,Bitmap logoBitmap, float logoPercent) {
+                                            String error_correction_level, String margin, int color_black,
+                                            int color_white, Bitmap logoBitmap, float logoPercent) {
         // 字符串内容判空
         if (TextUtils.isEmpty(content)) {
             return null;
@@ -165,7 +264,7 @@ public class VerifyUtlis {
             bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
 
             /** 5.为二维码添加logo图标 */
-            if(logoBitmap != null){
+            if (logoBitmap != null) {
                 return addLogo(bitmap, logoBitmap, logoPercent);
             }
             return bitmap;
@@ -176,16 +275,15 @@ public class VerifyUtlis {
     }
 
 
-
-    private static Bitmap addLogo(Bitmap srcBitmap,  Bitmap logoBitmap, float logoPercent){
-        if(srcBitmap == null){
+    private static Bitmap addLogo(Bitmap srcBitmap, Bitmap logoBitmap, float logoPercent) {
+        if (srcBitmap == null) {
             return null;
         }
-        if(logoBitmap == null){
+        if (logoBitmap == null) {
             return srcBitmap;
         }
         //传值不合法时使用0.2F
-        if(logoPercent < 0F || logoPercent > 1F){
+        if (logoPercent < 0F || logoPercent > 1F) {
             logoPercent = 0.2F;
         }
 
@@ -203,16 +301,16 @@ public class VerifyUtlis {
         Bitmap bitmap = Bitmap.createBitmap(srcWidth, srcHeight, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         canvas.drawBitmap(srcBitmap, 0, 0, null);
-        canvas.scale(scaleWidth, scaleHeight, srcWidth/2, srcHeight/2);
-        canvas.drawBitmap(logoBitmap, srcWidth/2 - logoWidth/2, srcHeight/2 - logoHeight/2, null);
+        canvas.scale(scaleWidth, scaleHeight, srcWidth / 2, srcHeight / 2);
+        canvas.drawBitmap(logoBitmap, srcWidth / 2 - logoWidth / 2, srcHeight / 2 - logoHeight / 2, null);
 
         return bitmap;
     }
 
-    public static void copy(Context context,String copystring) {
-        android.text.ClipboardManager cm = (android.text.ClipboardManager)context.getSystemService(CLIPBOARD_SERVICE);
-        cm.setText(copystring+"");
-        Toast.makeText(context,R.string.Out_copyok, Toast.LENGTH_SHORT).show();
+    public static void copy(Context context, String copystring) {
+        android.text.ClipboardManager cm = (android.text.ClipboardManager) context.getSystemService(CLIPBOARD_SERVICE);
+        cm.setText(copystring + "");
+        Toast.makeText(context, R.string.Out_copyok, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -296,6 +394,10 @@ public class VerifyUtlis {
             result = result.substring(1);
         }
         return result;
+    }
+
+    public static byte[] toHash(String key) {
+        return Hash.sha256(key.getBytes());
     }
 
     //验证手机号码
@@ -425,7 +527,7 @@ public class VerifyUtlis {
     }
 
     public static Intent take(Context context) {
-         Uri imageUri;
+        Uri imageUri;
         File imageStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "MyApp");        // Create the storage directory if it does not exist
         if (!imageStorageDir.exists()) {
             imageStorageDir.mkdirs();
@@ -454,6 +556,6 @@ public class VerifyUtlis {
         i.setType("image/*");
         Intent chooserIntent = Intent.createChooser(i, "Image Chooser");
         chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, cameraIntents.toArray(new Parcelable[]{}));
-       return chooserIntent;
+        return chooserIntent;
     }
 }

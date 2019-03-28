@@ -1,36 +1,14 @@
 package com.example.administrator.mode.Interface;
 
-import com.example.administrator.mode.Pojo.Balanceturn;
-import com.example.administrator.mode.Pojo.Bantrun;
-import com.example.administrator.mode.Pojo.Common;
-import com.example.administrator.mode.Pojo.CountryTurn;
-import com.example.administrator.mode.Pojo.Earningtrun;
-import com.example.administrator.mode.Pojo.Friendtrun;
-import com.example.administrator.mode.Pojo.GetNodeMessage;
-import com.example.administrator.mode.Pojo.GetNoticeByTop;
-import com.example.administrator.mode.Pojo.GetNoticeDetail;
-import com.example.administrator.mode.Pojo.LatestNoticeTurn;
-import com.example.administrator.mode.Pojo.MyNodeTurn;
-import com.example.administrator.mode.Pojo.NodeTurn;
-import com.example.administrator.mode.Pojo.Paritiesturn;
-import com.example.administrator.mode.Pojo.PosTurn;
-import com.example.administrator.mode.Pojo.PropertyPer;
-import com.example.administrator.mode.Pojo.PropertyStm;
-import com.example.administrator.mode.Pojo.RedPacket;
-import com.example.administrator.mode.Pojo.SystemUPTurn;
-import com.example.administrator.mode.Pojo.Transferturn;
-import com.example.administrator.mode.Pojo.Parckettrun;
-import com.example.administrator.mode.Pojo.Versionsturn;
-import com.example.administrator.mode.Pojo.aa;
-import com.example.administrator.mode.Pojo.prpertyturn;
-import com.example.administrator.mode.Pojo.prturn;
-import com.example.administrator.mode.Pojo.selectOrderDetail;
+import com.example.administrator.mode.Pojo.*;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+
 public interface MoneyService {
     //转账步骤一
     @FormUrlEncoded
@@ -60,7 +38,8 @@ public interface MoneyService {
             @Field("clientType") String clientType,
             @Field("timestamp") String timestamp,
             @Field("language") String language,
-            @Field("sign") String sign
+            @Field("sign") String sign,
+            @Field("secretKey") String secretKey
     );
 
     //兑换余额
@@ -75,7 +54,8 @@ public interface MoneyService {
             @Field("clientType") String clientType,
             @Field("timestamp") String timestamp,
             @Field("language") String language,
-            @Field("sign") String sign
+            @Field("sign") String sign,
+            @Field("secretKey") String secretKey
     );
 
     //查询红包信息
@@ -151,7 +131,6 @@ public interface MoneyService {
     );
 
 
-
     @GET("notice/getNoticeDetail")
     Call<GetNoticeDetail> getNoticeDetail(
             @Query("userId") String userId,
@@ -178,6 +157,7 @@ public interface MoneyService {
             @Query("language") String language,
             @Query("sign") String sign
     );
+
     //资产详细
     @GET("antScore/getAntLogScoreDetail")
     Call<PropertyPer> getAntLogScoreDetailPer(
@@ -214,7 +194,7 @@ public interface MoneyService {
             @Query("sign") String sign
     );
 
-//type :  2 , 3    dpos , node
+    //type :  2 , 3    dpos , node
     @GET("antBanance/getAntBananceLogList")
     Call<aa> getAntBananceLogList(
             @Query("userId") String userId,
@@ -254,6 +234,7 @@ public interface MoneyService {
             @Query("language") String language,
             @Query("sign") String sign
     );
+
     //获取接点信息
     @GET("antIntroducer/getInsertPointInfo")
     Call<GetNodeMessage> getNodeMessage(
@@ -442,5 +423,230 @@ public interface MoneyService {
             @Field("timestamp") String timestamp,
             @Field("language") String language,
             @Field("sign") String sign
+    );
+
+    //拉取红包配置信息
+    @GET("antRedEnvelope/getEnvelopeConfigInfo")
+    Call<GetRedBagMessage> getEnvelopeConfigInfo(
+            @Query("userId") String userId,
+            @Query("envelopeType") String envelopeType,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType
+    );
+
+    //发送单个红包
+    @FormUrlEncoded
+    @POST("antRedEnvelope/sendSingleEnvelope")
+    Call<Common> sendSingleEnvelope(
+            @Field("userId") String userId,
+            @Field("tradePassword") String tradePassword,
+            @Field("accept_id") String accept_id,
+            @Field("accept_phone") String accept_phone,
+            @Field("accept_wordCode") String accept_wordCode,
+            @Field("envelope_type") String envelope_type,
+            @Field("totoal_score") String totoal_score,
+            @Field("memo") String memo,
+            @Field("timestamp") String timestamp,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Field("language") String language,
+            @Field("clientType") String clientType,
+            @Field("secretKey") String secretKey
+
+    );
+
+    //发送单个红包
+    @FormUrlEncoded
+    @POST("antRedEnvelope/sendPeopleQuantityEnvelope")
+    Call<Common> sendPeopleQuantityEnvelope(
+            @Field("userId") String userId,
+            @Field("tradePassword") String tradePassword,
+            @Field("isFixedAmount") String isFixedAmount,
+            @Field("quantity") String quantity,
+            @Field("nation") String nation,
+            @Field("province") String province,
+            @Field("city") String city,
+            @Field("totoal_score") String totoal_score,
+            @Field("memo") String memo,
+            @Field("timestamp") String timestamp,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Field("language") String language,
+            @Field("clientType") String clientType,
+            @Field("secretKey") String secretKey
+    );
+
+    //
+    //领取单人红包
+    @FormUrlEncoded
+    @POST("antRedEnvelope/drawSingleEnvelope")
+    Call<DrawSingleEnvelope> drawSingleEnvelope(
+            @Field("userId") String userId,
+            @Field("envelopeIds") String envelopeIds,
+            @Field("timestamp") String timestamp,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Field("language") String language,
+            @Field("clientType") String clientType
+    );
+
+    //领取多人红包
+    @FormUrlEncoded
+    @POST("antRedEnvelope/drawPeopleEnvelope")
+    Call<GetRedBag> drawPeopleEnvelope(
+            @Field("userId") String userId,
+            @Field("longitude") String longitude,
+            @Field("latitude") String latitude,
+            @Field("timestamp") String timestamp,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Field("language") String language,
+            @Field("clientType") String clientType
+    );
+
+
+    //创建钱包
+    @FormUrlEncoded
+    @POST("wallet/createWallet")
+    Call<Common> createWallet(
+            @Field("userId") String userId,
+            @Field("wallet_name") String wallet_name,
+            @Field("wallet_address") String wallet_address,
+            @Field("pub_key") String pub_key,
+            @Field("keystore") String keystore,
+            @Field("timestamp") String timestamp,
+            @Field("keystore_password") String keystore_password,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Field("language") String language,
+            @Field("clientType") String clientType
+    );
+
+    //私钥登录
+    @FormUrlEncoded
+    @POST("sso/walletLogin")
+    Call<Loginturn> walletLogin(
+            @Field("sourceStr") String userId,
+            @Field("signStr") String wallet_name,
+            @Field("timestamp") String timestamp,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Field("language") String language,
+            @Field("clientType") String clientType
+    );
+
+    //拉取单个红包列表
+    @GET("antRedEnvelope/geSingleEnvelopeList")
+    Call<geSingleEnvelopeList> geSingleEnvelopeList(
+            @Query("userId") String userId,
+            @Query("status") String status,
+            @Query("offset") String offset,
+            @Query("size") String size,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType
+    );
+
+    //拉取多人红包列表
+    @GET("antRedEnvelope/getRedEnvelopeRecordList")
+    Call<getRedEnvelopeRecordList> getRedEnvelopeRecordList(
+            @Query("userId") String userId,
+            @Query("isPrivate") String isPrivate,
+            @Query("isSingle") String isSingle,
+            @Query("offset") String offset,
+            @Query("size") String size,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType
+    );
+
+    //拉取多人红包列表
+    @GET("antRedEnvelope/getEnvelopeArea")
+    Call<GetState> getEnvelopeArea(
+            @Query("userId") String userId,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType
+    );
+
+    //拉取众筹列表
+    @GET("zhongchou/getZhongChouList")
+    Call<getZhongChouListBean> getZhongChouList(
+            @Query("userId") String userId,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType,
+            @Query("status") String status,
+            @Query("sourceType") String sourceType,
+            @Query("targetType") String targetType,
+            @Query("offset") String offset,
+            @Query("size") String size
+    );
+
+    //拉取我的众筹记录
+    @GET("zhongchou/getMyZhongChouBuyRecord")
+    Call<getMyZhongChouBuyRecordBean> getMyZhongChouBuyRecord(
+            @Query("userId") String userId,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType,
+            @Query("itemId") String itemId,
+            @Query("offset") String offset,
+            @Query("size") String size
+    );
+
+    //拉取众筹详细
+    @GET("zhongchou/getZhongChouDetail")
+    Call<getZhongChouDetailBean> getZhongChouDetail(
+            @Query("userId") String userId,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType,
+            @Query("itemId") String itemId
+    );
+
+    //拉取我的释放记录
+    @GET("zhongchou/getZhongChouReleaseRecord")
+    Call<getZhongChouReleaseRecordBean> getZhongChouReleaseRecord(
+            @Query("userId") String userId,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType,
+            @Query("itemId") String itemId,
+            @Query("offset") String offset,
+            @Query("size") String size
+    );
+
+    //认购 众筹
+    @FormUrlEncoded
+    @POST("zhongchou/buyZhongChou")
+    Call<buyZhongChouBean> buyZhongChou(
+            @Field("userId") String userId,
+            @Field("timestamp") String timestamp,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Field("language") String language,
+            @Field("clientType") String clientType,
+            @Field("itemId") String itemId,
+            @Field("amount") String amount,
+            @Field("tradePassword") String tradePassword,
+            @Field("secretKey") String secretKey
     );
 }

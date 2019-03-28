@@ -29,7 +29,7 @@
                 android:layout_width="57dp"
                 android:layout_height="54dp"
                 android:layout_gravity="center"
-                android:src="@mipmap/commodity_pay" />
+                android:src="@mipmap/up" />
 
             <LinearLayout
                 android:layout_width="match_parent"

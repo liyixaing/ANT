@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#F84D3B</color>
+    <color name="colorPrimaryDark">#F84D3B</color>
     <color name="grayf2">#f2f2f2</color>
     <color name="gray5a">#a5a5a5</color>
     <color name="essential">#00B07C</color>
     <color name="loginget">#007C58</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorhome">#19272e</color>
-    <color name="appbackground">#1D2D35</color>
-    <color name="afragment">#2F3E45</color>
-    <color name="afragmenttext">#b9b9b9</color>
+    <color name="colorhome1">#d6d6d6</color>
+    <color name="appbackground">#F5F5F7</color>
+    <color name="afragment">#FFFFFF</color>
+    <color name="afragmenttext">#333333</color>
     <color name="tuichu">#f43950</color>
-    <color name="aa">#edecec</color>
+    <color name="aa">#333333</color>
     <color name="bb">#1C2D35</color>
     <color name="red">#C5A00E</color>
     <color name="red1">#C5C352</color>
     <color name="service">#283338</color>
     <color name="service111">#f1f1f1</color>
-
+    <color name="editText">#666666</color>
+    <color name="editText11">#101010</color>
 </resources>

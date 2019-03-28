@@ -32,5 +32,7 @@ class prturn {
         var username: String? = null
         var isVip: String? = null
         var isMerchant: String? = null
+        var envelopeCount: String? = null
+
     }
 }

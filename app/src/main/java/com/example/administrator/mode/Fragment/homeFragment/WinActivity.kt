@@ -30,7 +30,7 @@ class WinActivity : AppCompatActivity() {
             }
         }
         val sp = this!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
-        winWebView.loadUrl("http://fcsap.com/src/index/GameRecord.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "")+"&language="+sp.getString("language",""))
+        winWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/src/index/GameRecord.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "")+"&language="+sp.getString("language",""))
          /* winWebView.loadUrl("http://192.168.31.211:8020/ant/src/index/GameRecord.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "")+"&language="+sp.getString("language",""))*/
     }
 

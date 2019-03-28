@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 
 import android.view.KeyEvent
 import android.view.View
@@ -20,8 +21,12 @@ import com.example.administrator.mode.Interface.MoneyService
 import com.example.administrator.mode.Pojo.Transferturn
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
+import com.example.administrator.mode.creatorprivatekey.MessageSignUtils
 import kotlinx.android.synthetic.main.activity_particulars.*
 import kotlinx.android.synthetic.main.tit.*
+import org.web3j.crypto.Credentials
+import org.web3j.crypto.ECKeyPair
+import org.web3j.utils.Numeric
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,10 +43,10 @@ class ParticularsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (PreferencesUtil.get("language", "").equals("zh")) {
+        if (PreferencesUtil.get("language", "") == "zh") {
             aaaaazz = "次日24小时"
 
-        } else if (PreferencesUtil.get("language", "").equals("en")) {
+        } else if (PreferencesUtil.get("language", "") == "en") {
             aaaaazz = "24 hours before next day"
         } else {
             aaaaazz = "次日24小时前"
@@ -83,7 +88,8 @@ class ParticularsActivity : BaseActivity() {
                             val nowtime = DateUtils.getdata()
                             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
                             val retrofit = Retrofit_manager.getInstance().userlogin
-                            val transfer = retrofit.create(MoneyService::class.java).transfertwo(sp.getString("user_id", ""), intent.extras.getString("transferid"), sp.getString("user_token", ""), intent.extras.getString("paypwd"), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+                            val keyPair = ECKeyPair.create(Numeric.hexStringToByteArray(SharedPreferencesUtil.getData("userPrivatelyKey", "").toString()))
+                            val transfer = retrofit.create(MoneyService::class.java).transfertwo(sp.getString("user_id", ""), intent.extras.getString("transferid"), sp.getString("user_token", ""),"", "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), MessageSignUtils.Sign(Credentials.create(keyPair), Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).substring(2, Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).length)))
                             transfer.enqueue(object : Callback<Transferturn> {
                                 override fun onResponse(call: Call<Transferturn>, response: Response<Transferturn>) {
                                     try {

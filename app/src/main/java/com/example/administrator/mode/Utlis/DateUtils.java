@@ -1,4 +1,7 @@
 package com.example.administrator.mode.Utlis;
+
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -47,7 +50,7 @@ public class DateUtils {
      * @return
      */
     public static String getCurrentTime_Today() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
         return sdf.format(new Date());
     }
 
@@ -64,7 +67,7 @@ public class DateUtils {
      * @return
      */
     public static String dataOne(String time) {
-        SimpleDateFormat sdr = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss SSS",
+        SimpleDateFormat sdr = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss",
                 Locale.CHINA);
         Date date;
         String times = null;
@@ -92,6 +95,24 @@ public class DateUtils {
             e.printStackTrace();
         }
         return times;
+    }
+
+    /**
+     * 计算相差天数
+     *
+     * @param
+     * @return
+     */
+    public static String countDifferDay(String end, String begin) throws ParseException {
+        String day = "";
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d1 = df.parse(timedate(end));
+        Date d2 = df.parse(timedate(begin));
+        long diff = d1.getTime() - d2.getTime();//这样得到的差值是微秒级别
+        long days = diff / (1000 * 60 * 60 * 24);
+        long hours = (diff - days * (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+        long minutes = (diff - days * (1000 * 60 * 60 * 24) - hours * (1000 * 60 * 60)) / (1000 * 60);
+        return day;
     }
 
     /**
@@ -148,6 +169,26 @@ public class DateUtils {
      */
     public static String timeslash(String time) {
         SimpleDateFormat sdr = new SimpleDateFormat("MM/dd,HH:mm");
+        @SuppressWarnings("unused")
+        long lcc = Long.valueOf(time);
+        int i = Integer.parseInt(time);
+        String times = sdr.format(new Date(i * 1000L));
+        return times;
+
+    }
+
+    public static String ymd(String time) {
+        SimpleDateFormat sdr = new SimpleDateFormat("yyyy/MM/dd");
+        @SuppressWarnings("unused")
+        long lcc = Long.valueOf(time);
+        int i = Integer.parseInt(time);
+        String times = sdr.format(new Date(i * 1000L));
+        return times;
+
+    }
+
+    public static String hm(String time) {
+        SimpleDateFormat sdr = new SimpleDateFormat("HH:mm");
         @SuppressWarnings("unused")
         long lcc = Long.valueOf(time);
         int i = Integer.parseInt(time);

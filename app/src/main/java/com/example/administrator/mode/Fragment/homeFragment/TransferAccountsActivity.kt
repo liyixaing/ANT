@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.baidu.mobstat.StatService
@@ -122,8 +123,6 @@ class TransferAccountsActivity : BaseActivity() {
                         return
                     }
                     val a = java.lang.Double.parseDouble(transfer_quantity.text.toString().trim())
-                    transfer_service.setText((a * huilv).toString())
-                    moneyinput.text = "  -  " + String.format("%.8f", ((a * huilv) + transfer_quantity.text.toString().toDouble())) + "  "
                 } catch (e: Exception) {
                     transfer_quantity.hint = "0.00"
                 }
@@ -145,51 +144,46 @@ class TransferAccountsActivity : BaseActivity() {
                     return
                 }
                 val c = java.lang.Double.parseDouble(transfer_quantity.text.toString().trim())
-
                 if (mix > c) {
                     Toast.makeText(this@TransferAccountsActivity, "最小输入$mix", Toast.LENGTH_SHORT).show()
                     return
                 }
-
                 if (max < c) {
                     Toast.makeText(this@TransferAccountsActivity, "最大输入$max", Toast.LENGTH_SHORT).show()
                     return
                 }
-                try {
-                    val nowtime = DateUtils.getdata()
-                    val retrofit = Retrofit_manager.getInstance().getUserlogin()
-                    val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-                    val transfer = retrofit.create(MoneyService::class.java!!).transfer(sp.getString("user_id", ""), transfer_name.text.toString().trim(), goguanhao.text.toString().trim(), sp.getString("user_token", ""), transfer_quantity.text.toString().trim(), "", remark.text.toString().trim(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
-                    transfer.enqueue(object : Callback<Transferturn> {
-                        override fun onResponse(call: Call<Transferturn>, response: Response<Transferturn>) {
-                            try {
-                                if (response.body()!!.code == 1) {
-                                    val intent = Intent(this@TransferAccountsActivity, AffirmDealActivity::class.java)
-                                    intent.putExtra("transferid", response.body()!!.data!!.tradeId.toString())
-                                    intent.putExtra("toPhone", response.body()!!.data!!.toPhone.toString())
-                                    intent.putExtra("toUsername", response.body()!!.data!!.toUsername.toString())
-                                    intent.putExtra("amount", String.format("%.8f", response.body()!!.data!!.amount))
-                                    intent.putExtra("actualAmount", String.format("%.8f", response.body()!!.data!!.actualAmount))
-                                    intent.putExtra("transfer_time", response.body()!!.data!!.transfer_time.toString())
-                                    intent.putExtra("fees", response.body()!!.data!!.fees.toString())
-                                    startActivity(intent)
-                                    StatService.onPageEnd(this@TransferAccountsActivity, "MainModule.HomeView.TransferView")
-                                }
-                            } catch (e: Exception) {
-                                abnormal(this@TransferAccountsActivity)
+                val nowtime = DateUtils.getdata()
+                val retrofit = Retrofit_manager.getInstance().userlogin
+                val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
+                val transfer = retrofit.create(MoneyService::class.java!!).transfer(sp.getString("user_id", ""), transfer_name.text.toString().trim(), goguanhao.text.toString().trim(), sp.getString("user_token", ""), transfer_quantity.text.toString().trim(), "", remark.text.toString().trim(), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+                transfer.enqueue(object : Callback<Transferturn> {
+                    override fun onResponse(call: Call<Transferturn>, response: Response<Transferturn>) {
+                        try {
+                            if (response.body()!!.code == 1) {
+                                val intent = Intent(this@TransferAccountsActivity, AffirmDealActivity::class.java)
+                                intent.putExtra("transferid", response.body()!!.data!!.tradeId.toString())
+                                intent.putExtra("toPhone", response.body()!!.data!!.toPhone.toString())
+                                intent.putExtra("toUsername", response.body()!!.data!!.toUsername.toString())
+                                intent.putExtra("amount", String.format("%.8f", response.body()!!.data!!.amount))
+                                intent.putExtra("actualAmount", String.format("%.8f", response.body()!!.data!!.actualAmount))
+                                intent.putExtra("transfer_time", response.body()!!.data!!.transfer_time.toString())
+                                intent.putExtra("fees", response.body()!!.data!!.fees.toString())
+                                intent.putExtra("rateInput", response.body()!!.data!!.rate.toString())
+                                startActivity(intent)
+                                StatService.onPageEnd(this@TransferAccountsActivity, "MainModule.HomeView.TransferView")
                             }
+                        } catch (e: Exception) {
+                            abnormal(this@TransferAccountsActivity)
                         }
+                    }
 
-                        override fun onFailure(call: Call<Transferturn>, t: Throwable) {
-                            if (t is DataResultException) {
-                                val resultException = t as DataResultException
-                                Toast.makeText(this@TransferAccountsActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
-                            }
+                    override fun onFailure(call: Call<Transferturn>, t: Throwable) {
+                        if (t is DataResultException) {
+                            val resultException = t
+                            Toast.makeText(this@TransferAccountsActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
                         }
-                    })
-                } catch (e: Exception) {
-                    abnormal(this@TransferAccountsActivity)
-                }
+                    }
+                })
             }
         })
     }
@@ -207,7 +201,6 @@ class TransferAccountsActivity : BaseActivity() {
                             huilv = response.body()!!.data!!.ant_transfer_rate!!.toDouble()
                             mix = response.body()!!.data!!.ant_transfer_min_value!!.toDouble()
                             max = response.body()!!.data!!.ant_transfer_max_value!!.toDouble()
-                            transfer_serviceCharge.setText((response.body()!!.data!!.ant_transfer_rate!!.toDouble() * 100).toString() + "%")
                         }
                     } catch (e: Exception) {
                         abnormal(this@TransferAccountsActivity)
@@ -238,9 +231,9 @@ class TransferAccountsActivity : BaseActivity() {
 
         val retrofit = Retrofit_manager.getInstance().getUserlogin()
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
+        val token = sp.getString("user_token", "")
         val nowtime = DateUtils.getdata()
-        var id = sp.getString("user_id", "")
+        val id = sp.getString("user_id", "")
         try {
             val login = retrofit.create(MoneyService::class.java!!).paroper(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<prturn> {
@@ -248,7 +241,7 @@ class TransferAccountsActivity : BaseActivity() {
                     try {
                         if (response.body()!!.code == 1) {
                             num = response.body()!!.data!!.user_ant!!.toDouble()
-                            car_transfer.setText(Available2 + num.toString())
+                            car_transfer.text = Available2 + num.toString()
                         } else {
                             Toast.makeText(this@TransferAccountsActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                         }

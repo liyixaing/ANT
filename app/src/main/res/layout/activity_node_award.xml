@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorhome"
+    android:background="@color/appbackground"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Fragment.homeFragment.NodeAwardActivity">
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_margin="@dimen/dp_10"
-        android:background="@color/afragment"
+        android:background="@drawable/home_view_fillet"
         android:orientation="vertical">
 
         <LinearLayout
@@ -31,6 +31,7 @@
                 <TextView
                     android:id="@+id/nodeCard"
                     style="@style/textview"
+                    android:textColor="@color/afragment"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
@@ -39,6 +40,7 @@
 
                 <TextView
                     style="@style/vitextview"
+                    android:textColor="@color/afragment"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Property_yesterdayaward"
                     android:textSize="12sp" />
@@ -58,6 +60,7 @@
 
                 <TextView
                     android:id="@+id/nodeproperty"
+                    android:textColor="@color/afragment"
                     style="@style/textview"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
@@ -67,6 +70,7 @@
 
                 <TextView
                     style="@style/vitextview"
+                    android:textColor="@color/afragment"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Dpos_yesterday1"
                     android:textSize="12sp" />
@@ -95,6 +99,7 @@
                 <TextView
                     android:id="@+id/dyesterdaynode"
                     style="@style/textview"
+                    android:textColor="@color/afragment"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
@@ -103,6 +108,7 @@
 
                 <TextView
                     style="@style/vitextview"
+                    android:textColor="@color/afragment"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Dpos_yesterday3"
                     android:textSize="12sp" />
@@ -126,6 +132,7 @@
                 <TextView
                     android:id="@+id/daccumulatenode"
                     style="@style/textview"
+                    android:textColor="@color/afragment"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
@@ -136,6 +143,7 @@
                     style="@style/vitextview"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/Dpos_yesterday2"
+                    android:textColor="@color/afragment"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>

@@ -49,30 +49,5 @@ class MerchantActivity : BaseActivity() {
 
             }
         })
-        cai.setOnClickListener(object : ClickUtlis() {
-            override fun onMultiClick(v: View?) {
-                if (aa.text.toString().trim().isNotEmpty() ||
-                        bb.text.toString().trim().isNotEmpty() ||
-                        cc.text.toString().trim().isNotEmpty() ||
-                        dd.text.toString().trim().isNotEmpty() ||
-                        ee.text.toString().trim().isNotEmpty()) {
-                    if (ee.text.toString().trim().length > 50) {
-                        Toast.makeText(this@MerchantActivity, R.string.mmm, Toast.LENGTH_SHORT).show()
-                        return
-                    }
-                    val intent = Intent(this@MerchantActivity, MerchantQrCodeActivity::class.java)
-                    intent.putExtra("aa", aa.text.toString().trim())
-                    intent.putExtra("bb", bb.text.toString().trim())
-                    intent.putExtra("cc", cc.text.toString().trim())
-                    intent.putExtra("dd", dd.text.toString().trim())
-                    intent.putExtra("ee", ee.text.toString().trim())
-                    intent.putExtra("aaaaaa", "cai")
-                    startActivity(intent)
-                    finish()
-                } else {
-                    Toast.makeText(this@MerchantActivity, R.string.lll, Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
     }
 }

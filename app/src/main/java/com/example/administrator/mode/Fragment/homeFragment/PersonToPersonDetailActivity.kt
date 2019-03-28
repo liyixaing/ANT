@@ -1,5 +1,6 @@
 package com.example.administrator.mode.Fragment.homeFragment
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -19,6 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PersonToPersonDetailActivity : BaseActivity() {
+
     override fun getContentViewId(): Int {
         return R.layout.activity_person_to_person_detail
     }
@@ -35,10 +37,10 @@ class PersonToPersonDetailActivity : BaseActivity() {
 
     override fun init() {
         super.init()
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         tit_iv.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 startActivity(Intent(this@PersonToPersonDetailActivity, PropertyActivity::class.java))
@@ -48,9 +50,10 @@ class PersonToPersonDetailActivity : BaseActivity() {
         tit_name.setText(R.string.Deal_tit)
         try {
             val nowtime = DateUtils.getdata()
-            if (intent.extras.getString("propertytype").equals("tong")) {
-                val login = retrofit.create(MoneyService::class.java!!).getAntBananceLogDetailPer(id, token, intent.extras.getString("order"), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(token + nowtime))
+            if (intent.extras.getString("propertytype") == "tong") {
+                val login = retrofit.create(MoneyService::class.java).getAntBananceLogDetailPer(id, token, intent.extras.getString("order"), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(token + nowtime))
                 login.enqueue(object : Callback<PropertyPer> {
+                    @SuppressLint("SetTextI18n")
                     override fun onResponse(call: Call<PropertyPer>, response: Response<PropertyPer>) {
                         try {
                             if (response.body()!!.code == 1) {
@@ -61,15 +64,14 @@ class PersonToPersonDetailActivity : BaseActivity() {
                                 personName.text = response.body()!!.data.fromUsername
                                 expenditureNumber.text = String.format("%.8f", response.body()!!.data.fromChangeAnt)
                                 expenditurecurrency.text = response.body()!!.data.coin
-                                expenditureService.text = response.body()!!.data.rate.toString()
+                                expenditureService.text = (response.body()!!.data.rate * 100).toString()+"%"
                                 expenditureAllOut.text = "+" + String.format("%.8f", response.body()!!.data.fromChangeScore)
                                 nameOut.text = response.body()!!.data.toPhone
                                 personNameGet.text = response.body()!!.data.toUsername
                                 expenditureGet.text = "+" + String.format("%.8f", response.body()!!.data.toChangeAnt)
                                 ecurrency.text = response.body()!!.data.coin
                                 expenditureAllGet.text = "+" + String.format("%.8f", response.body()!!.data.toChangeScore)
-                               Log.i("WHZZZZ",response.body()!!.data.memo+"ssss")
-                                beizhuzhu.text=response.body()!!.data.memo
+                                beizhuzhu.text = response.body()!!.data.memo
                             } else {
                                 Toast.makeText(this@PersonToPersonDetailActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                             }
@@ -78,18 +80,17 @@ class PersonToPersonDetailActivity : BaseActivity() {
                     }
 
                     override fun onFailure(call: Call<PropertyPer>, t: Throwable) {
-                        Log.i("whz", t.toString())
                         if (t is DataResultException) {
-                            val resultException = t as DataResultException
-                            Toast.makeText(this@PersonToPersonDetailActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@PersonToPersonDetailActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 })
             }
-            if (intent.extras.getString("propertytype").equals("property")) {
+            if (intent.extras.getString("propertytype") == "property") {
                 val nowtime = DateUtils.getdata()
-                val login = retrofit.create(MoneyService::class.java!!).getAntLogScoreDetailPer(id, token, intent.extras.getString("order"), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+                val login = retrofit.create(MoneyService::class.java).getAntLogScoreDetailPer(id, token, intent.extras.getString("order"), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
                 login.enqueue(object : Callback<PropertyPer> {
+                    @SuppressLint("SetTextI18n")
                     override fun onResponse(call: Call<PropertyPer>, response: Response<PropertyPer>) {
                         try {
                             if (response.body()!!.code == 1) {
@@ -100,14 +101,14 @@ class PersonToPersonDetailActivity : BaseActivity() {
                                 personName.text = response.body()!!.data.fromUsername
                                 expenditureNumber.text = String.format("%.8f", response.body()!!.data.fromChangeAnt)
                                 expenditurecurrency.text = response.body()!!.data.coin
-                                expenditureService.text = response.body()!!.data.rate.toString()
-                                expenditureAllOut.text = "+" + String.format("%.8f", response.body()!!.data.fromChangeAnt)
+                                expenditureService.text = (response.body()!!.data.rate*100).toString()+"%"
+                                expenditureAllOut.text = "+" + String.format("%.8f", response.body()!!.data.fromChangeScore)
                                 nameOut.text = response.body()!!.data.toPhone
                                 personNameGet.text = response.body()!!.data.toUsername
                                 expenditureGet.text = " + " + String.format("%.8f", response.body()!!.data.toChangeAnt)
                                 ecurrency.text = response.body()!!.data.coin
-                                expenditureAllGet.text = " + " + String.format("%.8f", response.body()!!.data.toChangeAnt)
-                                beizhuzhu.text=response.body()!!.data.memo
+                                expenditureAllGet.text = " + " + String.format("%.8f", response.body()!!.data.toChangeScore)
+                                beizhuzhu.text = response.body()!!.data.memo
                             } else {
                                 Toast.makeText(this@PersonToPersonDetailActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                             }
@@ -117,8 +118,7 @@ class PersonToPersonDetailActivity : BaseActivity() {
 
                     override fun onFailure(call: Call<PropertyPer>, t: Throwable) {
                         if (t is DataResultException) {
-                            val resultException = t as DataResultException
-                            Toast.makeText(this@PersonToPersonDetailActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@PersonToPersonDetailActivity, t.message.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 })

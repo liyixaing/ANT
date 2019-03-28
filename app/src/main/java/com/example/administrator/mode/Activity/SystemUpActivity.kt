@@ -3,6 +3,7 @@ package com.example.administrator.mode.Activity
 import android.annotation.SuppressLint
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.DateUtils
+import com.example.administrator.mode.Utlis.VerifyUtlis
 import kotlinx.android.synthetic.main.activity_steam_up.*
 
 class SystemUpActivity : BaseActivity() {
@@ -14,5 +15,6 @@ class SystemUpActivity : BaseActivity() {
     override fun init() {
         super.init()
         systemOverTime.text = "系统预计开放时间"+ DateUtils.timet(intent.extras.getString("openingtime"))
+        vczxczxc.text= VerifyUtlis.stringChang("\n" + intent.extras.getString("openinginfo") + "\n")
     }
 }

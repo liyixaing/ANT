@@ -57,15 +57,15 @@ class RegisterSecondActivity : BaseActivity() {
                     val nowtime = DateUtils.getdata()
                     val phoneinput = intent.extras.getString("userphone")
                     val wcinout = intent.extras.getString("userwc")
-                    val retrofit = Retrofit_manager.getInstance().getUserlogin()
+                    val retrofit = Retrofit_manager.getInstance().userlogin
                     val register = retrofit.create(GitHubService::class.java!!).registertwo(phoneinput, user_Regpwds.text.toString().trim(), wcinout, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(nowtime))
                     register.enqueue(object : Callback<Common> {
                         override fun onResponse(call: Call<Common>, response: Response<Common>) {
                             try {
                                 if (response.body()!!.code == 1) {
                                     val intent = Intent(this@RegisterSecondActivity, RegisterThirdlyActivity::class.java)
-                                    intent.putExtra("user_phone", phoneinput);
-                                    intent.putExtra("user_wc", wcinout);
+                                    intent.putExtra("user_phone", phoneinput)
+                                    intent.putExtra("user_wc", wcinout)
                                     startActivity(intent);
                                     finish()
                                 } else {

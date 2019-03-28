@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEDED"
+    tools:context="com.example.administrator.mode.Activity.privatekeymanage.PrivateKeyManageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/tit" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:background="@drawable/private_key_back"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/manageHead"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/antdefault" />
+
+            <TextView
+                android:id="@+id/WalletName"
+                style="@style/edittext12"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/WalletPrivateKey"
+                style="@style/edittext12"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/afragment"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/upWalletName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/ChangeTheNameOfTheWallet"
+                    android:textColor="#101010"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="32dp"
+                    android:src="@mipmap/fan" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#d2d2d2" />
+
+            <LinearLayout
+                android:id="@+id/upWalletPwd"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/textview1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/changePassword"
+                    android:textColor="#101010"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="32dp"
+                    android:src="@mipmap/fan" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="24dp"
+            android:background="@color/afragment"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/derivePrivateKey"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/afragment"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/ExportThePrivateKey"
+                    android:textColor="#101010"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="32dp"
+                    android:src="@mipmap/fan" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#d2d2d2" />
+
+            <LinearLayout
+                android:id="@+id/deriveKeystore"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/afragment"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/deriveKeystore"
+                    android:textColor="#101010"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="32dp"
+                    android:src="@mipmap/fan" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="#d2d2d2" />
+
+            <LinearLayout
+                android:id="@+id/deriveDSSCard"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/afragment"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/textview1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/deriveDSSCard"
+                    android:textColor="#101010"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="32dp"
+                    android:src="@mipmap/fan" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/deleteWallet"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/tuichu"
+            android:text="@string/ToDeleteTheWallet"
+            android:textColor="#ffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+</ScrollView>

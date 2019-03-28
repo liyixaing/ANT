@@ -1,17 +1,14 @@
 package com.example.administrator.mode.Activity.drawer
 
 import android.content.Context
-import android.content.Intent
 import android.view.View
 import android.widget.Toast
 import com.example.administrator.mode.Activity.BaseActivity
 import com.example.administrator.mode.Activity.DataResultException
-import com.example.administrator.mode.Activity.LoginActivity
 import com.example.administrator.mode.Interface.GitHubService
 import com.example.administrator.mode.Pojo.Common
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
-import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_security_login_up.*
 import kotlinx.android.synthetic.main.tit.*
 import retrofit2.Call
@@ -35,46 +32,45 @@ class SecurityLoginUpActivity : BaseActivity() {
                 finish()
             }
         })
-        loginup_submit.setOnClickListener(object :ClickUtlis(){
+        loginup_submit.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 if ("" == loginup_oldpwd.text.toString().trim()) {
-                  Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_oldpwdinput, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_oldpwdinput, Toast.LENGTH_SHORT).show()
                     return
                 }
                 if ("" == loginup_newpwd.text.toString().trim()) {
-                   Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_newspwdinput, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_newspwdinput, Toast.LENGTH_SHORT).show()
                     return
                 }
-                if (loginup_newpwd.text.toString().trim().length<6){
+                if (loginup_newpwd.text.toString().trim().length < 6) {
                     Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_newspwderror, Toast.LENGTH_SHORT).show()
                     return
                 }
-                if (loginup_newpwd.text.toString().trim().length>16){
+                if (loginup_newpwd.text.toString().trim().length > 16) {
                     Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_newspwderror, Toast.LENGTH_SHORT).show()
                     return
                 }
                 if ("" == loginup_affirmnewpwd.text.toString().trim()) {
-                   Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_affirmnewpwdinput, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SecurityLoginUpActivity, R.string.Loginup_affirmnewpwdinput, Toast.LENGTH_SHORT).show()
                     return
                 }
 
-                if (loginup_affirmnewpwd.text.toString().trim()!=loginup_newpwd.text.toString().trim()) {
-                   Toast.makeText(this@SecurityLoginUpActivity, R.string.Phoneup_paypwderor, Toast.LENGTH_SHORT).show()
+                if (loginup_affirmnewpwd.text.toString().trim() != loginup_newpwd.text.toString().trim()) {
+                    Toast.makeText(this@SecurityLoginUpActivity, R.string.Phoneup_paypwderor, Toast.LENGTH_SHORT).show()
                     return
                 }
 
                 try {
-                    val nowtime= DateUtils.getdata()
+                    val nowtime = DateUtils.getdata()
                     val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
                     val retrofit = Retrofit_manager.getInstance().getUserlogin()
-                    val register = retrofit.create(GitHubService::class.java!!).loginpwdup(sp.getString("user_id", ""), loginup_oldpwd.text.toString().trim(), loginup_newpwd.text.toString().trim(), sp.getString("user_token", ""),"0",nowtime, PreferencesUtil.get("language", ""),SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "")+nowtime))
+                    val register = retrofit.create(GitHubService::class.java!!).loginpwdup(sp.getString("user_id", ""), loginup_oldpwd.text.toString().trim(), loginup_newpwd.text.toString().trim(), sp.getString("user_token", ""), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
                     register.enqueue(object : Callback<Common> {
                         override fun onResponse(call: Call<Common>, response: Response<Common>) {
                             try {
                                 if (response.body()!!.code == 1) {
-                                    Toast.makeText(this@SecurityLoginUpActivity,R.string.Property_suess,Toast.LENGTH_SHORT).show()
-                                    startActivity(Intent(this@SecurityLoginUpActivity, LoginActivity::class.java))
-                                    finish()
+                                    Toast.makeText(this@SecurityLoginUpActivity, R.string.Property_suess, Toast.LENGTH_SHORT).show()
+                                    abnormal22(this@SecurityLoginUpActivity)
                                 } else {
                                     Toast.makeText(this@SecurityLoginUpActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                                 }

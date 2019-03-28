@@ -12,11 +12,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.administrator.mode.Activity.AnnouncementActivity
 import com.example.administrator.mode.Activity.DataResultException
-import com.example.administrator.mode.Activity.LoginActivity
 import com.example.administrator.mode.Activity.drawer.InviteActivity
 import com.example.administrator.mode.Adapter.BannerAdapter
 import com.example.administrator.mode.Adapter.SmoothLinearLayoutManager
 import com.example.administrator.mode.Fragment.homeFragment.*
+import com.example.administrator.mode.Fragment.red_packet.RedPacketGetActivity
 import com.example.administrator.mode.Interface.GitHubService
 import com.example.administrator.mode.Interface.MoneyService
 import com.example.administrator.mode.Pojo.Common
@@ -25,7 +25,8 @@ import com.example.administrator.mode.Pojo.RedPacket
 import com.example.administrator.mode.Pojo.prturn
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
-import com.znq.zbarcode.CaptureActivity
+import com.example.administrator.mode.creatorprivatekey.NewLoginActivity
+import com.github.shenyuanqing.zxingsimplify.zxing.Activity.CaptureActivity
 import kotlinx.android.synthetic.main.fragment_a.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -51,6 +52,8 @@ class A_Fragment : Fragment() {
     var aaaqq = ""
     var xxaa = ""
     var itemsinpit = arrayOf(PreferencesUtil.get("collection", ""), PreferencesUtil.get("envelope", ""))
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_a, container, false)
@@ -91,29 +94,44 @@ class A_Fragment : Fragment() {
                 startActivity(Intent(activity, MerchantActivity::class.java))
             }
         })
+
         telephone.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                unopened()
+                val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
+                val intent = Intent(activity, ANTStoreActivity::class.java)
+                intent.putExtra("url", "http://mall.fcsap.com/?user_id=" + sp.getString("user_id", "") + "&user_token=" + Encryption.generateFakeTokenToShop(sp.getString("user_token", "")) + "&mall_key=b64ab4b8124e2c5d43d52d9c05a6f992")
+                startActivity(intent)
+                activity!!.finish()
+
             }
         })
+
         taking.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                unopened()
+                val intent = Intent(activity, ConsultActivity::class.java)
+                intent.putExtra("webUrl", "purchasing")
+                startActivity(intent)
             }
         })
         game.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                unopened()
+                val intent = Intent(activity, ConsultActivity::class.java)
+                intent.putExtra("webUrl", "mountain")
+                startActivity(intent)
             }
         })
         take.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                unopened()
+                val intent = Intent(activity, ConsultActivity::class.java)
+                intent.putExtra("webUrl", "funding")
+                startActivity(intent)
             }
         })
         information.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                unopened()
+                val intent = Intent(activity, ConsultActivity::class.java)
+                intent.putExtra("webUrl", "https://m.jinse.com/member/209230")
+                startActivity(intent)
             }
         })
         more1.setOnClickListener(object : ClickUtlis() {
@@ -121,7 +139,9 @@ class A_Fragment : Fragment() {
                 unopened()
             }
         })
+        image.add(R.drawable.banner6)
         image.add(R.drawable.banner4)
+        image.add(R.drawable.banner2)
         image.add(R.drawable.banner)
         image.add(R.drawable.banner8)
         val adapter = BannerAdapter(activity, image)
@@ -134,7 +154,6 @@ class A_Fragment : Fragment() {
         snapHelper.attachToRecyclerView(recycler)
         val scheduledExecutorService = Executors.newScheduledThreadPool(1)
         scheduledExecutorService.scheduleAtFixedRate({ recycler.smoothScrollToPosition(layoutManager.findFirstVisibleItemPosition() + 1); }, 5000, 5000, TimeUnit.MILLISECONDS)
-
         //扫一下
         sao.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
@@ -171,7 +190,7 @@ class A_Fragment : Fragment() {
         //加速
         jiashu.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                jiashuinput()
+                startActivity(Intent(activity, RedPacketGetActivity::class.java))
             }
         })
         //收款
@@ -189,7 +208,10 @@ class A_Fragment : Fragment() {
         //资产
         home_card.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                startActivity(Intent(activity, ServiceActivity::class.java))
+                val intent = Intent(activity, ConsultActivity::class.java)
+                intent.putExtra("webUrl", "CustomerService")
+                startActivity(intent)
+    /*            startActivity(Intent(activity, ServiceActivity::class.java))*/
             }
         })
         //兑换资产
@@ -233,35 +255,29 @@ class A_Fragment : Fragment() {
     fun loadpr() {
         val retrofit = Retrofit_manager.getInstance().getUserlogin()
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).paroper(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java!!).paroper(id, token, "0", nowtime, PreferencesUtil.get("language", "ch"), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<prturn> {
                 override fun onResponse(call: Call<prturn>, response: Response<prturn>) {
                     try {
                         if (response.body()!!.code == 1) {
-                            if (response.body()!!.data!!.redPacketCount.equals("0")) {
-                                read.visibility = View.GONE
-                                jiashu.setOnClickListener(object : ClickUtlis() {
-                                    override fun onMultiClick(v: View?) {
-                                        Toast.makeText(activity, R.string.nored, Toast.LENGTH_SHORT).show()
-                                    }
-                                })
+                            ant.text = String.format("%.0f", response.body()!!.data!!.user_ant!!.toDouble())
+                            score = response.body()!!.data!!.user_score!!.toDouble()
+                            integral.text = String.format("%.0f", response.body()!!.data!!.user_score!!.toDouble())
+                            if (response.body()!!.data!!.envelopeCount!! == "0") {
+                                redDo.visibility = View.GONE
                             } else {
-                                jiashu.setClickable(true)
-                                read.visibility = View.VISIBLE
+                                redDo.visibility = View.VISIBLE
+                            }
+
+                            if (response.body()!!.data!!.redPacketCount.equals("0")) {
+                            } else {
+                                jiashu.isClickable = true
                                 jiashuinput()
                             }
-                            ant.setText(String.format("%.0f", response.body()!!.data!!.user_ant!!.toDouble()))
-                            score = response.body()!!.data!!.user_score!!.toDouble()
-                            integral.setText(String.format("%.0f", response.body()!!.data!!.user_score!!.toDouble()))
-                            /*         card.setText(String.format("%.8f", response.body()!!.data!!.lt_earnings!!.toDouble()))
-                                     T2_card.setText(String.format("%.8f", response.body()!!.data!!.lg_earnings!!.toDouble()))
-                                     zhimoney.setText(String.format("%.8f", response.body()!!.data!!.introduce_earnings!!.toDouble()))
-                                     money.setText(String.format("%.8f", response.body()!!.data!!.static_earnings!!.toDouble()))
-                                */
                             initAnnouncement()
                         } else {
                             Toast.makeText(activity, response.body()!!.message, Toast.LENGTH_SHORT).show()
@@ -271,17 +287,13 @@ class A_Fragment : Fragment() {
                 }
 
                 override fun onFailure(call: Call<prturn>, t: Throwable) {
-                    if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(activity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
-                    }
                     val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
                     //获得一个SharedPreferences编辑器
                     Toast.makeText(activity, R.string.guoqi, Toast.LENGTH_SHORT).show()
                     val edit = sp.edit()
                     edit.putBoolean("first", true)
-                    edit.commit();
-                    startActivity(Intent(activity, LoginActivity::class.java))
+                    edit.commit()
+                    startActivity(Intent(activity, NewLoginActivity::class.java))
                     activity!!.finish()
                 }
             })
@@ -291,22 +303,22 @@ class A_Fragment : Fragment() {
     }
 
     fun initAnnouncement() {
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
         val edit = sp.edit()
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).getLatestNotice(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java).getLatestNotice(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<LatestNoticeTurn> {
                 override fun onResponse(call: Call<LatestNoticeTurn>, response: Response<LatestNoticeTurn>) {
                     try {
                         if (response.body()!!.code == 1) {
-                            if (response.body()!!.data.content.equals("")) {
+                            if (response.body()!!.data.content == "") {
                                 return
                             }
-                            if (sp.getString("announcementTime", "noTime").equals(response.body()!!.data.createTime.toString())) {
+                            if (sp.getString("announcementTime", "noTime") == response.body()!!.data.createTime.toString()) {
                                 return
                             } else {
                                 val payDialog = AnnouncementActivity(activity!!)
@@ -324,8 +336,7 @@ class A_Fragment : Fragment() {
 
                 override fun onFailure(call: Call<LatestNoticeTurn>, t: Throwable) {
                     if (t is DataResultException) {
-                        val resultException = t as DataResultException
-                        Toast.makeText(activity!!, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity!!, t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -352,8 +363,7 @@ class A_Fragment : Fragment() {
     fun next() {
         try {
             getRedPacket()
-        }catch (e:Exception){
-
+        } catch (e: Exception) {
         }
     }
 
@@ -363,20 +373,20 @@ class A_Fragment : Fragment() {
             val payDialog = RedPacket2Activity(activity)
             payDialog.setaFragment(this, siz)
             payDialog.show()
-        }catch (e:Exception){
+        } catch (e: Exception) {
 
         }
 
     }
 
     fun getRedPacket() {
-        val retrofit = Retrofit_manager.getInstance().getUserlogin()
+        val retrofit = Retrofit_manager.getInstance().userlogin
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
-        var token = sp.getString("user_token", "")
-        var id = sp.getString("user_id", "")
+        val token = sp.getString("user_token", "")
+        val id = sp.getString("user_id", "")
         val nowtime = DateUtils.getdata()
         try {
-            val login = retrofit.create(MoneyService::class.java!!).getEveryDayRed(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+            val login = retrofit.create(MoneyService::class.java).getEveryDayRed(id, token, "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
             login.enqueue(object : Callback<RedPacket> {
                 override fun onResponse(call: Call<RedPacket>, response: Response<RedPacket>) {
                     try {
@@ -417,8 +427,8 @@ class A_Fragment : Fragment() {
                             try {
                                 val nowtime = DateUtils.getdata()
                                 val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
-                                val retrofit = Retrofit_manager.getInstance().getUserlogin()
-                                val register = retrofit.create(GitHubService::class.java!!).redPacketUp(sp.getString("user_id", ""), redId.toString(), sp.getString("user_token", ""), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
+                                val retrofit = Retrofit_manager.getInstance().userlogin
+                                val register = retrofit.create(GitHubService::class.java).redPacketUp(sp.getString("user_id", ""), redId.toString(), sp.getString("user_token", ""), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
                                 register.enqueue(object : Callback<Common> {
                                     override fun onResponse(call: Call<Common>, response: Response<Common>) {
                                         try {
@@ -450,7 +460,7 @@ class A_Fragment : Fragment() {
             try {
                 val nowtime = DateUtils.getdata()
                 val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
-                val retrofit = Retrofit_manager.getInstance().getUserlogin()
+                val retrofit = Retrofit_manager.getInstance().userlogin
                 val register = retrofit.create(GitHubService::class.java!!).redPacketUp(sp.getString("user_id", ""), redId.toString(), sp.getString("user_token", ""), "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime))
                 register.enqueue(object : Callback<Common> {
                     override fun onResponse(call: Call<Common>, response: Response<Common>) {
@@ -464,10 +474,10 @@ class A_Fragment : Fragment() {
                         } catch (e: Exception) {
                         }
                     }
+
                     override fun onFailure(call: Call<Common>, t: Throwable) {
                         if (t is DataResultException) {
-                            val resultException = t as DataResultException
-                            Toast.makeText(activity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(activity, t.message.toString(), Toast.LENGTH_SHORT).show()
                         }
                     }
                 })
@@ -481,8 +491,7 @@ class A_Fragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
             75063 -> try {
-                val b = activity!!.intent!!.extras
-                val result = b!!.getString(CaptureActivity.EXTRA_STRING)
+                val result = data!!.getStringExtra("barCode")
                 val intent = Intent(activity, TransferAccountsActivity::class.java)
                 intent.putExtra("userkey", result.toString())
                 startActivity(intent)

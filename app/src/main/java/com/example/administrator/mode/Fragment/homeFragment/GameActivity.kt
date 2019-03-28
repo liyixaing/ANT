@@ -31,13 +31,9 @@ class GameActivity : AppCompatActivity() {
             override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
                 return true
             }
-
-            override fun onPageFinished(view: WebView, url: String) {
-                super.onPageFinished(view, url)
-            }
         }
-        val sp = this!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
-        gameWebView.loadUrl("http://fcsap.com/src/index/Game.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", ""))
+        val sp = this.getSharedPreferences("USER", Context.MODE_PRIVATE)
+        gameWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/src/index/Game.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", ""))
         /* gameWebView.loadUrl("http://192.168.31.211:8020/ant/src/index/Game.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", ""))*/
     }
 

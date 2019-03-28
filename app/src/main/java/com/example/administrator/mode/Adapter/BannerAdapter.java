@@ -8,11 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.administrator.mode.Fragment.homeFragment.ConsultActivity;
 import com.example.administrator.mode.Fragment.homeFragment.GameActivity;
 import com.example.administrator.mode.Fragment.homeFragment.dialActivity;
+import com.example.administrator.mode.Fragment.red_packet.RedPacketGetActivity;
 import com.example.administrator.mode.R;
 import com.example.administrator.mode.Utlis.ClickUtlis;
 
@@ -40,12 +41,30 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.ViewHolder
             @Override
             public void onMultiClick(View v) {
                 Integer aa = list.get(position % list.size());
-                Log.i("whzzzzz", aa.toString());
-                if (aa == 2131230814) {
+                Log.i("dasdas", aa.toString());
+
+                if (aa == 2131230821) {
                     Intent intent = new Intent(context, GameActivity.class);
                     context.startActivity(intent);
                 }
-                if (aa == 2131230816) {
+                if (aa == 2131230823) {
+                    Intent intent = new Intent(context, ConsultActivity.class);
+                    intent.putExtra("webUrl","mountain");
+                    context.startActivity(intent);
+                }
+                if (aa == 2131230824) {
+                    Intent intent = new Intent(context, ConsultActivity.class);
+                    intent.putExtra("webUrl","funding");
+                    context.startActivity(intent);
+                }
+
+
+                if (aa == 2131230822) {
+                    Intent intent = new Intent(context, RedPacketGetActivity.class);
+                    context.startActivity(intent);
+                }
+                if (aa == 2131230825) {
+
                     Intent intent = new Intent(context, dialActivity.class);
                     context.startActivity(intent);
                 }

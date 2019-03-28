@@ -71,7 +71,6 @@ class FindpwdSecondActivity : BaseActivity() {
                             }
                         }
                         override fun onFailure(call: Call<Common>, t:Throwable) {
-                            Log.i("whz", "gggg")
                             if (t is DataResultException) {
                                 val attributes = HashMap<String, String>()
                                 attributes.put("UserName", user_Finnameinput);

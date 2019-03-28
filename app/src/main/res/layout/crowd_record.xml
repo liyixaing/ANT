@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/afragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/showCrowdRecord"
+            style="@style/xx"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:padding="5dp"
+            android:text="@string/TheRaiseRecord"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#d6d6d6" />
+
+    <LinearLayout
+        android:id="@+id/crowdRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:text="@string/crowdType"
+                android:gravity="left"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:text="@string/crowdQuantityCopies"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:text="@string/crowdDate"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:text="@string/crowdMoney"
+
+                android:gravity="right"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.example.administrator.mode.Fragment.homeFragment.LoadMoreListView
+            android:id="@+id/crowdRecordList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/afragment" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/releaseRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:text="@string/crowdMoneyANT"
+                android:textColor="#aaaaaa"
+                android:textSize="10sp" />
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:text="@string/crowdQuantityCopies"
+                android:textColor="#aaaaaa"
+                android:textSize="10sp" />
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:text="@string/crowdDate"
+                android:textColor="#aaaaaa"
+                android:textSize="10sp" />
+
+            <TextView
+                style="@style/edittext12"
+                android:layout_weight="1"
+                android:text="@string/crowdPayType"
+                android:gravity="right"
+                android:textColor="#aaaaaa"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/xxxxdada"
+        style="@style/xx"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:text="@string/zzzz" />
+</LinearLayout>
