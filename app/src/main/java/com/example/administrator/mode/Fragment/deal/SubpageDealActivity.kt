@@ -13,6 +13,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.example.administrator.mode.Activity.BaseActivity
 import com.example.administrator.mode.Activity.drawer.DownloadTask
+import com.example.administrator.mode.Fragment.homeFragment.ANTStoreActivity
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.PreferencesUtil
 import com.example.administrator.mode.Utlis.VerifyUtlis
@@ -65,6 +66,13 @@ class SubpageDealActivity : BaseActivity() {
         finish()
     }
 
+    @JavascriptInterface
+    fun jumpMarketOrder() {
+        val intent = Intent(this@SubpageDealActivity, ANTStoreActivity::class.java)
+        intent.putExtra("url", "http://47.91.22.21/s?route=account/order")
+        startActivity(intent)
+        finish()
+    }
 
     @JavascriptInterface
     fun clipboardSet(message: String) {
@@ -143,5 +151,12 @@ class SubpageDealActivity : BaseActivity() {
         }catch (e:Exception){
 
         }
+    }
+    @JavascriptInterface
+    fun finishThis() {
+        val intent = Intent(this@SubpageDealActivity, ANTStoreActivity::class.java)
+        intent.putExtra("url", "http://47.91.22.21/s?route=account/order")
+        startActivity(intent)
+        finish()
     }
 }

@@ -83,51 +83,51 @@
                     android:text="@string/Code_save"
                     android:textSize="10sp" />
 
-                <ImageView
-                    android:id="@+id/twoImageView"
-                    android:layout_width="27dp"
-                    android:layout_height="27dp"
-                    android:layout_below="@+id/oneSaveImage"
-                    android:layout_marginLeft="@dimen/dp_25"
-                    android:layout_marginTop="@dimen/dp_10"
-                    android:src="@drawable/service" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/twoImageView"-->
+                    <!--android:layout_width="27dp"-->
+                    <!--android:layout_height="27dp"-->
+                    <!--android:layout_below="@+id/oneSaveImage"-->
+                    <!--android:layout_marginLeft="@dimen/dp_25"-->
+                    <!--android:layout_marginTop="@dimen/dp_10"-->
+                    <!--android:src="@drawable/service" />-->
 
-                <TextView
-                    style="@style/qqq"
-                    android:layout_below="@+id/oneSaveImage"
-                    android:layout_marginLeft="@dimen/dp_1"
-                    android:layout_marginTop="12dp"
-                    android:layout_toRightOf="@+id/twoImageView"
-                    android:text="@string/ty"
-                    android:textSize="17sp" />
+                <!--<TextView-->
+                    <!--style="@style/qqq"-->
+                    <!--android:layout_below="@+id/oneSaveImage"-->
+                    <!--android:layout_marginLeft="@dimen/dp_1"-->
+                    <!--android:layout_marginTop="12dp"-->
+                    <!--android:layout_toRightOf="@+id/twoImageView"-->
+                    <!--android:text="@string/ty"-->
+                    <!--android:textSize="17sp" />-->
 
-                <TextView
-                    android:id="@+id/twoService"
-                    style="@style/qqq"
-                    android:layout_below="@+id/oneSaveImage"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginRight="@dimen/dp_25"
-                    android:text="@string/Service_wc"
-                    android:textSize="17sp" />
+                <!--<TextView-->
+                    <!--android:id="@+id/twoService"-->
+                    <!--style="@style/qqq"-->
+                    <!--android:layout_below="@+id/oneSaveImage"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginTop="12dp"-->
+                    <!--android:layout_marginRight="@dimen/dp_25"-->
+                    <!--android:text="@string/Service_wc"-->
+                    <!--android:textSize="17sp" />-->
 
-                <ImageView
-                    android:id="@+id/qqImageView"
-                    android:layout_width="150dp"
-                    android:layout_height="200dp"
-                    android:layout_below="@+id/twoImageView"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/dp_10"
-                    android:src="@drawable/mall" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/qqImageView"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:layout_below="@+id/twoImageView"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="@dimen/dp_10"-->
+                    <!--android:src="@drawable/mall" />-->
 
-                <TextView
-                    android:id="@+id/twoSaveImage"
-                    style="@style/qqq"
-                    android:layout_below="@+id/qqImageView"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/Code_save"
-                    android:textSize="10sp" />
+                <!--<TextView-->
+                    <!--android:id="@+id/twoSaveImage"-->
+                    <!--style="@style/qqq"-->
+                    <!--android:layout_below="@+id/qqImageView"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="@string/Code_save"-->
+                    <!--android:textSize="10sp" />-->
 
 
             </RelativeLayout>

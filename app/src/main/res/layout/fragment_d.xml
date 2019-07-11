@@ -158,7 +158,7 @@
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="27px"
-                android:src="@mipmap/renzhen" />
+                android:src="@mipmap/mine01" />
 
             <TextView
                 android:id="@+id/tvrenz"
@@ -186,6 +186,16 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="23px"
                 android:src="@mipmap/fan" />
+
+            <TextView
+                android:id="@+id/rubSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="48dp"
+                android:textSize="14sp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textColor="#cccccc" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -357,6 +367,40 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="23px"
                 android:src="@mipmap/fan" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/re_cache"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/appbackground"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/iv_cache"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="27px"
+                android:src="@mipmap/our" />
+
+            <TextView
+                style="@style/textview1"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30px"
+                android:layout_toRightOf="@+id/iv_cache"
+                android:text="@string/Clean_up_the_cache"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="0.0KB"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="23px"
+                />
         </RelativeLayout>
 
         <Button

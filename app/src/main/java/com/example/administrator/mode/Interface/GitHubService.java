@@ -1,8 +1,10 @@
 package com.example.administrator.mode.Interface;
 
+import com.example.administrator.mode.Pojo.Banner;
 import com.example.administrator.mode.Pojo.Common;
 import com.example.administrator.mode.Pojo.CommonInt;
 import com.example.administrator.mode.Pojo.Loginturn;
+import com.example.administrator.mode.Pojo.QueryMerchantApplyStatus;
 import com.example.administrator.mode.Pojo.ResponseBodytu;
 import java.util.List;
 import okhttp3.MultipartBody;
@@ -30,6 +32,8 @@ public interface GitHubService {
             @Field("language") String language,
             @Field("sign") String sign
     );
+
+
 
     //注册第二部
     @FormUrlEncoded
@@ -209,4 +213,45 @@ public interface GitHubService {
             @Query("language") String language,
             @Query("sign") String sign
     );
+
+
+
+
+
+    //查看申请状态
+    @GET("sat/getBanners")
+    Call<Banner> getBanners(
+            @Query("userId") String userId,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType,
+            @Query("offset") String offset,
+            @Query("size") String size
+    );
+
+    //查看申请状态
+    @GET("merchantApply/queryMerchantApplyStatus")
+    Call<QueryMerchantApplyStatus> queryMerchantApplyStatus(
+            @Query("userId") String userId,
+            @Query("timestamp") String timestamp,
+            @Query("token") String token,
+            @Query("sign") String sign,
+            @Query("language") String language,
+            @Query("clientType") String clientType
+    );
+
+    //申请商家
+    @FormUrlEncoded
+    @POST("merchantApply/merchantApply")
+    Call<Common> merchantApply(
+            @Field("userId") String userId,
+            @Field("timestamp") String timestamp,
+            @Field("token") String token,
+            @Field("sign") String sign,
+            @Query("language") String language,
+            @Field("clientType") String clientType
+    );
+
 }

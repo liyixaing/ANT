@@ -46,16 +46,16 @@ class ServiceActivity : BaseActivity() {
                 save()
             }
         })
-        twoService.setOnClickListener(object : ClickUtlis() {
-            override fun onMultiClick(v: View?) {
-                VerifyUtlis.copy(this@ServiceActivity, "gxganhh")
-            }
-        })
-        twoSaveImage.setOnClickListener(object : ClickUtlis() {
-            override fun onMultiClick(v: View?) {
-                save1()
-            }
-        })
+//        twoService.setOnClickListener(object : ClickUtlis() {
+//            override fun onMultiClick(v: View?) {
+//                VerifyUtlis.copy(this@ServiceActivity, "gxganhh")
+//            }
+//        })
+//        twoSaveImage.setOnClickListener(object : ClickUtlis() {
+//            override fun onMultiClick(v: View?) {
+//                save1()
+//            }
+//        })
 
 
     }
@@ -75,10 +75,10 @@ class ServiceActivity : BaseActivity() {
          Code_code.layout(0, 0, Code_code.getMeasuredWidth(), Code_code.getMeasuredHeight());
          Code_code.buildDrawingCache();*/
 
-        qqImageView.isDrawingCacheEnabled = true
-        val obmp = Bitmap.createBitmap(qqImageView.drawingCache)
-        qqImageView.isDrawingCacheEnabled = false
-        saveImageToGallery(this@ServiceActivity, obmp!!)
+//        qqImageView.isDrawingCacheEnabled = true
+//        val obmp = Bitmap.createBitmap(qqImageView.drawingCache)
+//        qqImageView.isDrawingCacheEnabled = false
+//        saveImageToGallery(this@ServiceActivity, obmp!!)
     }
 
     fun saveImageToGallery(context: Context, bmp: Bitmap) {

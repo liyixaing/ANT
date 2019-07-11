@@ -45,12 +45,12 @@ class LeadKeyActivity : BaseActivity() {
         leadKeyWebView.webChromeClient = webViewAlbum
         if (intent.getStringExtra("leadKeyUrl") == "11") {
             val sp = this.getSharedPreferences("USER", Context.MODE_PRIVATE)
-              leadKeyWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/importWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-           /* leadKeyWebView.loadUrl("http://192.168.31.211:8020/ant/wallet/src/importWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")*/
+             leadKeyWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/importWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+            //leadKeyWebView.loadUrl("http://192.168.31.211:8020/ant/wallet/src/importWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
         }else{
             val sp = this.getSharedPreferences("USER", Context.MODE_PRIVATE)
               leadKeyWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/importWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-            /*leadKeyWebView.loadUrl("http://192.168.31.211:8020/ant/wallet/src/importWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android&LoginPrivateKey="+intent.getStringExtra("leadKeyUrl"))*/
+            //leadKeyWebView.loadUrl("http://192.168.31.211:8020/ant/wallet/src/importWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android&LoginPrivateKey="+intent.getStringExtra("leadKeyUrl"))
         }
     }
 

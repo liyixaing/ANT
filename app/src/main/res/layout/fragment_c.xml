@@ -7,38 +7,36 @@
     android:background="@color/appbackground"
     android:orientation="vertical"
     tools:context=".Fragment.C_Fragment">
-  <!--  <fragment
-        android:id="@+id/recent_contacts_fragment"
-        android:name="com.netease.nim.uikit.business.recent.RecentContactsFragment"
+    <WebView
+        android:id="@+id/shequWebView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </fragment>-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        android:orientation="vertical">
+        android:layout_height="match_parent"/>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.85"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.4"-->
+        <!--android:orientation="vertical">-->
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@mipmap/steamup" />
+        <!--<ImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:src="@mipmap/steamup" />-->
 
-        <TextView
-            style="@style/xx"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:lineHeight="24dp"
-            android:text="@string/Blank_announcement"
-            android:textSize="18dp" />
-    </LinearLayout>
+        <!--<TextView-->
+            <!--style="@style/xx"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="32dp"-->
+            <!--android:gravity="center"-->
+            <!--android:lineHeight="24dp"-->
+            <!--android:text="@string/Blank_announcement"-->
+            <!--android:textSize="18dp" />-->
+    <!--</LinearLayout>-->
     <!-- <WebView
          android:id="@+id/crowdWebView"
          android:layout_width="match_parent"

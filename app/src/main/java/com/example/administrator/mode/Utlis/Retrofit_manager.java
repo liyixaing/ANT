@@ -14,11 +14,11 @@ public class Retrofit_manager {
 
     private Retrofit_manager() {
         //baseUrl链接地址  http://mobileapi.antbank.org
-         retrofit = new Retrofit.Builder().baseUrl("http://mobileapi.fuyer.com")
-        /* retrofit = new Retrofit.Builder().baseUrl("http://hellokitty.s1.natapp.cc")*/
+        retrofit = new Retrofit.Builder().baseUrl("http://mobileapi.fuyer.com")
+//         retrofit = new Retrofit.Builder().baseUrl("http://hellokitty.natapp1.cc")
         //添加gson解析
-        /*retrofit = new Retrofit.Builder().baseUrl("http://47.74.25.143:80")*/
-     /*   retrofit = new Retrofit.Builder().baseUrl("http://192.168.31.135:80")*/
+       // retrofit = new Retrofit.Builder().baseUrl("http://47.74.25.143:80")
+       // retrofit = new Retrofit.Builder().baseUrl("http://192.168.31.135:80")
                 .addConverterFactory(MyGsonConverterFactory.create())
                 .build();
     }

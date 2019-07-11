@@ -121,6 +121,7 @@ class RredEnvelopeActivity : BaseActivity() {
             val register = retrofit.create(MoneyService::class.java).getEnvelopeConfigInfo(sp.getString("user_id", ""), "5", nowtime, sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), PreferencesUtil.get("language", ""), "0")
             register.enqueue(object : Callback<GetRedBagMessage> {
                 override fun onResponse(call: Call<GetRedBagMessage>, response: Response<GetRedBagMessage>) {
+
                     if (response.body()!!.code == 1) {
                         redEnvelopeMax = response.body()!!.data.ant_red_envolope_territory_score_max_value.toInt()
                         redEnvelopeMin = response.body()!!.data!!.ant_red_envolope_territoty_score_min_value.toInt()

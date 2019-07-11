@@ -64,7 +64,6 @@ class ANTStoreActivity : AppCompatActivity() {
         intent.putExtra("commodityOrder", commodityOrder)
         intent.putExtra("commodityOrderkey", commodityOrderkey)
         startActivity(intent)
-        finish()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

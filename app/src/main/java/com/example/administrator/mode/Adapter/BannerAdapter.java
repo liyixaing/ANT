@@ -21,10 +21,10 @@ import java.util.List;
 
 public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.ViewHolder> {
 
-    private List<Integer> list;
+    private List<String> list;
     private Context context;
 
-    public BannerAdapter(Context context, List<Integer> list) {
+    public BannerAdapter(Context context, List<String> list) {
         this.list = list;
         this.context = context;
     }
@@ -40,34 +40,7 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.ViewHolder
         holder.imageView.setOnClickListener(new ClickUtlis() {
             @Override
             public void onMultiClick(View v) {
-                Integer aa = list.get(position % list.size());
-                Log.i("dasdas", aa.toString());
-
-                if (aa == 2131230821) {
-                    Intent intent = new Intent(context, GameActivity.class);
-                    context.startActivity(intent);
-                }
-                if (aa == 2131230823) {
-                    Intent intent = new Intent(context, ConsultActivity.class);
-                    intent.putExtra("webUrl","mountain");
-                    context.startActivity(intent);
-                }
-                if (aa == 2131230824) {
-                    Intent intent = new Intent(context, ConsultActivity.class);
-                    intent.putExtra("webUrl","funding");
-                    context.startActivity(intent);
-                }
-
-
-                if (aa == 2131230822) {
-                    Intent intent = new Intent(context, RedPacketGetActivity.class);
-                    context.startActivity(intent);
-                }
-                if (aa == 2131230825) {
-
-                    Intent intent = new Intent(context, dialActivity.class);
-                    context.startActivity(intent);
-                }
+                String aa = list.get(position % list.size());
             }
         });
         Glide.with(context).load(list.get(position % list.size())).into(holder.imageView);

@@ -97,22 +97,27 @@
     <string name="Home_game">                             闪兑</string>
     <string name="Home_take">                             众筹</string>
     <string name="Home_information">                      资讯</string>
-    <string name="Home_more1">                            更多</string>
+    <string name="Home_more1">                            认购</string>
     <string name="Home_more">                             邀请卡</string>
     <string name="Home_T2">                               T2节点</string>
     <string name="Home_zhitui">                           DPOS权益</string>
     <string name="Home_success">                          领取成功</string>
     <string name="get_red">                          领取</string>
+    <string name="Business_application">                          商家申请</string>
     <string name="already_received">                          已领取</string>
+    <string name="yishengq">                          您已经是ANT商家，无需重复申请</string>
 
+    <string name="already_shenqing">                          \t\t 申请开通ANT商家需要不低于20000RUB的信誉押金，存入本账号绑定的Ruby钱包蚂蚁理财宝后，提交申请。</string>
+    <string name="Applyimmediately">                         立即申请</string>
     <string name="Home_earnings">                         昨日奖励</string>
     <string name="Home_announcement">                     系统公告：各大币种支持提币、转账</string>
-    <string name="Home_renz">                             实名认证</string>
+    <string name="Home_renz">                             个人中心</string>
     <string name="Home_anq">                              私钥管理</string>
     <string name="Home_xx">                               消息中心</string>
     <string name="Home_banb">                             版本检测</string>
     <string name="language_settings">                             语言设置</string>
     <string name="Home_guanyuwo">                         关于我们</string>
+    <string name="Clean_up_the_cache">                         清理缓存</string>
     <string name="Home_shezhi">                           系统设置</string>
     <string name="Home_tuichu">                           退出登录</string>
     <string name="Home_yaoqin">                           邀请卡</string>
@@ -403,7 +408,7 @@
     <string name="yyy">                                     众筹</string>
     <string name="zzzz">                                    已全部加载完成..</string>
     <string name="RedEnvelopeType">                         红包类型</string>
-    <string name="RedEnvelopeCommon">                       普通红包</string>
+    <string name="RedEnvelopeCommon">                       资产红包</string>
     <string name="RedEnvelopeMoney">                        红包金额</string>
     <string name="RedEnvelopeInput">                        请输入红包金额</string>
     <string name="RedEnvelopeProperty">                     资产</string>
@@ -435,7 +440,7 @@
     <string name="RedEnvelopeMessageError">                 留言的字符区间应当为</string>
     <string name="RedEnvelopeMoneyError">                   发送金额区间应当为</string>
     <string name="RedEnvelopeTypeError">                    发送方式只能选择一个哦</string>
-    <string name="RedEnvelopeSendRedBag">                   发普通红包</string>
+    <string name="RedEnvelopeSendRedBag">                   发资产红包</string>
     <string name="RedEnvelopeSendArea">                     发区域红包</string>
     <string name="Toreceivethe">                     领取了</string>
 

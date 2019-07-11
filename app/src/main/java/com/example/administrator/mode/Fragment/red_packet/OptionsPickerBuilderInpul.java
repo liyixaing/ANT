@@ -10,7 +10,6 @@ import com.bigkoo.pickerview.listener.CustomListener;
 import com.bigkoo.pickerview.listener.OnOptionsSelectChangeListener;
 import com.bigkoo.pickerview.listener.OnOptionsSelectListener;
 import com.bigkoo.pickerview.view.OptionsPickerView;
-import com.contrarywind.view.WheelView;
 
 public class OptionsPickerBuilderInpul {
     //配置类
@@ -165,15 +164,15 @@ public class OptionsPickerBuilderInpul {
         return this;
     }
 
-    /**
-     * Set item divider line type.
-     *
-     * @param dividerType enum Type {@link WheelView.DividerType}
-     */
-    public OptionsPickerBuilderInpul setDividerType(WheelView.DividerType dividerType) {
-        mPickerOptions.dividerType = dividerType;
-        return this;
-    }
+//    /**
+//     * Set item divider line type.
+//     *
+//     * @param dividerType enum Type {@link WheelView.DividerType}
+//     */
+//    public OptionsPickerBuilderInpul setDividerType(WheelView.DividerType dividerType) {
+//        mPickerOptions.dividerType = dividerType;
+//        return this;
+//    }
 
     /**
      * Set the textColor of selected item.

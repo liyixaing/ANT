@@ -14,7 +14,6 @@ import java.security.MessageDigest;
 //圆角图片处理
 public class GlideCircleTransform extends BitmapTransformation {
     public GlideCircleTransform(Context context) {
-        super(context);
     }
 
     @Override

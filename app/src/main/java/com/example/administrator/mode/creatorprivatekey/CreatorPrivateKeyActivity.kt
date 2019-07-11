@@ -83,7 +83,7 @@ class CreatorPrivateKeyActivity : BaseActivity() {
       var hash256 = BytesUtils.hexStringToBytes("0x63c1dd951ffedf6f7fd968ad4efa39b8ed584f162f46e715114ee184f8de9201")
       val ecd = credentials.ecKeyPair.sign(hash256)
       var rstr = BytesUtils.bytesToHexString(ecd.r.toByteArray())
-      var sstr = BytesUtils.bytesToHexString(ecd.s.toByteArray())
+      var sstr = BytesUtils.bytesToHexString(ecd.QueryMerchantApplyStatus.toByteArray())
       var con = rstr + sstr
       Log.i("Ret", con)
       if (readFile(fileName) != "" && readFile(fileName) != "") {

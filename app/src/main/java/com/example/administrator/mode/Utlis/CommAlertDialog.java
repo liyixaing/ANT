@@ -81,7 +81,7 @@ public class CommAlertDialog extends Dialog {
          * <p/>
          * The default alert dialog theme is defined by
          * {@link android.R.attr#alertDialogTheme} within the parent
-         * {@code context}'s theme.
+         * {@code context}'QueryMerchantApplyStatus theme.
          *
          * @param context the parent context
          */
@@ -95,10 +95,10 @@ public class CommAlertDialog extends Dialog {
          * resource.
          * <p/>
          * The specified theme resource ({@code themeResId}) is applied on top
-         * of the parent {@code context}'s theme. It may be specified as a
+         * of the parent {@code context}'QueryMerchantApplyStatus theme. It may be specified as a
          * style resource containing a fully-populated theme, such as
          * {@link android.R.style#Theme_Material_Dialog}, to replace all
-         * attributes in the parent {@code context}'s theme including primary
+         * attributes in the parent {@code context}'QueryMerchantApplyStatus theme including primary
          * and accent colors.
          * <p/>
          * To preserve attributes such as primary and accent colors, the
@@ -108,13 +108,13 @@ public class CommAlertDialog extends Dialog {
          * window as a dialog.
          * <p/>
          * Alternatively, the {@code themeResId} may be specified as {@code 0}
-         * to use the parent {@code context}'s resolved value for
+         * to use the parent {@code context}'QueryMerchantApplyStatus resolved value for
          * {@link android.R.attr#alertDialogTheme}.
          *
          * @param context the parent context
          * @param themeResId the resource ID of the theme against which to inflate
          * this dialog, or {@code 0} to use the parent
-         * {@code context}'s default alert dialog theme
+         * {@code context}'QueryMerchantApplyStatus default alert dialog theme
          */
         public Builder(Context context, int themeResId) {
 
@@ -129,7 +129,7 @@ public class CommAlertDialog extends Dialog {
          * a {@link ListView} then the light background will be used.
          * <p/>
          * <strong>Note:</strong> To ensure consistent styling, the custom view
-         * should be inflated or constructed using the alert dialog's themed
+         * should be inflated or constructed using the alert dialog'QueryMerchantApplyStatus themed
          * context obtained via {@link #getContext()}.
          *
          * @param view the view to use as the contents of the alert dialog

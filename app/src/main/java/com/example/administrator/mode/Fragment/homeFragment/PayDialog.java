@@ -146,7 +146,7 @@ public class PayDialog extends BaseDialog {
                     }
 
                     if (getCommodityDealActivity() != null) {
-                        getCommodityDealActivity().OnInputPayPasswrodSuccess(str);
+//                        getCommodityDealActivity().OnInputPayPasswrodSuccess(str);
                     }
 
                     if (getRredEnvelopeActivity() != null) {

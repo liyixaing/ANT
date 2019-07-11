@@ -42,7 +42,7 @@ class ConsultActivity : BaseActivity() {
         if (intent.getStringExtra("webUrl") == "https://m.jinse.com/member/209230") {
             xdasdac.loadUrl("https://m.jinse.com/member/209230")
         }else if (intent.getStringExtra("webUrl") == "mountain"){
-        /*    xdasdac.loadUrl("http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange01.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")*/
+          // xdasdac.loadUrl("http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange01.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
             xdasdac.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/Ruby/exchange01.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
         }else if (intent.getStringExtra("webUrl")=="funding"){
           /*  xdasdac.loadUrl("http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")*/
@@ -113,6 +113,5 @@ class ConsultActivity : BaseActivity() {
         }catch (e: Exception){
 
         }
-
     }
 }

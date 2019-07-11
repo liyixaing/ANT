@@ -179,7 +179,6 @@
         android:textSize="14sp"
         android:visibility="gone" />
 
-
     <ImageView
         android:layout_width="294dp"
         android:layout_height="192dp"
@@ -229,6 +228,8 @@
             android:layout_width="100dp"
             android:layout_height="33dp"
             android:layout_weight="1"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
             android:background="@drawable/red_butt"
             android:text="@string/RedEnvelopeSendRedBag"
             android:textColor="#ce2b24"
@@ -238,6 +239,7 @@
             android:id="@+id/regionRed"
             android:layout_width="100dp"
             android:layout_height="33dp"
+            android:visibility="gone"
             android:layout_marginLeft="40dp"
             android:layout_weight="1"
             android:background="@drawable/red_butt"

@@ -199,8 +199,8 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/recycler"
+                    <com.youth.banner.Banner
+                        android:id="@+id/banner"
                         android:layout_width="match_parent"
                         android:layout_height="108dp"
                         android:layout_gravity="center_horizontal"
@@ -459,9 +459,9 @@
                                 android:layout_width="52dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:drawableTop="@mipmap/exchangefor"
+                                android:drawableTop="@mipmap/live9"
                                 android:gravity="center"
-                                android:text="@string/Home_game"
+                                android:text="@string/Home_more1"
                                 android:textSize="13sp" />
                         </LinearLayout>
 
@@ -516,9 +516,8 @@
                                 android:layout_width="52dp"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:drawableTop="@mipmap/live9"
                                 android:gravity="center"
-                                android:text="@string/Home_more1"
+                                android:text=""
                                 android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>

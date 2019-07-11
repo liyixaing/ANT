@@ -7,6 +7,9 @@ import kotlinx.android.synthetic.main.activity_versions.*
 import kotlinx.android.synthetic.main.tit.*
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.util.Log
 import android.widget.Toast
 import com.example.administrator.mode.Activity.DataResultException
 import com.example.administrator.mode.Interface.MoneyService
@@ -102,24 +105,36 @@ class VersionsActivity : BaseActivity() {
                 finish()
             }
         })
+        //立即跟新按钮
         versions_ok.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                var progressDialog: ProgressDialog? = null
-                progressDialog = ProgressDialog(this@VersionsActivity)
-                progressDialog.setMessage(xxxxxxxxx)
-                progressDialog.isIndeterminate = true
-                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-                progressDialog.setCancelable(true)
-                val downloadTask: DownloadTask = DownloadTask(this@VersionsActivity, progressDialog)
-                downloadTask.execute(url)
-                progressDialog.setOnCancelListener {
-                    downloadTask.cancel(true)
+
+                try {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    intent.setData(Uri.parse(url))
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    println("当前手机未安装浏览器")
                 }
-                val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
-                //获得一个SharedPreferences编辑器
-                val edit = sp.edit()
-                edit.putBoolean("versions", false)
-                edit.commit()
+
+//                var progressDialog: ProgressDialog? = null
+//                progressDialog = ProgressDialog(this@VersionsActivity)
+//                progressDialog.setMessage(xxxxxxxxx)
+//                progressDialog.isIndeterminate = true
+//                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
+//                progressDialog.setCancelable(true)
+//                val downloadTask: DownloadTask = DownloadTask(this@VersionsActivity, progressDialog)
+//                downloadTask.execute(url)
+//                Log.e("xaiqoaing", url)
+//                progressDialog.setOnCancelListener {
+//                    downloadTask.cancel(true)
+//                }
+//                val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
+//                //获得一个SharedPreferences编辑器
+//                val edit = sp.edit()
+//                edit.putBoolean("versions", false)
+//                edit.commit()
             }
         })
     }

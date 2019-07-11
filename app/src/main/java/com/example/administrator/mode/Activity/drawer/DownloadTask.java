@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.PowerManager;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.widget.Toast;
 import java.io.File;
@@ -121,8 +123,10 @@ public class DownloadTask extends AsyncTask<String,Integer,String> {
         File file=new File("/sdcard/new.apk");
         Intent installIntent = new Intent(Intent.ACTION_VIEW);
         installIntent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-        installIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        installIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK  | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         context.startActivity(installIntent);
+
+
     }
 
 }

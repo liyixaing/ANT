@@ -93,7 +93,7 @@ public class VerifyUtlis {
 
 //        StringBuffer sb = new StringBuffer();
 //        char[] c;
-//        c = s.toCharArray();
+//        c = QueryMerchantApplyStatus.toCharArray();
 //        for (int i = 0; i < c.length; i++) {
 //            if (c[i] != '\\') {
 //                if (c[i] != 'n') {

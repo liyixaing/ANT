@@ -14,7 +14,10 @@ import android.util.Log
 import android.widget.Toast
 import com.baidu.mobstat.StatService
 import com.example.administrator.mode.Activity.drawer.VersionsActivity
+import com.example.administrator.mode.Interface.GitHubService
 import com.example.administrator.mode.Interface.MoneyService
+import com.example.administrator.mode.Pojo.Common
+import com.example.administrator.mode.Pojo.CommonInt
 import com.example.administrator.mode.Pojo.Versionsturn
 import com.example.administrator.mode.R
 import retrofit2.Call
@@ -22,6 +25,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import com.example.administrator.mode.Pojo.SystemUPTurn
 import com.example.administrator.mode.Utlis.*
+import com.example.administrator.mode.creatorprivatekey.ReadAgreementActivity
 import java.util.*
 
 
@@ -35,19 +39,6 @@ class WelActivity : BaseActivity() {
     override fun onStart() {
         super.onStart()
 
-        /*  if (VerifyUtlis.isInstallApp(this)) {
-              toast("xxx")
-          } else {
-              toast("zzz")
-          }
-          val intent = Intent()
-          intent.data = Uri.parse("csd://pull.csd.demo/cyn")
-          intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-          startActivity(intent)*/
-        /*          val intent = Intent()
-                  intent.data = Uri.parse("rubychainwallet://")
-                  intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                  startActivity(intent)*/
     }
 
     override fun init() {

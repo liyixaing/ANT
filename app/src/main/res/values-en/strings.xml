@@ -27,13 +27,17 @@
     <string name="namenode">                              Binding contact</string>
     <string name="nation">                                Choose the country</string>
     <string name="Node_message">                          Contact information</string>
+    <string name="Business_application">                          Business application</string>
     <string name="Node_activate">                         Confirm activation of friends</string>
     <string name="Node_search">                           Search</string>
     <string name="Node_affirm">                           Please confirm that the contact information is correct and cannot be modified once activated.</string>
     <string name="Node_mark">                             Contact mark</string>
     <string name="Node_markinput">                        Enter contact mark</string>
+    <string name="already_shenqing">                         \t\t To apply for ANT merchants, the credit deposit of not less than 20000RUB is required. After the deposit is made into ANT financial treasure, a Ruby wallet bound to this account, the application is submitted.</string>
     <string name="nameuptwo">                             The name should not exceed 6 characters.</string>
     <string name="Node_Error">                            Contact input is incorrect, please confirm contact</string>
+    <string name="Applyimmediately">                         Applyimmediately</string>
+    <string name="yishengq">                          You are already an ANT merchant and do not need to apply again</string>
     <!--欢迎页面-->
     <string name="Themnemonicword">                           Safety warning: mnemonic words must be properly kept, if the loss of mnemonic words may cause unnecessary trouble</string>
     <string name="Property_loginup2">Security warning: private key is not encrypted, there is a risk of export, it is recommended to use mnemonic and Ketstore for backup</string>
@@ -112,7 +116,7 @@
     <string name="Home_game">                             conversion</string>
     <string name="Home_take">                             ICO</string>
     <string name="Home_information">                      Information</string>
-    <string name="Home_more1">                            More</string>
+    <string name="Home_more1">                            Subscribe</string>
     <string name="Home_more">                             Invitation card</string>
     <string name="Home_T2">                               T2</string>
     <string name="reception">                       reception</string>
@@ -128,6 +132,7 @@
     <string name="Home_banb">                             Version detection</string>
     <string name="language_settings">                     languageSettings</string>
     <string name="Home_guanyuwo">                         About us</string>
+    <string name="Clean_up_the_cache">                    Clean up the cache</string>
     <string name="Home_shezhi">                           Settings</string>
     <string name="Home_tuichu">                           Logout</string>
     <string name="Home_yaoqin">                           Invitation card</string>

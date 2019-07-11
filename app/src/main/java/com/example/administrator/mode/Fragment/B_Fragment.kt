@@ -57,8 +57,8 @@ class B_Fragment : Fragment() {
         val ua = dealWebView.settings.userAgentString
         dealWebView.settings.userAgentString = "$ua/AntDapp"
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
-        dealWebView.loadUrl("http://192.168.31.211:8020/ant/wallet/home.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-        /* dealWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/home.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")*/
+     //dealWebView.loadUrl("http://192.168.31.211:8020/ant/wallet/home.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+         dealWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/home.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
     }
 
     @JavascriptInterface

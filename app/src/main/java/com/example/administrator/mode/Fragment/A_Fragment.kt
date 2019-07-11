@@ -4,7 +4,9 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat.startActivityForResult
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.PagerSnapHelper
 import android.view.LayoutInflater
 import android.view.View
@@ -15,19 +17,20 @@ import com.example.administrator.mode.Activity.DataResultException
 import com.example.administrator.mode.Activity.drawer.InviteActivity
 import com.example.administrator.mode.Adapter.BannerAdapter
 import com.example.administrator.mode.Adapter.SmoothLinearLayoutManager
+import com.example.administrator.mode.Fragment.deal.SubpageDealActivity
 import com.example.administrator.mode.Fragment.homeFragment.*
+import com.example.administrator.mode.Fragment.my.MyCenterActivity
 import com.example.administrator.mode.Fragment.red_packet.RedPacketGetActivity
 import com.example.administrator.mode.Interface.GitHubService
 import com.example.administrator.mode.Interface.MoneyService
-import com.example.administrator.mode.Pojo.Common
-import com.example.administrator.mode.Pojo.LatestNoticeTurn
-import com.example.administrator.mode.Pojo.RedPacket
-import com.example.administrator.mode.Pojo.prturn
+import com.example.administrator.mode.Pojo.*
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
 import com.example.administrator.mode.creatorprivatekey.NewLoginActivity
 import com.github.shenyuanqing.zxingsimplify.zxing.Activity.CaptureActivity
+import com.youth.banner.listener.OnBannerListener
 import kotlinx.android.synthetic.main.fragment_a.*
+import kotlinx.android.synthetic.main.fragment_d.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,7 +42,7 @@ private const val ARG_PARAM2 = "param2"
 
 
 class A_Fragment : Fragment() {
-    var image = arrayListOf<Int>()
+    var image = arrayListOf<String>()
     var num = arrayListOf<String>()
     private var siz = ""
     private var redId = 0
@@ -136,25 +139,57 @@ class A_Fragment : Fragment() {
         })
         more1.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                unopened()
+                val intent = Intent(activity, SubpageDealActivity::class.java)
+               // intent.putExtra("dealurl", "http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange02.html")
+                intent.putExtra("dealurl", "http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/Ruby/exchange02.html")
+                startActivity(intent)
             }
         })
-        image.add(R.drawable.banner6)
-        image.add(R.drawable.banner4)
-        image.add(R.drawable.banner2)
-        image.add(R.drawable.banner)
-        image.add(R.drawable.banner8)
-        val adapter = BannerAdapter(activity, image)
-        val layoutManager = SmoothLinearLayoutManager(activity, SmoothLinearLayoutManager.HORIZONTAL, false)
-        recycler.adapter = adapter
-        recycler.layoutManager = layoutManager
-        recycler.setHasFixedSize(true)
-        recycler.scrollToPosition(image.size * 10)
-        val snapHelper = PagerSnapHelper()
-        snapHelper.attachToRecyclerView(recycler)
-        val scheduledExecutorService = Executors.newScheduledThreadPool(1)
-        scheduledExecutorService.scheduleAtFixedRate({ recycler.smoothScrollToPosition(layoutManager.findFirstVisibleItemPosition() + 1); }, 5000, 5000, TimeUnit.MILLISECONDS)
-        //扫一下
+
+            val nowtime = DateUtils.getdata()
+            val retrofit = Retrofit_manager.getInstance().userlogin
+            val logins = retrofit.create(GitHubService::class.java).getBanners(sp.getString("user_id", ""), nowtime, sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), PreferencesUtil.get("language", ""), "0", "0", "10")
+            logins.enqueue(object : Callback<Banner> {
+                override fun onResponse(call: Call<Banner>, response: Response<Banner>) {
+                    if (response.body()!!.code == 1) {
+                        try {
+                            for(t :Banner.DataBean in response.body()!!.data){
+                                image.add(t.imgurl)
+                            }
+                            banner.setImages(image).setImageLoader(GlideImageLoader()).start()
+                            banner.setOnBannerListener { position ->
+                                val intent = Intent(activity, SubpageDealActivity::class.java)
+                                intent.putExtra("dealurl", response.body()!!.data!![position].action)
+                                startActivity(intent)
+                            }
+                        }catch (e:Exception){
+                            Toast.makeText(activity,e.toString(),Toast.LENGTH_LONG).show()
+                        }
+
+                    } else {
+                        Toast.makeText(activity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Banner>, t: Throwable) {
+                    if (t is DataResultException) {
+                        Toast.makeText(activity, t.message.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                }
+            })
+
+
+//        val adapter = BannerAdapter(activity, image)
+//        val layoutManager = SmoothLinearLayoutManager(activity, SmoothLinearLayoutManager.HORIZONTAL, false)
+//        recycler.adapter = adapter
+//        recycler.layoutManager = layoutManager
+//        recycler.setHasFixedSize(true)
+//        recycler.scrollToPosition(image.size * 10)
+//        val snapHelper = PagerSnapHelper()
+//        snapHelper.attachToRecyclerView(recycler)
+//        val scheduledExecutorService = Executors.newScheduledThreadPool(1)
+//        scheduledExecutorService.scheduleAtFixedRate({ recycler.smoothScrollToPosition(layoutManager.findFirstVisibleItemPosition() + 1); }, 5000, 5000, TimeUnit.MILLISECONDS)
+        // 扫一下
         sao.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 val alertDialog = AlertDialog.Builder(activity)
@@ -211,7 +246,7 @@ class A_Fragment : Fragment() {
                 val intent = Intent(activity, ConsultActivity::class.java)
                 intent.putExtra("webUrl", "CustomerService")
                 startActivity(intent)
-    /*            startActivity(Intent(activity, ServiceActivity::class.java))*/
+                /*            startActivity(Intent(activity, ServiceActivity::class.java))*/
             }
         })
         //兑换资产

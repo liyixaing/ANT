@@ -80,7 +80,7 @@ public class Base64Encoder extends FilterOutputStream {
         }
         charCount++;
 
-        // Add newline every 76 output chars (that's 57 input chars)
+        // Add newline every 76 output chars (that'QueryMerchantApplyStatus 57 input chars)
         if (this.isWrapBreak && charCount % 57 == 0) {
             out.write('\n');
         }

@@ -12,7 +12,7 @@ public class Base32Core {
             0x17, 0x18, 0x19, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, // 'X', 'Y', 'Z', '[', '\', ']', '^', '_'
             0xFF, 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, // '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g'
             0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, // 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o'
-            0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, // 'p', 'q', 'r', 's', 't', 'u', 'v', 'w'
+            0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, // 'p', 'q', 'r', 'QueryMerchantApplyStatus', 't', 'u', 'v', 'w'
             0x17, 0x18, 0x19, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF // 'x', 'y', 'z', '{', '|', '}', '~', 'DEL'
     };
 
@@ -110,8 +110,8 @@ public class Base32Core {
         String input = "1wozaina9";
         byte[] inputBuf = input.getBytes();
 // try {
-// String s = new String(inputBuf, "utf-8");
-// Logger.v("s : " + s);
+// String QueryMerchantApplyStatus = new String(inputBuf, "utf-8");
+// Logger.v("QueryMerchantApplyStatus : " + QueryMerchantApplyStatus);
 // } catch (UnsupportedEncodingException e1) {}
 //
         String encoded = Base32Core.encode(inputBuf);
@@ -119,7 +119,7 @@ public class Base32Core {
         try {
             byte[] outputBuf = Base32Core.decode(encoded);
             String s = new String(outputBuf, "utf-8");
-            Logger.v("s : " + s);
+            Logger.v("QueryMerchantApplyStatus : " + s);
         } catch (Exception e) {
             Logger.v("Illegal character");
         }

@@ -22,15 +22,15 @@ import com.bigkoo.alertview.OnItemClickListener
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions.bitmapTransform
 import com.eightbitlab.rxbus.Bus
-import com.example.administrator.mode.Activity.DataResultException
-import com.example.administrator.mode.Activity.LoginActivity
-import com.example.administrator.mode.Activity.MainActivity
+import com.example.administrator.mode.Activity.*
 import com.example.administrator.mode.Activity.drawer.AboutWeActivity
 import com.example.administrator.mode.Activity.drawer.VersionsActivity
 import com.example.administrator.mode.Activity.privatekeymanage.PrivateKeyManageActivity
+import com.example.administrator.mode.Fragment.my.MyCenterActivity
 import com.example.administrator.mode.Interface.GitHubService
 import com.example.administrator.mode.Pojo.Common
 import com.example.administrator.mode.Pojo.KeyAddressBean
+import com.example.administrator.mode.Pojo.QueryMerchantApplyStatus
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
 import com.example.administrator.mode.app.MyApplication
@@ -43,19 +43,32 @@ import retrofit2.Response
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+var cacheSize: String = ""
 
 class D_Fragment : Fragment() {
-
+    override fun onStart() {
+        super.onStart()
+        initShot()
+    }
     var items = arrayOf("中文", "English")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_d, container, false)
     }
 
+
+    override fun onResume() {
+        cacheSize = GetFileSize.FormetFileSize(GetFileSize.getFileSize(activity!!.cacheDir))
+        tv_cache.setText(cacheSize)
+        super.onResume()
+        super.onResume()
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
         val edit = sp.edit()
+        cacheSize = GetFileSize.FormetFileSize(GetFileSize.getFileSize(activity!!.cacheDir))
+        tv_cache.setText(cacheSize)
         if (MyApplication.isVip != "0") {
             isVip.visibility = View.VISIBLE
             eee.visibility = View.VISIBLE
@@ -76,18 +89,18 @@ class D_Fragment : Fragment() {
         }
         if (MyApplication.keyAddressBeans.userHead != "" && MyApplication.keyAddressBeans.userHead != null) {
 
-            Glide.with(activity).load(MyApplication.keyAddressBeans.userHead).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
+            Glide.with(activity!!).load(MyApplication.keyAddressBeans.userHead).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
         } else {
             val resource = R.drawable.antdefault
 
-            Glide.with(activity).load(resource).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
+            Glide.with(activity!!).load(resource).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
         }
 
         Bus.observe<UserHeadEvent>().subscribe { t: UserHeadEvent ->
             kotlin.run {
                 try {
                     if (t.isLong != ""&&t.isLong!=null) {
-                        Glide.with(activity).load(t.isLong).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
+                        Glide.with(activity!!).load(t.isLong).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
                     }else{
                     }
                 }catch (e:Exception){
@@ -110,11 +123,7 @@ class D_Fragment : Fragment() {
                 }
             }
         })
-        re_shiming.setOnClickListener(object : ClickUtlis() {
-            override fun onMultiClick(v: View?) {
-                Toast.makeText(activity, R.string.System_in_error, Toast.LENGTH_SHORT).show()
-            }
-        })
+
         re_anquan.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 startActivity(Intent(activity, PrivateKeyManageActivity::class.java))
@@ -130,6 +139,16 @@ class D_Fragment : Fragment() {
         re_guanyu.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 startActivity(Intent(activity, AboutWeActivity::class.java))
+            }
+        })
+        //清除缓存
+        re_cache.setOnClickListener(object : ClickUtlis() {
+            override fun onMultiClick(v: View?) {
+                DataCleanManager.cleanInternalCache(activity)
+                cacheSize = GetFileSize.FormetFileSize(GetFileSize.getFileSize(activity!!.cacheDir))
+                tv_cache.setText(cacheSize)
+                Toast.makeText(activity, R.string.Clean_up_the_cache, Toast.LENGTH_SHORT).show()
+
             }
         })
         bu_tuichu.setOnClickListener(object : ClickUtlis() {
@@ -243,6 +262,37 @@ class D_Fragment : Fragment() {
                         })
                 mAlertViewExt.show()
                 mAlertViewExt.addExtView(extView)
+            }
+        })
+    }
+
+    private fun initShot() {
+        val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
+        val nowtime = DateUtils.getdata()
+        val retrofit = Retrofit_manager.getInstance().userlogin
+        val login = retrofit.create(GitHubService::class.java).queryMerchantApplyStatus(sp.getString("user_id", ""), nowtime,  sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime),PreferencesUtil.get("language", ""),"0")
+        login.enqueue(object : Callback<QueryMerchantApplyStatus> {
+            override fun onResponse(call: Call<QueryMerchantApplyStatus>, response: Response<QueryMerchantApplyStatus>) {
+                if (response.body()!!.code == 1) {
+                    rubSelect.text = response.body()!!.data.approvalDesc
+                    if (response.body()!!.data.approvalStatus!=0){
+                        re_shiming.setOnClickListener(object : ClickUtlis() {
+                            override fun onMultiClick(v: View?) {
+                                val intent = Intent(activity, MyCenterActivity::class.java)
+                                intent.putExtra("approvalDesc", response.body()!!.data.approvalStatus.toString())
+                                startActivity(intent)
+                            }
+                        })
+                    }
+                } else {
+                    Toast.makeText(activity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<QueryMerchantApplyStatus>, t: Throwable) {
+                if (t is DataResultException) {
+                    Toast.makeText(activity, t.message.toString(), Toast.LENGTH_SHORT).show()
+                }
             }
         })
     }
