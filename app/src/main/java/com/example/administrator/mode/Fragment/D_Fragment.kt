@@ -50,6 +50,7 @@ class D_Fragment : Fragment() {
         super.onStart()
         initShot()
     }
+
     var items = arrayOf("中文", "English")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -63,6 +64,7 @@ class D_Fragment : Fragment() {
         super.onResume()
         super.onResume()
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
@@ -84,26 +86,26 @@ class D_Fragment : Fragment() {
         val s = sp.getBoolean("versions11", false)
         if (s) {
 
-        }else{
+        } else {
             iv_ban.visibility = View.VISIBLE
         }
         if (MyApplication.keyAddressBeans.userHead != "" && MyApplication.keyAddressBeans.userHead != null) {
 
-            Glide.with(activity!!).load(MyApplication.keyAddressBeans.userHead).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
+            Glide.with(activity!!).load(MyApplication.keyAddressBeans.userHead).apply(bitmapTransform(GlideCircleTransform(activity))).into(mainhead)
         } else {
             val resource = R.drawable.antdefault
 
-            Glide.with(activity!!).load(resource).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
+            Glide.with(activity!!).load(resource).apply(bitmapTransform(GlideCircleTransform(activity))).into(mainhead)
         }
 
         Bus.observe<UserHeadEvent>().subscribe { t: UserHeadEvent ->
             kotlin.run {
                 try {
-                    if (t.isLong != ""&&t.isLong!=null) {
-                        Glide.with(activity!!).load(t.isLong).apply(bitmapTransform( GlideCircleTransform(activity))).into(mainhead)
-                    }else{
+                    if (t.isLong != "" && t.isLong != null) {
+                        Glide.with(activity!!).load(t.isLong).apply(bitmapTransform(GlideCircleTransform(activity))).into(mainhead)
+                    } else {
                     }
-                }catch (e:Exception){
+                } catch (e: Exception) {
 
                 }
             }
@@ -148,7 +150,6 @@ class D_Fragment : Fragment() {
                 cacheSize = GetFileSize.FormetFileSize(GetFileSize.getFileSize(activity!!.cacheDir))
                 tv_cache.setText(cacheSize)
                 Toast.makeText(activity, R.string.Clean_up_the_cache, Toast.LENGTH_SHORT).show()
-
             }
         })
         bu_tuichu.setOnClickListener(object : ClickUtlis() {
@@ -270,12 +271,12 @@ class D_Fragment : Fragment() {
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
         val nowtime = DateUtils.getdata()
         val retrofit = Retrofit_manager.getInstance().userlogin
-        val login = retrofit.create(GitHubService::class.java).queryMerchantApplyStatus(sp.getString("user_id", ""), nowtime,  sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime),PreferencesUtil.get("language", ""),"0")
+        val login = retrofit.create(GitHubService::class.java).queryMerchantApplyStatus(sp.getString("user_id", ""), nowtime, sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), PreferencesUtil.get("language", ""), "0")
         login.enqueue(object : Callback<QueryMerchantApplyStatus> {
             override fun onResponse(call: Call<QueryMerchantApplyStatus>, response: Response<QueryMerchantApplyStatus>) {
                 if (response.body()!!.code == 1) {
                     rubSelect.text = response.body()!!.data.approvalDesc
-                    if (response.body()!!.data.approvalStatus!=0){
+                    if (response.body()!!.data.approvalStatus != 0) {
                         re_shiming.setOnClickListener(object : ClickUtlis() {
                             override fun onMultiClick(v: View?) {
                                 val intent = Intent(activity, MyCenterActivity::class.java)
