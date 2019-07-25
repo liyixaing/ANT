@@ -85,6 +85,7 @@ public abstract class BaseActivity extends FragmentActivity {
         return res;
     }
 
+
     protected void showLanguage(String language) {
 
         //设置应用语言类型

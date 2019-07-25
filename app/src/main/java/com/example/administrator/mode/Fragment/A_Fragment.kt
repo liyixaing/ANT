@@ -140,45 +140,43 @@ class A_Fragment : Fragment() {
         more1.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 val intent = Intent(activity, SubpageDealActivity::class.java)
-               // intent.putExtra("dealurl", "http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange02.html")
+                // intent.putExtra("dealurl", "http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange02.html")
                 intent.putExtra("dealurl", "http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/Ruby/exchange02.html")
                 startActivity(intent)
             }
         })
 
-            val nowtime = DateUtils.getdata()
-            val retrofit = Retrofit_manager.getInstance().userlogin
-            val logins = retrofit.create(GitHubService::class.java).getBanners(sp.getString("user_id", ""), nowtime, sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), PreferencesUtil.get("language", ""), "0", "0", "10")
-            logins.enqueue(object : Callback<Banner> {
-                override fun onResponse(call: Call<Banner>, response: Response<Banner>) {
-                    if (response.body()!!.code == 1) {
-                        try {
-                            for(t :Banner.DataBean in response.body()!!.data){
-                                image.add(t.imgurl)
-                            }
-                            banner.setImages(image).setImageLoader(GlideImageLoader()).start()
-                            banner.setOnBannerListener { position ->
-                                val intent = Intent(activity, SubpageDealActivity::class.java)
-                                intent.putExtra("dealurl", response.body()!!.data!![position].action)
-                                startActivity(intent)
-                            }
-                        }catch (e:Exception){
-                            Toast.makeText(activity,e.toString(),Toast.LENGTH_LONG).show()
+        val nowtime = DateUtils.getdata()
+        val retrofit = Retrofit_manager.getInstance().userlogin
+        val logins = retrofit.create(GitHubService::class.java).getBanners(sp.getString("user_id", ""), nowtime, sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), PreferencesUtil.get("language", ""), "0", "0", "10")
+        logins.enqueue(object : Callback<Banner> {
+            override fun onResponse(call: Call<Banner>, response: Response<Banner>) {
+                if (response.body()!!.code == 1) {
+                    try {
+                        for (t: Banner.DataBean in response.body()!!.data) {
+                            image.add(t.imgurl)
                         }
-
-                    } else {
-                        Toast.makeText(activity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                        banner.setImages(image).setImageLoader(GlideImageLoader()).start()
+                        banner.setOnBannerListener { position ->
+                            val intent = Intent(activity, SubpageDealActivity::class.java)
+                            intent.putExtra("dealurl", response.body()!!.data!![position].action)
+                            startActivity(intent)
+                        }
+                    } catch (e: Exception) {
+                        Toast.makeText(activity, e.toString(), Toast.LENGTH_LONG).show()
                     }
+
+                } else {
+                    Toast.makeText(activity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                 }
+            }
 
-                override fun onFailure(call: Call<Banner>, t: Throwable) {
-                    if (t is DataResultException) {
-                        Toast.makeText(activity, t.message.toString(), Toast.LENGTH_SHORT).show()
-                    }
+            override fun onFailure(call: Call<Banner>, t: Throwable) {
+                if (t is DataResultException) {
+                    Toast.makeText(activity, t.message.toString(), Toast.LENGTH_SHORT).show()
                 }
-            })
-
-
+            }
+        })
 //        val adapter = BannerAdapter(activity, image)
 //        val layoutManager = SmoothLinearLayoutManager(activity, SmoothLinearLayoutManager.HORIZONTAL, false)
 //        recycler.adapter = adapter

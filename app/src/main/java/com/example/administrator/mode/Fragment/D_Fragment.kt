@@ -57,7 +57,6 @@ class D_Fragment : Fragment() {
         return inflater.inflate(R.layout.fragment_d, container, false)
     }
 
-
     override fun onResume() {
         cacheSize = GetFileSize.FormetFileSize(GetFileSize.getFileSize(activity!!.cacheDir))
         tv_cache.setText(cacheSize)
