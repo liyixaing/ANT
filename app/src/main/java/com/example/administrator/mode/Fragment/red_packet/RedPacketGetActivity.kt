@@ -10,6 +10,7 @@ import android.media.MediaPlayer
 import android.os.Build
 import android.provider.Settings
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -26,6 +27,7 @@ import com.example.administrator.mode.Pojo.geSingleEnvelopeList
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
 import kotlinx.android.synthetic.main.activity_redpacket.*
+import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,7 +35,9 @@ import java.io.IOException
 import java.lang.Exception
 import java.util.ArrayList
 
-
+/**
+ * 摇一摇红包界面
+ */
 class RedPacketGetActivity : BaseActivity(), SensorEventListener {
     val num = 0
     var isPlayer = true
@@ -94,7 +98,7 @@ class RedPacketGetActivity : BaseActivity(), SensorEventListener {
                     if (zz.size > 0) {
 
                         if (PreferencesUtil.get("language", "") == "en") {
-                             dasd.setImageResource(R.mipmap.sdadazxdasdzx)
+                            dasd.setImageResource(R.mipmap.sdadazxdasdzx)
                         }
                         dasd.visibility = View.VISIBLE
                         dasd.setOnClickListener { showCardGet2(zz[0].amountScore, zz[0].id, zz[0].memo) }
@@ -129,6 +133,7 @@ class RedPacketGetActivity : BaseActivity(), SensorEventListener {
                         getRedRecord()
                         Toast.makeText(this@RedPacketGetActivity, getString(R.string.Toreceivethe) + response.body()!!.data.score.toString() + "资产", Toast.LENGTH_SHORT).show()
                     } else {
+
                     }
                 }
 
@@ -238,6 +243,8 @@ class RedPacketGetActivity : BaseActivity(), SensorEventListener {
         }
     }
 
+
+    //摇一摇后调用接口
     private fun isShowGetRed() {
         try {
             if (!isLocationEnabled()) {
@@ -249,9 +256,16 @@ class RedPacketGetActivity : BaseActivity(), SensorEventListener {
             val retrofit = Retrofit_manager.getInstance().userlogin
             val baiduLocationUtil = BaiduLocationUtil(this, object : BaiduLocationUtil.IGetLocation {
                 override fun getLocationSuccess(bdLocation: BDLocation?) {
-                    val register = retrofit.create(MoneyService::class.java).drawPeopleEnvelope(sp.getString("user_id", ""), bdLocation!!.longitude.toString(), bdLocation.latitude.toString(), nowtime, sp.getString("user_token", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), PreferencesUtil.get("language", ""), "0")
+                    val register = retrofit
+                            .create(MoneyService::class.java)
+                            .drawPeopleEnvelope(sp.getString("user_id", ""),
+                                    bdLocation!!.longitude.toString(), bdLocation.latitude.toString(), nowtime,
+                                    sp.getString("user_token", ""),
+                                    SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime),
+                                    PreferencesUtil.get("language", ""), "0")
                     register.enqueue(object : Callback<GetRedBag> {
                         override fun onResponse(call: Call<GetRedBag>, response: Response<GetRedBag>) {
+                            Log.e("TAG", response.body()!!.code.toString())
                             if (response.body()!!.code == 1) {
                                 /*    ant_phone.setImageResource(R.drawable.red_open_card)*/
 
@@ -259,7 +273,7 @@ class RedPacketGetActivity : BaseActivity(), SensorEventListener {
                                     dasd.setImageResource(R.mipmap.sdadazxdasdzx)
                                 }
                                 dasd.visibility = View.VISIBLE
-                                dasd.setOnClickListener { showCardGet(response.body()!!.data.score,response.body()!!.data.memo) }
+                                dasd.setOnClickListener { showCardGet(response.body()!!.data.score, response.body()!!.data.memo) }
                             } else {
                             }
                         }

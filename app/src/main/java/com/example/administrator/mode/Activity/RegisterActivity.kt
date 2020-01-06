@@ -3,6 +3,7 @@ package com.example.administrator.mode.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.CountDownTimer
+import android.util.Log
 
 import android.view.View
 import retrofit2.Call
@@ -111,6 +112,7 @@ class RegisterActivity : BaseActivity() {
             override fun onMultiClick(v: View?) {
                 try {
                     val ssmUtlis = SsmUtlis()
+                    Log.e("HOME", user_Regname.text.toString().trim())
                     ssmUtlis.Ssm(user_Regname.text.toString().trim(), login_state1.text.toString().trim(), VerifyUtlis.getIMEI(this@RegisterActivity), "0", this@RegisterActivity)
                     count_down()
                 } catch (e: Exception) {

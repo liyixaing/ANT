@@ -199,12 +199,27 @@ class ConversionActivity : BaseActivity() {
         }
         try {
             val nowtime = DateUtils.getdata()
+//            val nowtime = "1578308305000"
+            Log.e("时间戳", nowtime)
             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
+            Log.e("用户token：", sp.getString("user_token", ""))
+            Log.e("地方：", sp.getString("user_phone", ""))
             val retrofit = Retrofit_manager.getInstance().userlogin
             val keyPair = ECKeyPair.create(Numeric.hexStringToByteArray(SharedPreferencesUtil.getData("userPrivatelyKey", "").toString()))
-            val transfer = retrofit.create(MoneyService::class.java).conversion(sp.getString("user_id", ""), duihuanshu.text.toString().trim(), sp.getString("user_token", ""), "", "", "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), MessageSignUtils.Sign(Credentials.create(keyPair), Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).substring(2, Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).length)))
+            val transfer = retrofit.create(MoneyService::class.java).conversion(
+                    sp.getString("user_id", ""),
+                    duihuanshu.text.toString().trim(),
+                    sp.getString("user_token", ""), "", "",
+                    "0", nowtime, PreferencesUtil.get("language", ""),
+                    SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime),
+                    MessageSignUtils.Sign(Credentials.create(keyPair), Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", "")))
+                            .substring(2, Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).length)))
+            Log.e("参数1", Credentials.create(keyPair).toString())
+            Log.e("参数2", Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", "")))
+                    .substring(2, Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).length))
             transfer.enqueue(object : Callback<Common> {
                 override fun onResponse(call: Call<Common>, response: Response<Common>) {
+
                     if (response.body()!!.code == 1) {
                         try {
                             val attributes = HashMap<String, String>()
@@ -216,19 +231,23 @@ class ConversionActivity : BaseActivity() {
                             finish()
                         } catch (e: Exception) {
                             abnormal(this@ConversionActivity)
+                            Log.e("转账错误信息1", response.body()!!.message)
                         }
                     } else {
                         Toast.makeText(this@ConversionActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
+                        Log.e("转账错误信息2", response.body()!!.message)
                     }
                 }
 
                 override fun onFailure(call: Call<Common>, t: Throwable) {
                     val resultException = t as DataResultException
+                    Log.e("转账错误信息3", resultException.message.toString())
                     Toast.makeText(this@ConversionActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()
                 }
             })
         } catch (e: Exception) {
             abnormal(this@ConversionActivity)
+            Log.e("转账错误信息4", "错误转账")
         }
 
     }

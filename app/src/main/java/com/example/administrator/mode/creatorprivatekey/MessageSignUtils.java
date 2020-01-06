@@ -1,5 +1,7 @@
 package com.example.administrator.mode.creatorprivatekey;
 
+import android.util.Log;
+
 import org.web3j.crypto.*;
 import org.web3j.utils.Numeric;
 
@@ -10,7 +12,7 @@ public class MessageSignUtils {
     public static String Sign( Credentials credentials, String message )
     {
         Sign.SignatureData data = Sign.signPrefixedMessage(message.getBytes(), credentials.getEcKeyPair());
-
+        Log.e("签名串", "0x" + Numeric.toHexStringNoPrefix(data.getR()) + Numeric.toHexStringNoPrefix(data.getS()) + Numeric.toHexStringNoPrefix( BigInteger.valueOf(data.getV())));
         return "0x" + Numeric.toHexStringNoPrefix(data.getR()) + Numeric.toHexStringNoPrefix(data.getS()) + Numeric.toHexStringNoPrefix( BigInteger.valueOf(data.getV()));
     }
 

@@ -2,6 +2,7 @@ package com.example.administrator.mode.Utlis;
 
 import android.content.Context;
 
+import android.util.Log;
 import android.widget.Toast;
 
 import com.baidu.mobstat.StatService;
@@ -18,6 +19,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+/**
+ * 获取验证码
+ */
 public class SsmUtlis {
 
     public void Ssm(String Inputphone, String worldCode, String phoneKey, String status, final Context context) {

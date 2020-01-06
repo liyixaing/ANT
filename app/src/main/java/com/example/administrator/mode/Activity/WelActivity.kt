@@ -28,7 +28,9 @@ import com.example.administrator.mode.Utlis.*
 import com.example.administrator.mode.creatorprivatekey.ReadAgreementActivity
 import java.util.*
 
-
+/**
+ * 启动界面
+ */
 class WelActivity : BaseActivity() {
     private var recLen = 2
     var timer = Timer()

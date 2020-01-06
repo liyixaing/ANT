@@ -3,7 +3,7 @@ package com.example.administrator.mode.Utlis;
 import retrofit2.Retrofit;
 
 /**
- * Created by Administrator on 2018/5/5/005.
+ * Created by Administrator on 2018/5/5/005. 配置环境
  */
 
 //Retrofit初始

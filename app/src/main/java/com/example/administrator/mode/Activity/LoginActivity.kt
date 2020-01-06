@@ -84,6 +84,7 @@ class LoginActivity : BaseActivity() {
                                 StatService.onPageEnd(this@LoginActivity, "LoginModule.LoginView")
                                 edit.putString("user_id", response.body()!!.data!!.id.toString())
                                 edit.putString("user_token", response.body()!!.data!!.token)
+                                Log.e("登录时的token", response.body()!!.data!!.token)
                                 edit.putString("user_phone", response.body()!!.data!!.phone)
                                 edit.putString("oldwcn", response.body()!!.data!!.worldCode)
                                 edit.putString("user_name", response.body()!!.data!!.username)

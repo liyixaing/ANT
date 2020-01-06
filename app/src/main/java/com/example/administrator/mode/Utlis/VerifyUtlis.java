@@ -1,5 +1,6 @@
 package com.example.administrator.mode.Utlis;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -15,6 +16,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Parcelable;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v4.content.FileProvider;
 import android.telephony.TelephonyManager;
 
@@ -72,9 +74,13 @@ public class VerifyUtlis {
      * 需要动态权限: android.permission.READ_PHONE_STATE
      */
     public static String getIMEI(Context context) {
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(context.TELEPHONY_SERVICE);
-        String imei = telephonyManager.getDeviceId();
-        return imei;
+//        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(context.TELEPHONY_SERVICE);
+//        String imei = telephonyManager.getDeviceId();
+//        return imei;
+        String android_id = Settings.System.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        @SuppressLint("MissingPermission") String imei = telephonyManager.getDeviceId();
+        return android_id;
     }
 
     public static boolean mClick() {
@@ -89,7 +95,7 @@ public class VerifyUtlis {
 
     public static String stringChang(String s) {
 
-        return s.replace("\\n","\n");
+        return s.replace("\\n", "\n");
 
 //        StringBuffer sb = new StringBuffer();
 //        char[] c;
@@ -125,6 +131,7 @@ public class VerifyUtlis {
         }
         return versionName;
     }
+
     public static boolean isInstallApp(Context context) {
         final PackageManager packageManager = context.getPackageManager();// 获取packagemanager
         List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 获取所有已安装程序的包信息
@@ -397,6 +404,7 @@ public class VerifyUtlis {
     }
 
     public static byte[] toHash(String key) {
+        Log.e("has转换", key);
         return Hash.sha256(key.getBytes());
     }
 

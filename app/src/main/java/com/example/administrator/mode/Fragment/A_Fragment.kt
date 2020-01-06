@@ -223,7 +223,7 @@ class A_Fragment : Fragment() {
                 alertDialog.show()
             }
         })
-        //加速
+        //加速  红包
         jiashu.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
                 startActivity(Intent(activity, RedPacketGetActivity::class.java))
