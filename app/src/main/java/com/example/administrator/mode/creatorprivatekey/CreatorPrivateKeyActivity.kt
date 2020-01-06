@@ -3,12 +3,17 @@ package com.example.administrator.mode.creatorprivatekey
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import com.example.administrator.mode.Activity.BaseActivity
 import com.example.administrator.mode.R
 import kotlinx.android.synthetic.main.activity_creator_private_key.*
 import android.webkit.JavascriptInterface
 import android.webkit.WebViewClient
 import com.example.administrator.mode.Utlis.*
+
+/**
+ *创建私钥
+ */
 class CreatorPrivateKeyActivity : BaseActivity() {
 
     var webViewAlbum: WebViewAlbum? = null
@@ -34,8 +39,12 @@ class CreatorPrivateKeyActivity : BaseActivity() {
         webViewAlbum = WebViewAlbum(this)
         CreatorPrivateKeyWebView.webChromeClient = webViewAlbum
         val sp = this.getSharedPreferences("USER", Context.MODE_PRIVATE)
-        CreatorPrivateKeyWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/src/login/CreateWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-       /* CreatorPrivateKeyWebView.loadUrl("http://192.168.31.211:8020/ant/src/login/CreateWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")*/
+
+        CreatorPrivateKeyWebView.loadUrl(Retrofit_manager.WEBURL + "/src/login/CreateWallet.html?" + "user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+        Log.e("user_id", sp.getString("user_id", ""))
+        Log.e("user_token", sp.getString("user_token", ""))
+        Log.e("language", sp.getString("language", ""))
+        Log.e("测试数据", Retrofit_manager.WEBURL + "/src/login/CreateWallet.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android");
     }
 
     @JavascriptInterface
@@ -50,16 +59,17 @@ class CreatorPrivateKeyActivity : BaseActivity() {
 
     @JavascriptInterface
     fun getCreatorKeyMessageCallBack(walletName: String, myAddress: String, myMnemonic: String, keyName: String, keystore: String, userPrivatelyKey: String, UserPwd: String) {
-            val intent = Intent(this@CreatorPrivateKeyActivity, BackupsWalletActivity::class.java)
-            intent.putExtra("readFileInput", keystore)
-            intent.putExtra("walletName", walletName)
-            intent.putExtra("readFileName", userPrivatelyKey)
-            intent.putExtra("readNameInput", keyName)
-            intent.putExtra("readaddress", myAddress)
-            intent.putExtra("readMnemonic", myMnemonic)
-            intent.putExtra("UserPwd", UserPwd)
-            startActivity(intent)
-            finish()
+        Log.e("TAG", "TAG")
+        val intent = Intent(this@CreatorPrivateKeyActivity, BackupsWalletActivity::class.java)
+        intent.putExtra("readFileInput", keystore)
+        intent.putExtra("walletName", walletName)
+        intent.putExtra("readFileName", userPrivatelyKey)
+        intent.putExtra("readNameInput", keyName)
+        intent.putExtra("readaddress", myAddress)
+        intent.putExtra("readMnemonic", myMnemonic)
+        intent.putExtra("UserPwd", UserPwd)
+        startActivity(intent)
+        finish()
     }
 }
 /*  private fun createCredentials() {

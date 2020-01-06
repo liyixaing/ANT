@@ -41,4 +41,5 @@ public class Announcement extends BaseDialog {
             }
         });
     }
+
 }

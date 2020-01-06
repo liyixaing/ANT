@@ -11,6 +11,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import com.example.administrator.mode.R
+import com.example.administrator.mode.Utlis.Retrofit_manager
 import kotlinx.android.synthetic.main.activity_dial.*
 
 class dialActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class dialActivity : AppCompatActivity() {
 
         }
         val sp = this.getSharedPreferences("USER", Context.MODE_PRIVATE)
-        dialImplWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/src/index/WelfareDraw.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", ""))
+        dialImplWebView.loadUrl(Retrofit_manager.WEBURL+"/src/index/WelfareDraw.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", ""))
 
     }
 

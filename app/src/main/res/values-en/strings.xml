@@ -132,6 +132,7 @@
     <string name="language_settings">languageSettings</string>
     <string name="Home_guanyuwo">About us</string>
     <string name="Clean_up_the_cache">Clean up the cache</string>
+    <string name="Clean_up_the_cache1">Cleanup success</string>
     <string name="Home_shezhi">Settings</string>
     <string name="Home_tuichu">Logout</string>
     <string name="Home_yaoqin">Invitation card</string>
@@ -150,7 +151,7 @@
     <string name="Particuars_pay">Forgot to payment password?</string>
     <string name="Particuars_payinput">Enter payment password</string>
     <string name="Invite_yard">Referral ID</string>
-    <string name="Invite_scan">www.anttoken.io</string>
+    <string name="Invite_scan">www.anttoken.one</string>
     <string name="Invite_newUser">Scan the code to download our APP</string>
     <string name="Invite_copy">Copy</string>
     <string name="Invite_tit">Invite Friends </string>

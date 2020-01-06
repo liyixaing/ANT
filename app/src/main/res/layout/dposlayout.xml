@@ -5,20 +5,27 @@
     android:layout_marginLeft="@dimen/dp_16"
     android:layout_marginRight="@dimen/dp_16">
 
-    <TextView
-        android:id="@+id/dPostUserId"
-        style="@style/vitextview"
-        android:text="@string/jiangli"
-        android:textColor="@color/afragmenttext"
-        android:textSize="14sp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/dPostUserTime"
-        style="@style/atextview"
-        android:layout_below="@+id/dPostUserId"
-        android:text="xxxxxxxx"
-        android:textColor="@color/afragmenttext"
-        android:textSize="11sp" />
+        <TextView
+            android:id="@+id/dPostUserId"
+            style="@style/vitextview"
+            android:text="@string/jiangli"
+            android:textColor="@color/afragmenttext"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/dPostUserTime"
+            style="@style/atextview"
+            android:layout_below="@+id/dPostUserId"
+            android:text="xxxxxxxx"
+            android:textColor="@color/afragmenttext"
+            android:textSize="11sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/dPostUserpr"

@@ -210,7 +210,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_gravity="center_horizontal"
-            android:text="ANT Token: www.anttoken.io"
+            android:text="ANT Token: www.anttoken.one"
             android:textColor="@color/essential"
             android:textSize="11sp" />
     </LinearLayout>

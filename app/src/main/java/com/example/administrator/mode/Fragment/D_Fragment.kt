@@ -148,7 +148,7 @@ class D_Fragment : Fragment() {
                 DataCleanManager.cleanInternalCache(activity)
                 cacheSize = GetFileSize.FormetFileSize(GetFileSize.getFileSize(activity!!.cacheDir))
                 tv_cache.setText(cacheSize)
-                Toast.makeText(activity, R.string.Clean_up_the_cache, Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, R.string.Clean_up_the_cache1, Toast.LENGTH_SHORT).show()
             }
         })
         bu_tuichu.setOnClickListener(object : ClickUtlis() {

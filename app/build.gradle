@@ -7,11 +7,11 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.xms.ant"
+        applicationId "com.xms.antplus"  //新包名:con.xms.antplus;老包名:com.xms.ant;  签名密码 005020
         minSdkVersion 22
         targetSdkVersion 28
         versionCode 1
-        versionName "2.2.0"
+        versionName "3.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     allprojects {
@@ -72,7 +72,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'org.greenrobot:eventbus:3.1.1'
-     implementation 'com.airsaid.library:pickerview:1.0.3'
+    implementation 'com.airsaid.library:pickerview:1.0.3'
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.github.florent37:viewanimator:1.0.0@aar'
     implementation 'com.baidu.mobstat:mtj-sdk:latest.integration'

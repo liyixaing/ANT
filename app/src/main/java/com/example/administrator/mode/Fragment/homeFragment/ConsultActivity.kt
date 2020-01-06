@@ -8,6 +8,7 @@ import android.webkit.JavascriptInterface
 import android.webkit.WebViewClient
 import com.example.administrator.mode.Activity.BaseActivity
 import com.example.administrator.mode.R
+import com.example.administrator.mode.Utlis.Retrofit_manager
 import com.example.administrator.mode.Utlis.VerifyUtlis
 import com.example.administrator.mode.Utlis.WebViewAlbum
 import com.example.administrator.mode.app.MyApplication
@@ -41,16 +42,16 @@ class ConsultActivity : BaseActivity() {
         val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
         if (intent.getStringExtra("webUrl") == "https://m.jinse.com/member/209230") {
             xdasdac.loadUrl("https://m.jinse.com/member/209230")
-        }else if (intent.getStringExtra("webUrl") == "mountain"){
-          // xdasdac.loadUrl("http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange01.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-            xdasdac.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/Ruby/exchange01.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-        }else if (intent.getStringExtra("webUrl")=="funding"){
-          /*  xdasdac.loadUrl("http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")*/
-            xdasdac.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/Ruby/exchange.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-        }else if (intent.getStringExtra("webUrl")=="purchasing"){
-            xdasdac.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/src/index/CloudPurchase.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-        }else if (intent.getStringExtra("webUrl")=="CustomerService"){
-            xdasdac.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/src/index/CustomerService.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+        } else if (intent.getStringExtra("webUrl") == "mountain") {
+            // xdasdac.loadUrl("http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange01.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+            xdasdac.loadUrl(Retrofit_manager.WEBURL+"/wallet/src/Ruby/exchange01.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+        } else if (intent.getStringExtra("webUrl") == "funding") {
+            /*  xdasdac.loadUrl("http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")*/
+            xdasdac.loadUrl(Retrofit_manager.WEBURL+"/wallet/src/Ruby/exchange.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+        } else if (intent.getStringExtra("webUrl") == "purchasing") {
+            xdasdac.loadUrl(Retrofit_manager.WEBURL+"/src/index/CloudPurchase.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+        } else if (intent.getStringExtra("webUrl") == "CustomerService") {
+            xdasdac.loadUrl(Retrofit_manager.WEBURL+"/src/index/CustomerService.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
         }
     }
 
@@ -97,7 +98,7 @@ class ConsultActivity : BaseActivity() {
         try {
             val intent = Intent(this, CaptureActivity::class.java)
             startActivityForResult(intent, 6666)
-        }catch (e: Exception){
+        } catch (e: Exception) {
 
         }
 
@@ -110,7 +111,7 @@ class ConsultActivity : BaseActivity() {
                 val result = data!!.getStringExtra("barCode")
                 subpageDealWebView.loadUrl("javascript:ScanningCallBackFunc('$result')")
             }
-        }catch (e: Exception){
+        } catch (e: Exception) {
 
         }
     }

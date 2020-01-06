@@ -33,6 +33,8 @@ class ConversionActivity : BaseActivity() {
     var zi = ""
     var mix = ""
     var Available1 = ""
+    var zhican = ""
+
     override fun getContentViewId(): Int {
         return R.layout.activity_conversion
     }
@@ -61,9 +63,12 @@ class ConversionActivity : BaseActivity() {
                 override fun onResponse(call: Call<prturn>, response: Response<prturn>) {
                     try {
                         if (response.body()!!.code == 1) {
-                            zi = String.format("%.8f", response.body()!!.data!!.user_ant!!.toDouble())
+                            zhican = String.format("%.8f", response.body()!!.data!!.user_ant!!.toDouble())
+                            zi = String.format("%.8f", response.body()!!.data!!.user_score!!.toDouble())
                             carinput.text = String.format("%.8f", response.body()!!.data!!.user_ant!!.toDouble())
+                            //默认赋值
                             con_integral.text = String.format("%.8f", response.body()!!.data!!.user_score!!.toDouble())
+
                             tvcard.text = Available1 + String.format("%.8f", response.body()!!.data!!.user_ant!!.toDouble())
                         } else {
                             Toast.makeText(this@ConversionActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
@@ -166,15 +171,18 @@ class ConversionActivity : BaseActivity() {
                 var dui = ""
                 dui = duihuanshu.text.toString()
                 try {
-                    if (dui.toDouble() > zi.toDouble()) {
-                        duihuanshu.setText(zi.substring(0, zi.length - 11) + "00")
+                    if (dui.toDouble() > zhican.toDouble()) {
+//                        duihuanshu.setText(zi.substring(0, zhican.length - 11) + "00")
+                        duihuanshu.setText(zhican.substring(0, zhican.length - 11) + "00")
                         duihuanshu.setSelection(duihuanshu.text.toString().trim().length)
                         return
                     }
-                    carinput.text = String.format("%.8f", (zi.toDouble() - dui.toDouble()))
+                    ///二次赋值
+                    carinput.text = String.format("%.8f", (zhican.toDouble() - dui.toDouble()))
                     conversion_rate.text = "+" + String.format("%.2f", (num.toDouble() * dui.trim().toDouble()))
                     con_integral.text = String.format("%.8f", (zi.toDouble() + (num.toDouble() * dui.trim().toDouble())))
-                    car_qian.text = "-" + String.format("%.2f", dui.toDouble())
+//                    car_qian.text = "-" + String.format("%.2f", dui.toDouble())
+                    car_qian.text = "-" + dui
                 } catch (e: Exception) {
                     duihuanshu.hint = "0.00"
                     car_qian.text = "0.00"
@@ -213,6 +221,7 @@ class ConversionActivity : BaseActivity() {
                         Toast.makeText(this@ConversionActivity, response.body()!!.message, Toast.LENGTH_SHORT).show()
                     }
                 }
+
                 override fun onFailure(call: Call<Common>, t: Throwable) {
                     val resultException = t as DataResultException
                     Toast.makeText(this@ConversionActivity, resultException.message.toString(), Toast.LENGTH_SHORT).show()

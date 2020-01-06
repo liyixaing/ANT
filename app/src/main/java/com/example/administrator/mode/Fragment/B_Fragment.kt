@@ -21,10 +21,7 @@ import com.baidu.mobstat.StatService
 import com.example.administrator.mode.Activity.drawer.DownloadTask
 import com.example.administrator.mode.Fragment.deal.SubpageDealActivity
 import com.example.administrator.mode.R
-import com.example.administrator.mode.Utlis.ClickUtlis
-import com.example.administrator.mode.Utlis.PreferencesUtil
-import com.example.administrator.mode.Utlis.VerifyUtlis
-import com.example.administrator.mode.Utlis.WebViewAlbum
+import com.example.administrator.mode.Utlis.*
 import com.example.administrator.mode.app.MyApplication
 import kotlinx.android.synthetic.main.fragment_b.*
 
@@ -58,7 +55,7 @@ class B_Fragment : Fragment() {
         dealWebView.settings.userAgentString = "$ua/AntDapp"
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
      //dealWebView.loadUrl("http://192.168.31.211:8020/ant/wallet/home.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-         dealWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/home.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+         dealWebView.loadUrl(Retrofit_manager.WEBURL+"/wallet/home.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
     }
 
     @JavascriptInterface

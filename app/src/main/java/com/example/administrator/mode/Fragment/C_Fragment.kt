@@ -14,6 +14,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.example.administrator.mode.Fragment.deal.SubpageDealActivity
 import com.example.administrator.mode.R
+import com.example.administrator.mode.Utlis.Retrofit_manager
 import com.example.administrator.mode.Utlis.VerifyUtlis
 import com.example.administrator.mode.Utlis.WebViewAlbum
 import com.example.administrator.mode.app.MyApplication
@@ -50,7 +51,7 @@ class C_Fragment : Fragment() {
         val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
 
       //  shequWebView.loadUrl("http://192.168.31.211:8020/ant/src/transaction/CrowdFunding.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
-       shequWebView.loadUrl("http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/src/transaction/CrowdFunding.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
+       shequWebView.loadUrl(Retrofit_manager.WEBURL+"/src/transaction/CrowdFunding.html?user_id=" + sp.getString("user_id", "") + "&user_token=" + sp.getString("user_token", "") + "&language=" + sp.getString("language", "") + "&loginType=android")
     }
 
     @JavascriptInterface

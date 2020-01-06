@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.administrator.mode.Activity.AnnouncementActivity
 import com.example.administrator.mode.Activity.DataResultException
+import com.example.administrator.mode.Activity.LianxikefuActivity
 import com.example.administrator.mode.Activity.drawer.InviteActivity
 import com.example.administrator.mode.Adapter.BannerAdapter
 import com.example.administrator.mode.Adapter.SmoothLinearLayoutManager
@@ -40,7 +41,9 @@ import java.util.concurrent.TimeUnit
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-
+/**
+ * 你我都知道代码烂 将就着看吧 毕竟这也不是我写的
+ */
 class A_Fragment : Fragment() {
     var image = arrayListOf<String>()
     var num = arrayListOf<String>()
@@ -55,7 +58,6 @@ class A_Fragment : Fragment() {
     var aaaqq = ""
     var xxaa = ""
     var itemsinpit = arrayOf(PreferencesUtil.get("collection", ""), PreferencesUtil.get("envelope", ""))
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -100,9 +102,10 @@ class A_Fragment : Fragment() {
 
         telephone.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
+//                Toast.makeText(activity, R.string.System_in_error, Toast.LENGTH_LONG).show()
                 val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
                 val intent = Intent(activity, ANTStoreActivity::class.java)
-                intent.putExtra("url", "http://mall.fcsap.com/?user_id=" + sp.getString("user_id", "") + "&user_token=" + Encryption.generateFakeTokenToShop(sp.getString("user_token", "")) + "&mall_key=b64ab4b8124e2c5d43d52d9c05a6f992")
+                intent.putExtra("url", "http://malldev.fcsap.com/?user_id=" + sp.getString("user_id", "") + "&user_token=" + Encryption.generateFakeTokenToShop(sp.getString("user_token", "")) + "&mall_key=b64ab4b8124e2c5d43d52d9c05a6f992")
                 startActivity(intent)
                 activity!!.finish()
 
@@ -141,7 +144,7 @@ class A_Fragment : Fragment() {
             override fun onMultiClick(v: View?) {
                 val intent = Intent(activity, SubpageDealActivity::class.java)
                 // intent.putExtra("dealurl", "http://192.168.31.211:8020/ant/wallet/src/Ruby/exchange02.html")
-                intent.putExtra("dealurl", "http://ipfs.fuyer.com/ipns/Qma5JwPPYmHEGSdxwvF8dQDrFxe4z2uHUSBZB4WAdv5Crc/wallet/src/Ruby/exchange02.html")
+                intent.putExtra("dealurl", Retrofit_manager.WEBURL + "/wallet/src/Ruby/exchange02.html")
                 startActivity(intent)
             }
         })
@@ -241,7 +244,7 @@ class A_Fragment : Fragment() {
         //资产
         home_card.setOnClickListener(object : ClickUtlis() {
             override fun onMultiClick(v: View?) {
-                val intent = Intent(activity, ConsultActivity::class.java)
+                val intent = Intent(activity, LianxikefuActivity::class.java)//ConsultActivity
                 intent.putExtra("webUrl", "CustomerService")
                 startActivity(intent)
                 /*            startActivity(Intent(activity, ServiceActivity::class.java))*/

@@ -118,6 +118,7 @@
     <string name="language_settings">语言设置</string>
     <string name="Home_guanyuwo">关于我们</string>
     <string name="Clean_up_the_cache">清理缓存</string>
+    <string name="Clean_up_the_cache1">清理成功</string>
     <string name="Home_shezhi">系统设置</string>
     <string name="Home_tuichu">退出登录</string>
     <string name="Home_yaoqin">邀请卡</string>
@@ -140,7 +141,7 @@
     <string name="Particuars_pay">忘记支付密码?</string>
     <string name="Particuars_payinput">输入支付密码</string>
     <string name="Invite_yard">邀请码</string>
-    <string name="Invite_scan">www.anttoken.io</string>
+    <string name="Invite_scan">www.anttoken.one</string>
     <string name="Invite_newUser">扫码下载我们的APP</string>
     <string name="Invite_copy">点击复制文字</string>
     <string name="Invite_tit">好友邀请</string>
