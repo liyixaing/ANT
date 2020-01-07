@@ -105,7 +105,7 @@ class A_Fragment : Fragment() {
 //                Toast.makeText(activity, R.string.System_in_error, Toast.LENGTH_LONG).show()
                 val sp = activity!!.getSharedPreferences("USER", Context.MODE_PRIVATE)
                 val intent = Intent(activity, ANTStoreActivity::class.java)
-                intent.putExtra("url", "http://malldev.fcsap.com/?user_id=" + sp.getString("user_id", "") + "&user_token=" + Encryption.generateFakeTokenToShop(sp.getString("user_token", "")) + "&mall_key=b64ab4b8124e2c5d43d52d9c05a6f992")
+                intent.putExtra("url", "http://bntmall.fcsap.com/?user_id=" + sp.getString("user_id", "") + "&user_token=" + Encryption.generateFakeTokenToShop(sp.getString("user_token", "")) + "&mall_key=b64ab4b8124e2c5d43d52d9c05a6f992")
                 startActivity(intent)
                 activity!!.finish()
 

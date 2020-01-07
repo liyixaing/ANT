@@ -21,6 +21,7 @@ import com.example.administrator.mode.Interface.MoneyService
 import com.example.administrator.mode.Pojo.Transferturn
 import com.example.administrator.mode.R
 import com.example.administrator.mode.Utlis.*
+import com.example.administrator.mode.app.MyApplication
 import com.example.administrator.mode.creatorprivatekey.MessageSignUtils
 import kotlinx.android.synthetic.main.activity_particulars.*
 import kotlinx.android.synthetic.main.tit.*
@@ -32,6 +33,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
+
+//交易确认界面
 class ParticularsActivity : BaseActivity() {
     var timer = Timer()
     private var recLen = 4
@@ -88,7 +91,8 @@ class ParticularsActivity : BaseActivity() {
                             val nowtime = DateUtils.getdata()
                             val sp = getSharedPreferences("USER", Context.MODE_PRIVATE)
                             val retrofit = Retrofit_manager.getInstance().userlogin
-                            val keyPair = ECKeyPair.create(Numeric.hexStringToByteArray(SharedPreferencesUtil.getData("userPrivatelyKey", "").toString()))
+                            //SharedPreferencesUtil.getData("userPrivatelyKey", "").toString())
+                            val keyPair = ECKeyPair.create(Numeric.hexStringToByteArray(MyApplication.keyAddressBeans.name))
                             val transfer = retrofit.create(MoneyService::class.java).transfertwo(sp.getString("user_id", ""), intent.extras.getString("transferid"), sp.getString("user_token", ""),"", "0", nowtime, PreferencesUtil.get("language", ""), SignatureUtil.signtureByPrivateKey(sp.getString("user_token", "") + nowtime), MessageSignUtils.Sign(Credentials.create(keyPair), Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).substring(2, Numeric.toHexString(VerifyUtlis.toHash(nowtime + sp.getString("user_token", ""))).length)))
                             transfer.enqueue(object : Callback<Transferturn> {
                                 override fun onResponse(call: Call<Transferturn>, response: Response<Transferturn>) {
